@@ -51,8 +51,11 @@ public class UserInteraction {
   UserController.saveSchool(name);
  }
  
+ /**
+  * view the logged in user's profile
+  */
  public void viewProfile() {
- //TODO 
+	 UserController.viewProfile();
  
  }
  
