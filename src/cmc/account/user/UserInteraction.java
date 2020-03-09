@@ -38,8 +38,8 @@ public class UserInteraction {
   //TODO
  }
  
- public void showSchoolPage(String schoolName) {
-  //TODO
+ public static void showSchoolPage(String schoolName) {
+  UserController.showSchoolPage(schoolName);
  }
  
  public String displaySchoolDetails(University uni) {
@@ -47,9 +47,8 @@ public class UserInteraction {
   return "School details";
  }
  
- public void saveSchool(String name) {
-  //TODO
-  
+ public static void saveSchool(String name) {
+  UserController.saveSchool(name);
  }
  
  /**
