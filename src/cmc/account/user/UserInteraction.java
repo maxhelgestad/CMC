@@ -57,7 +57,10 @@ public class UserInteraction {
   */
  public void viewProfile() {
 	 UserController.viewProfile();
+ }
  
+ public void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
+	 UserController.viewToEditProfile(username, password, newUsername, newPassword);
  }
  
  public void removeSchool(String name, String schoolName) {
