@@ -26,9 +26,9 @@ public class User extends Account{
   * @param userName - username of the user
   * @param password - password of the user
   */
- public User(String userName, String password)
+ public User(String userName, String password, String firstname, String lastName, char status)
  {
-  super(userName, password);
+  super(firstname, lastName, userName, password, status);
   this.savedSchools = new ArrayList<University>();
  }
     
