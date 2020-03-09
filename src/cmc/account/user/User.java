@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.search.Criteria;
+import cmc.account.user.Profile;
 import cmc.university.University;
 
 /**
@@ -45,8 +46,18 @@ public class User extends Account{
  //public boolean logOn(String username, String password) {
   //DatabaseController.getUser(username, password);
  //}
+ 
+ /**
+  * method for the user to view their profile
+  * 
+  * @return this user's profile
+  */
+ public static Profile viewProfile() {
+	 return new Profile("", "", "", "","");
+ }
     
- /*
+
+/**
   * method to add a school to the saved schools list
   * 
   * @param u - school to be added

@@ -74,9 +74,11 @@ public class Driver
   
   //(User)
   UserInteraction.showSchoolPage("SJU");
+
   
   //(Admin) Add a new User
   System.out.println("Admin added a new user" + AdminInteraction.addUser("jack", "password"));
+
  }
  
 

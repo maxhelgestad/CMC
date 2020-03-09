@@ -66,9 +66,12 @@ public class UserController {
   //u.addSavedSchool(s);
  }
  
- public void viewProfile()
+ /**
+  * allows users to view their profile
+  */
+ public static void viewProfile()
  {
-  
+	 User.viewProfile();
  }
  
  public void removeSchool(String userName, String schoolName)
