@@ -16,7 +16,7 @@ import cmc.university.University;
  */
 public class UserController {
  
- private List<User> regularUsers = new ArrayList<User>();
+ //private List<User> regularUsers = new ArrayList<User>();
  
  
  
@@ -29,9 +29,10 @@ public class UserController {
 
  }
  
- public void addUser(User u)
- {
-  this.regularUsers.add(u);
+ public static boolean addUser(String username, String password) {
+	User u = new User(username, password);
+	DatabaseController.addUser(u);
+	return true;
  }
  
  public void editUser(User u)
