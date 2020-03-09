@@ -83,20 +83,9 @@ public static void setUser() {
   }
 
   
-  public static User lookupUser(String username) {
-
-	  User result = null;
-	    for(int i = 0; i < accounts.size(); i++)
-	    {
-	      if(accounts.get(i).getUsername().equals(username))
-	      {
-	        result = (User)accounts.get(i); 
-	      }
-	    }
-	    return result;
-	  }   
-    	
- 
+  public Account lookupUser(String username) {
+   return sam;
+  }
   
   public void updateSavedSchoolList(String username) {
   }
@@ -106,6 +95,7 @@ public static void setUser() {
   }
   
   public static void addUser(User user) {
+	  
   }
   
   public static ArrayList<Account> getAccounts() {
