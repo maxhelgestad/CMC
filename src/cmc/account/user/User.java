@@ -28,7 +28,7 @@ public class User extends Account {
 	 * @param password - password of the user
 	 */
 	public User(String firstName, String lastName, String userName, String password, char type, char status) {
-		super(firstName, lastName, userName, password, type, status);
+		super(firstName, lastName, userName, password, 'u', status);
 		this.savedSchools = new ArrayList<University>();
 	}
 

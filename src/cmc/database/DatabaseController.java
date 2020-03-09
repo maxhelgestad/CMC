@@ -45,10 +45,6 @@ public class DatabaseController {
 	public static void addUser(User user) {
 	}
 
-	public static ArrayList<Account> getAccounts() {
-
-	}
-
 	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
 
 	}
@@ -78,5 +74,17 @@ public class DatabaseController {
 			allSchools.add(uni);
 		}
 		return allSchools;
+	}
+	
+	public static ArrayList<Account> getAccounts(){
+		String[][] a = lib.user_getUsers();
+		ArrayList<Account> allAccounts = new ArrayList<Account>();
+		for (int i = 0; a.length < i; i++) {
+			char[] ch1 = a[i][4].toCharArray();
+			char[] ch2 = a[1][5].toCharArray();
+			Account acc = new Account(a[i][0], a[i][1], a[i][2], a[i][3], ch1[0], ch2[0]);
+			allAccounts.add(acc);
+		}
+		return allAccounts;		
 	}
 }
