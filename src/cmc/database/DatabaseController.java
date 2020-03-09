@@ -93,7 +93,7 @@ public static void setUser() {
   public void updateSavedUser(User user) {
   }
   
-  public void addUser(User user) {
+  public static void addUser(User user) {
   }
   
   public static ArrayList<Account> getAccounts() {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.AccountController;
+import cmc.account.user.UserController;
 import cmc.university.University;
 import cmc.university.UniversityController;
 
@@ -32,9 +33,10 @@ public class AdminInteraction {
   return AccountController.getUsers();
  }
  
- //public static void addUser(User newUser) {
- 
- //}
+ public static boolean addUser(String username, String password) {
+	UserController.addUser(username, password);
+	return true;
+ }
  
  //public static void editUser(String username ) {
   
