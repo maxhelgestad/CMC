@@ -52,8 +52,11 @@ public class UserInteraction {
   
  }
  
+ /**
+  * view the logged in user's profile
+  */
  public void viewProfile() {
- //TODO 
+	 UserController.viewProfile();
  
  }
  
