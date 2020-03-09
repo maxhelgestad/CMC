@@ -55,15 +55,12 @@ public class UserController {
 	// save updated list to database
 
 	public ArrayList<University> getSavedSchoolList(String userName) {
-		
-		if(DatabaseController.lookupUser(userName)!= null)
-		   {
-		     return DatabaseController.lookupUser(userName).getSavedSchools(userName);
-		   }
-		   else{
-		     return null;
-		   }
-		   
+
+		if (DatabaseController.lookupUser(userName) != null) {
+			return DatabaseController.lookupUser(userName).getSavedSchools(userName);
+		} else {
+			return null;
+		}
 
 	}
 
@@ -85,12 +82,10 @@ public class UserController {
 	}
 
 	public static void removeSchool(String userName, String schoolName) {
-		
 
-		   if(DatabaseController.lookupUser(userName)!= null)
-		   {
-		     DatabaseController.lookupUser(userName).removeSavedSchool(schoolName);
-		   }
+		if (DatabaseController.lookupUser(userName) != null) {
+			DatabaseController.lookupUser(userName).removeSavedSchool(schoolName);
+		}
 
 	}
 }
