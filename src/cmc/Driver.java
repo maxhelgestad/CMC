@@ -87,6 +87,7 @@
 	   System.out.println(users.get(i).toString());
 	  }
 	  AdminInteraction.editUser("sammy", "password", "Sammy", "Password");
+	  AdminInteraction.editUser("james", "12345", "James", "123456");
 	  
 	  System.out.println("(Updated Username and Password)");
 	  for(int i = 0; i < users.size(); i++)
@@ -101,7 +102,7 @@
 	  {
 	   System.out.println(users.get(i).toString());
 	  }
-	  AdminInteraction.deactivateUser("james", "12345");
+	  AdminInteraction.deactivateUser("Sammy", "Password");
 	  
 	  System.out.println("(New list of users *one removed*)");
 	  ArrayList<Account> u = AdminInteraction.viewUsers();
