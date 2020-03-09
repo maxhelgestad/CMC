@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.search.Criteria;
-import cmc.account.user.Profile;
 import cmc.database.DatabaseController;
 import cmc.university.University;
 
@@ -17,52 +16,9 @@ import cmc.university.University;
  * @author mhelgesta001
  *
  */
-<<<<<<< HEAD
-public class User extends Account{
- //the list of saved schools for a user
- private ArrayList<University> savedSchools;
-    
- /*
-  * constructs a User object
-  * 
-  * @param userName - username of the user
-  * @param password - password of the user
-  */
- public User(String userName, String password, String firstname, String lastName, char status)
- {
-  super(firstname, lastName, userName, password, status);
-  this.savedSchools = new ArrayList<University>();
- }
-    
- /*
-  * 
-  */
- public void searchSchool(Criteria c)
- {
-  //TODO 
- }
-    
- /*
-  * 
-  */
- //public boolean logOn(String username, String password) {
-  //DatabaseController.getUser(username, password);
- //}
- 
- /**
-  * method for the user to view their profile
-  * 
-  * @return this user's profile
-  */
- public static Profile viewProfile() {
-	 return new Profile("", "", "", "","");
- }
-    
-=======
 public class User extends Account {
 	// the list of saved schools for a user
 	private ArrayList<University> savedSchools;
->>>>>>> 3736878c56ca00c223287f99ff337a9f44a7afb7
 
 	/*
 	 * constructs a User object
@@ -71,8 +27,8 @@ public class User extends Account {
 	 * 
 	 * @param password - password of the user
 	 */
-	public User(String userName, String password) {
-		super(userName, password);
+	public User(String firstName, String lastName, String userName, String password, char type, char status) {
+		super(firstName, lastName, userName, password, type, status);
 		this.savedSchools = new ArrayList<University>();
 	}
 
@@ -95,9 +51,9 @@ public class User extends Account {
 	 * 
 	 * @return this user's profile
 	 */
-	public static Profile viewProfile() {
-		return new Profile("", "", "", "", "");
-	}
+	//public static Profile viewProfile() {
+	//	return new Profile("", "", "", "", "");
+	//}
 
 	/**
 	 * method to add a school to the saved schools list

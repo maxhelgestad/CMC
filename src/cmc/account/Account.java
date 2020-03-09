@@ -15,6 +15,7 @@ public class Account {
 	private String password;
 	private String firstname;
 	private String lastName;
+	private char type;
 	private char status;
 
 	/**
@@ -25,11 +26,12 @@ public class Account {
 	 * @param password
 	 *            - password of the account
 	 */
-	public Account(String firstname, String lastName, String username, String password, char status) {
+	public Account(String firstname, String lastName, String username, String password, char type, char status) {
 		this.username = username;
 		this.password = password;
 		this.firstname = firstname;
 		this.lastName = lastName;
+		this.type = type;
 		this.status = status;
 	}
 
