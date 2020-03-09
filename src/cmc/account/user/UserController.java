@@ -76,9 +76,13 @@ public class UserController {
 		University s = DatabaseController.getUniversity(schoolName);
 		// u.addSavedSchool(s);
 	}
-
+	
 	public static void viewProfile() {
+		
+	}
 
+	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
+		User.editProfile(username, password, newUsername, newPassword);
 	}
 
 	public static void removeSchool(String userName, String schoolName) {
