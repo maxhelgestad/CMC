@@ -28,6 +28,7 @@ public class Driver {
 	 * @param args
 	 * @throws FileNotFoundException 
 	 */
+<<<<<<< HEAD
 	public static void main(String[] args) throws FileNotFoundException {
 		DatabaseController.setUp("javengers", "csci230");
 		
@@ -39,6 +40,15 @@ public class Driver {
 		
 		PrintWriter pw = new PrintWriter(file);
 		
+=======
+	public static void main(String[] args) {
+<<<<<<< HEAD
+		DatabaseController.setUser();
+		DatabaseController.setSchool();
+=======
+		DatabaseController.setUp("javengers", "csci230");
+>>>>>>> 2004f49f12366c6feeb0914cd30fc0df2f1deee4
+>>>>>>> 254dc48a0ad2b3a3ac4bbc7c5d807dc58500ac51
 
 		// Successful Login
 		pw.println("Login was success: (should be true)" + UserInteraction.logOn("sammy", "password"));
@@ -96,7 +106,10 @@ public class Driver {
 			pw.println(users.get(i).toString());
 		}
 		AdminInteraction.editUser("sammy", "password", "Sammy", "Password");
+<<<<<<< HEAD
+=======
 		AdminInteraction.editUser("james", "12345", "James", "123456");
+>>>>>>> 2004f49f12366c6feeb0914cd30fc0df2f1deee4
 
 		pw.println("(Updated Username and Password)");
 		for (int i = 0; i < users.size(); i++) {
@@ -109,7 +122,11 @@ public class Driver {
 		for (int i = 0; i < users.size(); i++) {
 			pw.println(users.get(i).toString());
 		}
+<<<<<<< HEAD
+		AdminInteraction.deactivateUser("james", "12345");
+=======
 		AdminInteraction.deactivateUser("Sammy", "Password");
+>>>>>>> 2004f49f12366c6feeb0914cd30fc0df2f1deee4
 
 		pw.println("(New list of users *one removed*)");
 		ArrayList<Account> u = AdminInteraction.viewUsers();

@@ -16,26 +16,26 @@ public class DatabaseController {
 		lib = new UniversityDBLibrary(username, password);
 	}
 
-	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
-
-	}
-
 	public static Account getUser(String username, String password) {
 
 	}
 
-	public static University getUniversity(String name) {
-
-	}
-
-	public void getSchoolDetails(String schoolName) {
-	}
-
+	/**
+	 * get a user by the given name
+	 *
+	 * @param user
+	 *            name
+	 *
+	 * @reutrn a User with given user name
+	 */
 	public static User lookupUser(String username) {
-
-	}
-
-	public void updateSavedSchoolList(String username) {
+		User result = null;
+		for (int i = 0; i < accounts.size(); i++) {
+			if (accounts.get(i).getUsername().equals(username)) {
+				result = (User) accounts.get(i);
+			}
+		}
+		return result;
 	}
 
 	public void updateSavedUser(User user) {
@@ -46,6 +46,22 @@ public class DatabaseController {
 	}
 
 	public static ArrayList<Account> getAccounts() {
+
+	}
+
+	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
+
+	}
+
+	public static University getUniversity(String name) {
+
+	}
+
+	public void getSchoolDetails(String schoolName) {
+
+	}
+
+	public void updateSavedSchoolList(String username) {
 
 	}
 

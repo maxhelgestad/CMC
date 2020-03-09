@@ -44,7 +44,7 @@ public class University {
    return this.name;
   }
   
-  public int getMfRatio() {
+  public float getMfRatio() {
    return this.mfRatio;
   }
   public String getControl() {
@@ -58,11 +58,11 @@ public class University {
    return this.numStudents;
   }
   
-  public int getSatVerbal() {
+  public float getSatVerbal() {
    return this.satVerbal;
   }
   
-  public int getSatMath() {
+  public float getSatMath() {
    return this.satMath;
   }
   

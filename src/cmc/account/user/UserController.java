@@ -27,8 +27,8 @@ public class UserController {
 
 	}
 
-	public static boolean addUser(String username, String password) {
-		User u = new User(username, password);
+	public static boolean addUser(String username, String password, String firstname, String lastname, char status) {
+		User u = new User(username, password, firstname, lastname, status);
 		DatabaseController.addUser(u);
 		return true;
 	}
@@ -90,9 +90,13 @@ public class UserController {
 		University s = DatabaseController.getUniversity(schoolName);
 		// u.addSavedSchool(s);
 	}
-
+	
 	public static void viewProfile() {
+		
+	}
 
+	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
+		User.editProfile(username, password, newUsername, newPassword);
 	}
 
 	public static void removeSchool(String userName, String schoolName) {
