@@ -45,12 +45,14 @@ public class Driver
    System.out.println();
   }
   System.out.println("------------------------------");
+  
   //(User) Find top 5 recommended schools for a given school
   float[] ratings = UserInteraction.displaySimilarSchools("SJU");
   System.out.println("Similarity Ratings for top 5 similar schools to SJU");
   System.out.println("CSB: " + ratings[0] + '\n' + "UST: " + ratings[1] +'\n' + " hi: " + ratings[2] +'\n' + "max: " + ratings[3] +'\n' + "UMN: " + ratings[4]);
   
   System.out.println("------------------------------");
+  
   //(Admin) View list of universities
   ArrayList<University> universities = AdminInteraction.viewUniversities();
   for(int i = 0; i < universities.size(); i++)
@@ -59,6 +61,7 @@ public class Driver
    System.out.println();
   }
   System.out.println("------------------------------");
+  
   //(Admin) View list of users
   ArrayList<Account> users = AdminInteraction.viewUsers();  
   for(int i = 0; i < users.size(); i++)
@@ -66,6 +69,11 @@ public class Driver
    System.out.println(users.get(i).toString());
   }
   
+  //(User) Save a school to saved schools list
+  UserInteraction.saveSchool("SJU");
+  
+  //(User)
+  UserInteraction.showSchoolPage("SJU");
  }
 
 }

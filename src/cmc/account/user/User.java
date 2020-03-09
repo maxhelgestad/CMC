@@ -53,7 +53,14 @@ public class User extends Account{
   */
  public void addSavedSchool(University u)
  {
-  this.savedSchools.add(u);
+	 if (this.savedSchools.contains(u) != true)
+	 {
+		 this.savedSchools.add(u);
+	 }
+	 else
+	 {
+		 System.out.println("School is already saved");
+	 }
  }
     
  /*
@@ -78,21 +85,5 @@ public class User extends Account{
   return this.savedSchools;
  }
    
- /*
- * method to tell whether or not a user already has a school saved
- * 
- * @param u - checking if this school is in the saved school list
- * @return true if school is contained in saved schools list
- */
- public boolean isSchoolSaved(University u)
- {
-  if(this.savedSchools.contains(u))
-  {
-   return true;
-  }
-  else
-  {
-   return false;
-  }
- }
 }
+
