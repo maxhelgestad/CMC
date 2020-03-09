@@ -35,7 +35,7 @@ public class UserInteraction {
   return SearchController.searchSchool(name, numStudents); 
  }
  
- public void showSavedSchoolList(String name) {
+ public ArrayList<University> showSavedSchoolList(String name) {
 	 return this.userControl.getSavedSchoolList(name);
  }
  

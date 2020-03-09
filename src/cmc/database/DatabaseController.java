@@ -85,18 +85,24 @@ public static void setUser() {
   
   public static User lookupUser(String username) {
 
-      if(accounts.get(i).getUsername().equals(username))
-      {
-        result = (User)accounts.get(i); 
-      }
-    }
-    return result;
-  }
+	  User result = null;
+	    for(int i = 0; i < accounts.size(); i++)
+	    {
+	      if(accounts.get(i).getUsername().equals(username))
+	      {
+	        result = (User)accounts.get(i); 
+	      }
+	    }
+	    return result;
+	  }   
+    	
+ 
   
   public void updateSavedSchoolList(String username) {
   }
   
   public void updateSavedUser(User user) {
+	  
   }
   
   public static void addUser(User user) {
