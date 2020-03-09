@@ -1,5 +1,13 @@
-package cmc.account.user;
+/**
+ * A class to control the User object
+ * 
+ * @author mli001
+ *
+ */
 
+//import user package
+package cmc.account.user;
+//import list
 import java.util.*;
 import javax.swing.JOptionPane;
 
@@ -7,15 +15,7 @@ import cmc.account.Account;
 import cmc.database.DatabaseController;
 import cmc.university.University;
 
-/**
- * 
- */
 
-/**
- * @author mli001
- *
- *
- */
 public class UserController {
 
 	// private List<User> regularUsers = new ArrayList<User>();
@@ -26,12 +26,22 @@ public class UserController {
 	public static void main(String[] args) {
 
 	}
-
+	/**
+	  * Add a new user  
+	  *
+	  * @param u user to be added
+	  */
 	public static boolean addUser(String username, String password) {
 		User u = new User(username, password);
 		DatabaseController.addUser(u);
 		return true;
 	}
+	
+	/**
+	  * Edit an existing user  
+	  *
+	  * @param u user to be added
+	  */
 
 	public static void editUser(String username, String password, String newUsername, String newPassword) {
 		Account u = DatabaseController.getUser(username, password);
