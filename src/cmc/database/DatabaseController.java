@@ -49,6 +49,70 @@ public class DatabaseController {
 
 	}
 
+<<<<<<< HEAD
+ 
+  public static ArrayList<University> getSchool(String schoolName, int numStudents) {
+   int i = 0;
+   ArrayList<University> uni = new ArrayList<University>();
+   while(universities.size() > i) {
+    if(universities.get(i).getName() == schoolName || universities.get(i).getNumStudents() == numStudents) {
+      uni.add(universities.get(i));
+    }
+    i++;
+   }
+   return uni;
+  }
+  
+  
+  public static Account getUser(String username, String password) {
+   int i = 0;
+   while(accounts.size() > i) {
+    if(accounts.get(i).getUsername() == username && accounts.get(i).getPassword() == password) {
+     return accounts.get(i);
+    }
+    i++;
+   }
+   return null;
+  }
+  
+  public static University getUniversity(String name) {
+   int i = 0;
+   while(universities.size() > i) {
+    if(universities.get(i).getName() == name) {
+     return universities.get(i);
+    }
+    i++;
+   }
+   return null;
+  }
+  
+  public void getSchoolDetails(String schoolName) {
+  }
+
+  
+  public Account lookupUser(String username) {
+   return sam;
+  }
+  
+  public void updateSavedSchoolList(String username) {
+  }
+  
+  public void updateSavedUser(User user) {
+	  
+  }
+  
+  public static void addUser(User user) {
+	  
+  }
+  
+  public static ArrayList<Account> getAccounts() {
+   return accounts;
+  }
+  
+  public static ArrayList<University> getUniversities(){
+   return universities;
+  }
+=======
 	public static ArrayList<University> getUniversities() {
 		String[][] u = lib.university_getUniversities();
 		ArrayList<University> allSchools = new ArrayList<University>();
@@ -63,4 +127,5 @@ public class DatabaseController {
 		}
 		return allSchools;
 	}
+>>>>>>> 259d10518a4ea68564b786da6674abbd960eb0b4
 }
