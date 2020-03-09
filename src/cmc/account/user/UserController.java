@@ -33,11 +33,9 @@ public class UserController {
 		return true;
 	}
 
-	public static void editUser(String username, String password) {
+	public static void editUser(String username, String password, String newUsername, String newPassword) {
 		Account u = DatabaseController.getUser(username, password);
 
-		String newUsername = JOptionPane.showInputDialog("Enter a new username: ");
-		String newPassword = JOptionPane.showInputDialog("Enter a new password: ");
 		u.setUsername(newUsername);
 		u.setPassword(newPassword);
 		// save updated password and User name in database
@@ -50,7 +48,6 @@ public class UserController {
 		while (a.size() > i) {
 			if (a.get(i).getUsername() == username && a.get(i).getPassword() == password) {
 				a.remove(i);
-				System.out.println("In IF statement");
 			}
 			i++;
 		}

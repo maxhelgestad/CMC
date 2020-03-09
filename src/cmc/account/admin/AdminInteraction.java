@@ -38,8 +38,8 @@ public class AdminInteraction {
 	return true;
  }
  
- public static void editUser(String username, String password) {
-	 UserController.editUser(username, password);
+ public static void editUser(String username, String password, String newUsername, String newPassword) {
+	 UserController.editUser(username, password, newUsername, newPassword);
   
  }
  

@@ -36,8 +36,13 @@ public Account(String username, String password) {
   return true;
  }
  
- /*
+ /**
+  * method to log on an account
   * 
+  * @param username the username of the account to log on
+  * @param password the password of the account to log on 
+  * 
+  * @return true if logged on succeeded, false if log on fails
   */
  public boolean logOn(String username, String password)
  {
