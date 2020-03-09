@@ -84,6 +84,10 @@ public class User extends Account{
   //TODO parameter???
   return this.savedSchools;
  }
+ 
+ public void editProfile() {
+	 
+ }
    
 }
 
