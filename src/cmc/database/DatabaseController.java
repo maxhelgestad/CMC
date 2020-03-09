@@ -83,8 +83,14 @@ public static void setUser() {
   }
 
   
-  public Account lookupUser(String username) {
-   return sam;
+  public static User lookupUser(String username) {
+
+      if(accounts.get(i).getUsername().equals(username))
+      {
+        result = (User)accounts.get(i); 
+      }
+    }
+    return result;
   }
   
   public void updateSavedSchoolList(String username) {

@@ -19,11 +19,12 @@ import cmc.university.UniversityController;
  */
 public class UserInteraction {
 
+	private UserController userControl;
  /**
   * 
   */
  public UserInteraction() {
-  // TODO Auto-generated constructor stub
+	//userControl = new UserController();
  }
  
  public static boolean logOn(String username, String password) {
@@ -35,7 +36,7 @@ public class UserInteraction {
  }
  
  public void showSavedSchoolList(String name) {
-  //TODO
+	 return this.userControl.getSavedSchoolList(name);
  }
  
  public static void showSchoolPage(String schoolName) {
@@ -60,7 +61,7 @@ public class UserInteraction {
  }
  
  public void removeSchool(String name, String schoolName) {
-  //TODO
+	 UserController.removeSchool(name, schoolName);
  }
  
  public void displaySearchResults() {

@@ -79,9 +79,16 @@ public class User extends Account{
   * 
   * @param u - school to be removed
   */
- public void removeSavedSchool(University u)
+ public void removeSavedSchool(String schoolName)
  {
-  this.savedSchools.remove(u);
+	 for(int i = 0; i < this.savedSchools.size(); i++)
+	   {
+	     University result = this.savedSchools.get(i);
+	     
+	     if(result.getName().equals(schoolName)){
+	       this.savedSchools.remove(result);
+	     }
+	   }
  }
    
  /*
