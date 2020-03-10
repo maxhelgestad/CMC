@@ -113,6 +113,6 @@ public class Account {
 	 * @return String of all the information of the user
 	 */
 	public String toString() {
-		return "Firstname: " + firstname + "Lastname: " + lastName + "Username: "+username + "Password" + password;
+		return "Firstname: " + firstname + "\nLastname: " + lastName + "\nUsername: "+username + "\nPassword: " + password + "\n";
 	}
 }
