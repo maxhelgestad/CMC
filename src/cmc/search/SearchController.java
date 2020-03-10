@@ -55,6 +55,7 @@ public class SearchController {
  }
  
  /**
+  * 
   * Displays the colleges matching the search criteria
   */
  public void displayList() {
@@ -62,6 +63,7 @@ public class SearchController {
  }
  
  /**
+  * Method to add university to list
   * 
   * @param uni the university being added
   */

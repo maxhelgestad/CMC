@@ -20,7 +20,7 @@ public class User extends Account {
 	// the list of saved schools for a user
 	private ArrayList<University> savedSchools;
 
-	/*
+	/**
 	 * constructs a User object
 	 * 
 	 * @param userName - username of the user
@@ -96,6 +96,14 @@ public class User extends Account {
 		//return this.savedSchools;
 	//}
 
+	/**
+	 * 
+	 * 
+	 * @param username
+	 * @param password
+	 * @param newUsername
+	 * @param newPassword
+	 */
 	public static void editProfile(String username, String password, String newUsername, String newPassword) {
 		Account u = DatabaseController.lookupAccount(username);
 

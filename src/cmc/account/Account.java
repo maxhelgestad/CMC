@@ -70,6 +70,7 @@ public class Account {
 		return true;
 	}
 	/**
+	 * Method to get username for an account
 	 * 
 	 * @return username of the account
 	 */
@@ -77,6 +78,7 @@ public class Account {
 		return this.username;
 	}
 	/**
+	 * Method to get the password for the account
 	 * 
 	 * @return password of the account
 	 */
@@ -84,6 +86,7 @@ public class Account {
 		return this.password;
 	}
 /**
+ * Method to set username
  * 
  * @param username that will become the new username
  */
