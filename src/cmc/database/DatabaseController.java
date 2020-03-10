@@ -11,9 +11,13 @@ import dblibrary.project.csci230.UniversityDBLibrary;
 
 public class DatabaseController {
 	private static UniversityDBLibrary lib;
+	private static Account noUser;
+	private static University noUniversity;
 
 	public static void setUp(String username, String password) {
 		lib = new UniversityDBLibrary(username, password);
+		noUser = new Account("NoAccount", "l", "x", "x", 'u', 'y');
+		noUniversity = new University("NoUniversity", "x", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);
 	}
 
 	/**
@@ -26,22 +30,24 @@ public class DatabaseController {
 	 */
 	public static Account lookupAccount(String username) {
 		ArrayList<Account> accounts = DatabaseController.getAccounts();
+		Account ac = noUser;
 		for (int i = 0; i < accounts.size(); i++)
 		{
 			if(accounts.get(i).getUsername() == username)
 			{
-				return accounts.get(i);
+				ac = accounts.get(i);
 			}
 			else
 			{
 				System.out.println("Account with this username does not exits");
-				return null;
 			}
 		}
+		return ac;
 	}
 
-	public void updateSavedUser(User user) {
-		
+	public static void updateSavedUser(String username, String newPassword, String newFirstName, String newLastName,
+			char newType, char newStatus) {
+		lib.user_editUser(username, newFirstName, newLastName, newPassword, newType, newStatus);
 	}
 
 	public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
@@ -58,15 +64,15 @@ public class DatabaseController {
 
 	public static University getUniversity(String name) {
 		ArrayList<University> schools = DatabaseController.getUniversities();
+		University un = noUniversity;
 		for (int i = 0; i < schools.size(); i++) {
 			if (schools.get(i).getName() == name) {
-				return schools.get(i);
+				un = (University)schools.get(i);
 			} else {
 				System.out.println("School with this name does not exits");
-				return null;
 			}
 		}
-
+		return un;
 	}
 
 	public static void saveSchool(String username, String schoolName)

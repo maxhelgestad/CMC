@@ -82,8 +82,8 @@ public class UserController {
 		DatabaseController.saveSchool(username, schoolName);
 	}
 	
-	public static void viewProfile() {
-		
+	public static Account viewProfile(String username) {
+		return DatabaseController.lookupAccount(username);
 	}
 
 	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {

@@ -2,6 +2,7 @@ package cmc.account.user;
 
 import java.util.ArrayList;
 
+import cmc.account.Account;
 import cmc.account.AccountController;
 import cmc.search.SearchController;
 import cmc.university.University;
@@ -54,8 +55,8 @@ public class UserInteraction {
  /**
   * view the logged in user's profile
   */
- public void viewProfile() {
-	 UserController.viewProfile();
+ public static Account viewProfile(String username) {
+	 return UserController.viewProfile(username);
  }
  
  public void viewToEditProfile(String username, String password, String newUsername, String newPassword) {

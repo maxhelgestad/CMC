@@ -30,21 +30,10 @@ public class Driver {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		DatabaseController.setUp("javengers", "csci230");
-		
-		
-		
-		
-		
 		File file = new File("output.txt");
 		
 		PrintWriter pw = new PrintWriter(file);
 		
-
-	public static void main(String[] args) {
-
-
-		DatabaseController.setUp("javengers", "csci230");
-
 		// Successful Login
 		pw.println("Login was success: (should be true)" + UserInteraction.logOn("juser", "user"));
 		// Failed Login (wrong password)
@@ -95,8 +84,8 @@ public class Driver {
 
 
 		// (User)
-		UserInteraction.showSchoolPage("SJU"PrintWriter(String fileName)
-				Creates a new PrintWriter, without automatic line flushing, with the specified file name.);
+		//UserInteraction.showSchoolPage("SJU"PrintWriter(String fileName)
+				//Creates a new PrintWriter, without automatic line flushing, with the specified file name.);
 
 		// (Admin) Add a new User
 		AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');
@@ -133,7 +122,8 @@ public class Driver {
 			pw.println(u.get(i).toString());
 		}
 		
-		
+		//(user) view profile
+		Account a = UserInteraction.viewProfile("juser");
 		
 		
           pw.close();
