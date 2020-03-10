@@ -52,14 +52,7 @@ public class UserController {
 		//u.setLastname(*newLastName*);
 		//u.setStatus(*newStatus*);
 		//u.setType(*newType*);
-		// save updated password and User name in database
-<<<<<<< HEAD
-		//}
-	//}
-	
-=======
 
->>>>>>> cbac2716171c388ac55e85399e4c31cad329e14e
 	/**
 	 * deactivates the user
 	 * 

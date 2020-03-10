@@ -138,9 +138,9 @@ public class Driver {
 		for (int i = 0; i < users.size(); i++) {
 			System.out.println(users.get(i).toString());
 		}
-		AdminInteraction.deactivateUser("james", "12345");												//(extra) U17 Deactivate User account
+		AdminInteraction.deactivateUser("james");												//(extra) U17 Deactivate User account
 
-		AdminInteraction.deactivateUser("Sammy", "Password");
+		AdminInteraction.deactivateUser("Sammy");
 
 		System.out.println("(New list of users *one removed*)");
 		ArrayList<Account> u = AdminInteraction.viewUsers();
