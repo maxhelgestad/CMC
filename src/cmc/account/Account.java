@@ -90,14 +90,14 @@ public class Account {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	/**
+	/**Sets the password for an account
 	 * 
 	 * @param password that will become the new password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	/**
+	/**Returns the type of the account
 	 * 
 	 * @return type of the account
 	 */
@@ -105,7 +105,8 @@ public class Account {
 		return this.type;
 		
 	}
-	/**
+	/**Returns a string containing the information about the user
+	 * 
 	 * @return String of all the information of the user
 	 */
 	public String toString() {

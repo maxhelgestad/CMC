@@ -32,7 +32,7 @@ public class AdminInteraction {
  public static ArrayList<Account> viewUsers() {
 	ArrayList<Account> users = new ArrayList<Account>();
 	ArrayList<Account> accounts = AccountController.getUsers();
-	
+	//System.out.println(accounts);
 	for(int i = 0; i < accounts.size(); i++) {
 		if (accounts.get(i).getType() == 'u' ) {
 			users.add(accounts.get(i));
@@ -45,10 +45,9 @@ public class AdminInteraction {
 	AccountController.addAccount(firstName, lastName, username, password, type, status);
  }
  
- public static void editUser(String username, String password, String newUsername, String newPassword) {
-	 UserController.editUser(username, password, newUsername, newPassword);
-  
- }
+ //public static void editUser(String username, String password, String newUsername, String newPassword) {
+	 //UserController.editUser(username, password, newUsername, newPassword); 
+ //}
  
  public static void deactivateUser(String username, String password) {
 	 UserController.deactivateUser(username, password);

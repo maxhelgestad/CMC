@@ -11,7 +11,7 @@ import cmc.university.UniversityController;
 
 
 /**
- * @author jkost001
+ * @author javengers
  *
  */
 public class UserInteraction {

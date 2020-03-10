@@ -27,11 +27,6 @@ public class UserController {
 
 	}
 
-	public static boolean addUser(String username, String password, String firstname, String lastname, char status) {
-		User u = new User(username, password, firstname, lastname, status);
-		DatabaseController.addUser(u);
-		return true;
-	}
 
 	/**
 	 * Edits the users username and password
@@ -41,14 +36,12 @@ public class UserController {
 	 * @param newUsername new username for user
 	 * @param newPassword new password for user
 	 */
-	public static void editUser(String username, String password, String newUsername, String newPassword) {
-		Account u = DatabaseController.getUser(username, password);
-
-		u.setUsername(newUsername);
-		u.setPassword(newPassword);
+	//public static void editUser(String username, String password, String newUsername, String newPassword) {
+		//Account u = DatabaseController.getUser(username, password);
+		//u.setUsername(newUsername);
+		//u.setPassword(newPassword);
 		// save updated password and User name in database
-
-	}
+	//}
 	
 	/**
 	 * deactivates the user

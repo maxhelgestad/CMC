@@ -17,7 +17,7 @@ public class DatabaseController {
 
 	public static void setUp(String username, String password) {
 		lib = new UniversityDBLibrary(username, password);
-		noUser = new Account("NoAccount", "l", "x", "x", 'u', 'y');
+		noUser = new Account("NoAccount", "x", "x", "x", 'u', 'y');
 		noUniversity = new University("NoUniversity", "x", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);
 	}
 
@@ -59,9 +59,9 @@ public class DatabaseController {
 		lib.user_deleteUser(username);
 	}
 
-	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
+	//public static ArrayList<University> getSchool(String schoolName, int numStudents) {
 		//TODO
-	}
+	//}
 
 	public static University getUniversity(String name) {
 		ArrayList<University> schools = DatabaseController.getUniversities();
@@ -91,10 +91,10 @@ public class DatabaseController {
 		  ArrayList<University> result = new ArrayList<University>();
 		  for(int i = 0; i < saved.length; i++)
 		  {
-			  if(saved[i].equals(username))
+			  if(saved[i][0].equals(username))
 			  {
 				  for(int j = 0; j < saved[i].length;j++) {
-					  result.add(saved[i][j]);
+					  result.add(getUniversity(saved[i][j]));
 				  }
 			  }
 		  }
@@ -118,6 +118,7 @@ public class DatabaseController {
 	
 	public static ArrayList<Account> getAccounts(){
 		String[][] a = lib.user_getUsers();
+		//System.out.println(a);
 		ArrayList<Account> allAccounts = new ArrayList<Account>();
 		for (int i = 0; a.length < i; i++) {
 			char[] ch1 = a[i][4].toCharArray();

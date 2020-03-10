@@ -97,7 +97,7 @@ public class User extends Account {
 	//}
 
 	public static void editProfile(String username, String password, String newUsername, String newPassword) {
-		Account u = DatabaseController.getUser(username, password);
+		Account u = DatabaseController.lookupAccount(username);
 
 		u.setUsername(newUsername);
 		u.setPassword(newPassword);
