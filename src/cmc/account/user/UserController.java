@@ -31,10 +31,14 @@ public class UserController {
 	/**
 	 * Edits the users username and password
 	 * 
-	 * @param username old username to be edited
-	 * @param password old password to be edited
-	 * @param newUsername new username for user
-	 * @param newPassword new password for user
+	 * @param username
+	 *            old username to be edited
+	 * @param password
+	 *            old password to be edited
+	 * @param newUsername
+	 *            new username for user
+	 * @param newPassword
+	 *            new password for user
 	 */
 	//public static void editUser(String username, String newPassword, String newStatus, String newType) {
 		//Account u = DatabaseController.lookupAccount(username);
@@ -49,14 +53,20 @@ public class UserController {
 		//u.setStatus(*newStatus*);
 		//u.setType(*newType*);
 		// save updated password and User name in database
+<<<<<<< HEAD
 		//}
 	//}
 	
+=======
+
+>>>>>>> cbac2716171c388ac55e85399e4c31cad329e14e
 	/**
 	 * deactivates the user
 	 * 
-	 * @param username the username of user being deactivated
-	 * @param password the password of user being deactivated
+	 * @param username
+	 *            the username of user being deactivated
+	 * @param password
+	 *            the password of user being deactivated
 	 */
 	//public static void deactivateUser(String username, String password) {
 	//	Account a = DatabaseController.lookupAccount(username);
@@ -100,6 +110,9 @@ public class UserController {
 	public static void saveSchool(String username, String schoolName) {
 		DatabaseController.saveSchool(username, schoolName);
 	}
+
+	public static void viewProfile() {
+	}
 	
 	/**
 	 * Method to view the profile of a user
@@ -109,6 +122,7 @@ public class UserController {
 	 */
 	public static Account viewProfile(String username) {
 		return DatabaseController.lookupAccount(username);
+		
 	}
 
 	/**
@@ -118,8 +132,8 @@ public class UserController {
 	 * @param newUsername
 	 * @param newPassword
 	 */
-	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
-		User.editProfile(username, password, newUsername, newPassword);
+	public static void viewToEditProfile(String username, String newUsername, String newPassword, String newFirstName, String newLastName) {
+		User.editProfile(username, newUsername, newPassword, newFirstName, newLastName);
 	}
 
 	/**

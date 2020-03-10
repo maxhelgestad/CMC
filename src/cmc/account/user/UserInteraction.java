@@ -95,8 +95,8 @@ public class UserInteraction {
   * @param newUsername to be new username
   * @param newPassword to be new username
   */
- public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
-	 UserController.viewToEditProfile(username, password, newUsername, newPassword);
+ public static void viewToEditProfile(String username, String newUsername, String newPassword, String newFirstName, String newLastName) {
+	 UserController.viewToEditProfile(username, newUsername, newPassword, newFirstName, newLastName);
  }
  
  /**

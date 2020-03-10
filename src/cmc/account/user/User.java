@@ -100,15 +100,17 @@ public class User extends Account {
 	 * 
 	 * 
 	 * @param username
-	 * @param password
 	 * @param newUsername
 	 * @param newPassword
 	 */
-	public static void editProfile(String username, String password, String newUsername, String newPassword) {
+	public static void editProfile(String username, String newUsername, String newPassword, String newFirstName,String newLastName) {
 		Account u = DatabaseController.lookupAccount(username);
 
 		u.setUsername(newUsername);
 		u.setPassword(newPassword);
+		u.setFirstname(newFirstName);
+		u.setLastName(newLastName);
+		
 		// save updated password and User name in database
 	}
 }
