@@ -68,14 +68,8 @@ public class UserController {
 	}
 	// save updated list to database
 
-	public ArrayList<University> getSavedSchoolList(String userName) {
-
-		if (DatabaseController.lookupUser(userName) != null) {
-			return DatabaseController.lookupUser(userName).getSavedSchools(userName);
-		} else {
-			return null;
-		}
-
+	public static ArrayList<University> getSavedSchoolList(String userName) {
+		return DatabaseController.getSavedSchools(userName);
 	}
 
 	public static void showSchoolPage(String schoolName) {
@@ -84,11 +78,8 @@ public class UserController {
 		University u = DatabaseController.getUniversity(schoolName);
 	}
 
-	public static void saveSchool(String schoolName) {
-		// TODO Account and User confusion
-		Account u = DatabaseController.getUser("sammy", "password");
-		University s = DatabaseController.getUniversity(schoolName);
-		// u.addSavedSchool(s);
+	public static void saveSchool(String username, String schoolName) {
+		DatabaseController.saveSchool(username, schoolName);
 	}
 	
 	public static void viewProfile() {
@@ -100,10 +91,6 @@ public class UserController {
 	}
 
 	public static void removeSchool(String userName, String schoolName) {
-
-		if (DatabaseController.lookupUser(userName) != null) {
-			DatabaseController.lookupUser(userName).removeSavedSchool(schoolName);
-		}
-
+		DatabaseController.removeSchool(userName, schoolName);
 	}
 }

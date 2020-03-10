@@ -46,9 +46,9 @@ public class Driver {
 		DatabaseController.setUp("javengers", "csci230");
 
 		// Successful Login
-		pw.println("Login was success: (should be true)" + UserInteraction.logOn("sammy", "password"));
+		pw.println("Login was success: (should be true)" + UserInteraction.logOn("juser", "user"));
 		// Failed Login (wrong password)
-		pw.println("Login was success: (should be false)" + UserInteraction.logOn("sammy", "pasword"));
+		pw.println("Login was success: (should be false)" + UserInteraction.logOn("juser", "pasword"));
 		// Failed (not a user)
 		pw.println("Login was success: (should be false)" + UserInteraction.logOn("max", "123"));
 		pw.println("------------------------------");
@@ -85,14 +85,22 @@ public class Driver {
 		}
 
 		// (User) Save a school to saved schools list
-		UserInteraction.saveSchool("SJU");        System.out.println("end");
+		UserInteraction.saveSchool("juser", "AUBURN"); 
+		
+		//(User) View Saved Schools
+		UserInteraction.showSavedSchoolList("juser");
+		
+		// (User) Remove a saved school from the saved shcools list
+		UserInteraction.removeSchool("juser", "AUBURN");
+
 
 		// (User)
 		UserInteraction.showSchoolPage("SJU"PrintWriter(String fileName)
 				Creates a new PrintWriter, without automatic line flushing, with the specified file name.);
 
 		// (Admin) Add a new User
-		pw.println("Admin added a new user" + AdminInteraction.addUser("jack", "password"));
+		AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');
+		//pw.println("Admin added a new user" + AdminInteraction.addUser("jack", "password"));
 
 		// (Admin) Edit a user
 		pw.println("------------------------------");

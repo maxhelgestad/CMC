@@ -19,7 +19,6 @@ import cmc.university.UniversityController;
  */
 public class UserInteraction {
 
-	private UserController userControl;
  /**
   * 
   */
@@ -35,8 +34,8 @@ public class UserInteraction {
   return SearchController.searchSchool(name, numStudents); 
  }
  
- public ArrayList<University> showSavedSchoolList(String name) {
-	 return this.userControl.getSavedSchoolList(name);
+ public static ArrayList<University> showSavedSchoolList(String name) {
+	 return UserController.getSavedSchoolList(name);
  }
  
  public static void showSchoolPage(String schoolName) {
@@ -48,8 +47,8 @@ public class UserInteraction {
   return "School details";
  }
  
- public static void saveSchool(String name) {
-  UserController.saveSchool(name);
+ public static void saveSchool(String username, String schoolName) {
+  UserController.saveSchool(username, schoolName);
  }
  
  /**
@@ -63,7 +62,7 @@ public class UserInteraction {
 	 UserController.viewToEditProfile(username, password, newUsername, newPassword);
  }
  
- public void removeSchool(String name, String schoolName) {
+ public static void removeSchool(String name, String schoolName) {
 	 UserController.removeSchool(name, schoolName);
  }
  

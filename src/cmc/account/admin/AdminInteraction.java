@@ -33,9 +33,8 @@ public class AdminInteraction {
   return AccountController.getUsers();
  }
  
- public static boolean addUser(String username, String password) {
-	UserController.addUser(username, password);
-	return true;
+ public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
+	AccountController.addAccount(firstName, lastName, username, password, type, status);
  }
  
  public static void editUser(String username, String password, String newUsername, String newPassword) {

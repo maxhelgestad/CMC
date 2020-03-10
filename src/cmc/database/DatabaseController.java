@@ -16,10 +16,6 @@ public class DatabaseController {
 		lib = new UniversityDBLibrary(username, password);
 	}
 
-	public static Account getUser(String username, String password) {
-
-	}
-
 	/**
 	 * get a user by the given name
 	 *
@@ -28,21 +24,32 @@ public class DatabaseController {
 	 *
 	 * @reutrn a User with given user name
 	 */
-	public static User lookupUser(String username) {
-		User result = null;
-		for (int i = 0; i < accounts.size(); i++) {
-			if (accounts.get(i).getUsername().equals(username)) {
-				result = (User) accounts.get(i);
+	public static Account lookupAccount(String username) {
+		ArrayList<Account> accounts = DatabaseController.getAccounts();
+		for (int i = 0; i < accounts.size(); i++)
+		{
+			if(accounts.get(i).getUsername() == username)
+			{
+				return accounts.get(i);
+			}
+			else
+			{
+				System.out.println("Account with this username does not exits");
+				return null;
 			}
 		}
-		return result;
 	}
 
 	public void updateSavedUser(User user) {
-
+		
 	}
 
-	public static void addUser(User user) {
+	public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
+		lib.user_addUser(firstName, lastName, username, password, type);
+	}
+	
+	public static void removeAccount(String username) {
+		lib.user_deleteUser(username);
 	}
 
 	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
@@ -50,15 +57,41 @@ public class DatabaseController {
 	}
 
 	public static University getUniversity(String name) {
+		ArrayList<University> schools = DatabaseController.getUniversities();
+		for (int i = 0; i < schools.size(); i++) {
+			if (schools.get(i).getName() == name) {
+				return schools.get(i);
+			} else {
+				System.out.println("School with this name does not exits");
+				return null;
+			}
+		}
 
 	}
 
-	public void getSchoolDetails(String schoolName) {
-
+	public static void saveSchool(String username, String schoolName)
+	{
+		lib.user_saveSchool(username, schoolName);
+	}
+	
+	public static void removeSchool(String username, String schoolName)
+	{
+		lib.user_removeSchool(username, schoolName);
 	}
 
-	public void updateSavedSchoolList(String username) {
-
+	public static ArrayList<University> getSavedSchools(String username){
+		  String[][] saved = lib.user_getUsernamesWithSavedSchools();
+		  ArrayList<University> result = new ArrayList<University>();
+		  for(int i = 0; i < saved.length; i++)
+		  {
+			  if(saved[i].equals(username))
+			  {
+				  for(int j = 0; j < saved[i].length;j++) {
+					  result.add(saved[i][j]);
+				  }
+			  }
+		  }
+		return result;
 	}
 
 	public static ArrayList<University> getUniversities() {

@@ -20,9 +20,14 @@ public class AccountController {
  
  public static boolean logOn(String userName, String password)
  {
-  Account user = DatabaseController.getUser(userName, password);
+  Account user = DatabaseController.lookupAccount(userName);
   if(user == null) {
    return false;
+  }
+  // could be !.equals if doesn't work - Max thought of this
+  else if(user.getPassword() != password)
+  {
+	  return false;
   }
   else {
    return true;
@@ -33,5 +38,9 @@ public class AccountController {
  {
   return DatabaseController.getAccounts();
  }
+ 
+ public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
+		DatabaseController.addAccount(firstName, lastName, username, password, type, status);
+	 }
 
 }
