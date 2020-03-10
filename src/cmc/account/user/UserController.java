@@ -36,11 +36,20 @@ public class UserController {
 	 * @param newUsername new username for user
 	 * @param newPassword new password for user
 	 */
-	//public static void editUser(String username, String password, String newUsername, String newPassword) {
-		//Account u = DatabaseController.getUser(username, password);
-		//u.setUsername(newUsername);
+	//public static void editUser(String username, String newPassword, String newStatus, String newType) {
+		//Account u = DatabaseController.lookupAccount(username);
+		//if (u == null){
+		//		System.out.println("That account does not exist");
+		//}
+		//else{
+		//
 		//u.setPassword(newPassword);
+		//u.setFirstname(*newFirstName*);
+		//u.setLastname(*newLastName*);
+		//u.setStatus(*newStatus*);
+		//u.setType(*newType*);
 		// save updated password and User name in database
+		//}
 	//}
 	
 	/**
@@ -49,16 +58,16 @@ public class UserController {
 	 * @param username the username of user being deactivated
 	 * @param password the password of user being deactivated
 	 */
-	public static void deactivateUser(String username, String password) {
-		ArrayList<Account> a = DatabaseController.getAccounts();
-		int i = 0;
-		while (a.size() > i) {
-			if (a.get(i).getUsername() == username && a.get(i).getPassword() == password) {
-				a.remove(i);
-			}
-			i++;
-		}
-	}
+	//public static void deactivateUser(String username, String password) {
+	//	Account a = DatabaseController.lookupAccount(username);
+	//	if (a == null) {
+	//		System.out.println("That account does not exist");
+	//	}
+	//	else {
+	//	DatabaseController.removeAccount(username);
+	//	}
+		
+	//}
 	// save updated list to database
 
 	/**

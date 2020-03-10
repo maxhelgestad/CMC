@@ -100,6 +100,17 @@ public class Account {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	/**
+	 * sets the first name for an account
+	 * 
+	 * @param firstname first name to update
+	 */
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	
+
 	/**Returns the type of the account
 	 * 
 	 * @return type of the account
