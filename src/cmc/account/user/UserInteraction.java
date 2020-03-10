@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.AccountController;
+import cmc.search.Criteria;
 import cmc.search.SearchController;
 import cmc.university.University;
 import cmc.university.UniversityController;
@@ -31,23 +32,43 @@ public class UserInteraction {
   return AccountController.logOn(username, password);
  }
  
- public static ArrayList<University> searchSchool(String name, int numStudents) {
-  return SearchController.searchSchool(name, numStudents); 
+ 
+ /**
+  * 
+  * @param c the criteria of search
+  * @return
+  */
+ public static ArrayList<University> searchSchool(Criteria c) {
+  return SearchController.searchSchool(c); 
  }
  
  public static ArrayList<University> showSavedSchoolList(String name) {
 	 return UserController.getSavedSchoolList(name);
  }
  
+ /**
+  * 
+  * @param schoolName
+  */
  public static void showSchoolPage(String schoolName) {
   UserController.showSchoolPage(schoolName);
  }
  
+ /**
+  * 
+  * @param uni
+  * @return
+  */
  public String displaySchoolDetails(University uni) {
   //TODO
   return "School details";
  }
  
+ /**
+  * 
+  * @param username
+  * @param schoolName
+  */
  public static void saveSchool(String username, String schoolName) {
   UserController.saveSchool(username, schoolName);
  }
@@ -58,11 +79,22 @@ public class UserInteraction {
  public static Account viewProfile(String username) {
 	 return UserController.viewProfile(username);
  }
- 
- public void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
+ /**
+  * 
+  * @param username
+  * @param password
+  * @param newUsername
+  * @param newPassword
+  */
+ public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
 	 UserController.viewToEditProfile(username, password, newUsername, newPassword);
  }
  
+ /**
+  * 
+  * @param name
+  * @param schoolName
+  */
  public static void removeSchool(String name, String schoolName) {
 	 UserController.removeSchool(name, schoolName);
  }

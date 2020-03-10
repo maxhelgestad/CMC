@@ -14,12 +14,12 @@ public class Criteria {
  
  
  private String name;
- private String mfRatio;
+ private float mfRatio;
  private int numStudents;
  private String control;
  private String location;
- private int satVerbal;
- private int satMath;
+ private float satVerbal;
+ private float satMath;
  private float expenses;
  private float financialAid;
  private float admitionRate;
@@ -27,7 +27,6 @@ public class Criteria {
  private int academics;
  private int social;
  private int qualOfLife;
- private List<String> emphasis;
 
  /**
   * criteria constructor
@@ -48,9 +47,9 @@ public class Criteria {
   * @param location the location of the school 
   * 
   */
- public Criteria(String name, String mfRatio, int numStudents, String control, int satVerbal,
-   int satMath, float expenses, float financialAid, float admitionRate, float percentEnrolled, int academics, int social, int qualOfLife,
-   List<String> emphasis, String location){
+ public Criteria(String name, String state, String location, String control, int numStudents, float mfRatio,
+			float satVerbal, float satMath, float expenses, float financialAid, int numApplicants, float admitionRate,
+			float percentEnrolled, int academics, int social, int qualOfLife){
   this.name = name;
   this.mfRatio = mfRatio;
   this.numStudents = numStudents;
@@ -65,7 +64,6 @@ public class Criteria {
   this.academics = academics;
   this.social = social;
   this.qualOfLife = qualOfLife;
-  this.emphasis = emphasis;
  }
 
 /**
@@ -85,14 +83,14 @@ public void setName(String name) {
 /**
  * @return the mfRatio
  */
-public String getMfRatio() {
+public float getMfRatio() {
 	return mfRatio;
 }
 
 /**
  * @param mfRatio the mfRatio to set
  */
-public void setMfRatio(String mfRatio) {
+public void setMfRatio(float mfRatio) {
 	this.mfRatio = mfRatio;
 }
 
@@ -141,28 +139,28 @@ public void setLocation(String location) {
 /**
  * @return the satVerbal
  */
-public int getSatVerbal() {
+public float getSatVerbal() {
 	return satVerbal;
 }
 
 /**
  * @param satVerbal the satVerbal to set
  */
-public void setSatVerbal(int satVerbal) {
+public void setSatVerbal(float satVerbal) {
 	this.satVerbal = satVerbal;
 }
 
 /**
  * @return the satMath
  */
-public int getSatMath() {
+public float getSatMath() {
 	return satMath;
 }
 
 /**
  * @param satMath the satMath to set
  */
-public void setSatMath(int satMath) {
+public void setSatMath(float satMath) {
 	this.satMath = satMath;
 }
 
@@ -264,18 +262,6 @@ public void setQualOfLife(int qualOfLife) {
 	this.qualOfLife = qualOfLife;
 }
 
-/**
- * @return the emphasis
- */
-public List<String> getEmphasis() {
-	return emphasis;
 }
 
-/**
- * @param emphasis the emphasis to set
- */
-public void setEmphasis(List<String> emphasis) {
-	this.emphasis = emphasis;
-}
 
-}

@@ -71,8 +71,13 @@ public class Account {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public char getType() {
+		return this.type;
+		
+	}
 
 	public String toString() {
-		return username + " " + password;
+		return "Firstname: " + firstname + "Lastname: " + lastName + "Username: "+username + "Password" + password;
 	}
 }

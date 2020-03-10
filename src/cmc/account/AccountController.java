@@ -43,4 +43,10 @@ public class AccountController {
 		DatabaseController.addAccount(firstName, lastName, username, password, type, status);
 	 }
 
+public static void editProfile(String username, String newPassword, String newFirstName, String newLastName,
+		char newType, char newStatus) {
+	DatabaseController.adminUserEdit(username, newPassword, newFirstName, newLastName, newType, newStatus);
+	
+}
+
 }

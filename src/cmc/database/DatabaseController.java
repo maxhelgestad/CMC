@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.user.User;
+import cmc.search.Criteria;
 import cmc.university.University;
 import dblibrary.project.csci230.UniversityDBLibrary;
 
@@ -45,7 +46,7 @@ public class DatabaseController {
 		return ac;
 	}
 
-	public static void updateSavedUser(String username, String newPassword, String newFirstName, String newLastName,
+	public static void adminUserEdit(String username, String newPassword, String newFirstName, String newLastName,
 			char newType, char newStatus) {
 		lib.user_editUser(username, newFirstName, newLastName, newPassword, newType, newStatus);
 	}
@@ -59,7 +60,7 @@ public class DatabaseController {
 	}
 
 	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
-
+		//TODO
 	}
 
 	public static University getUniversity(String name) {
@@ -126,4 +127,6 @@ public class DatabaseController {
 		}
 		return allAccounts;		
 	}
+
+
 }

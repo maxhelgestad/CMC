@@ -74,8 +74,11 @@ public class SearchController {
   * 
   * @param cri the criteria to search schools on
   */
- public static ArrayList<University> searchSchool(String name, int numStudents) {
-  return DatabaseController.getSchool(name, numStudents);
+ public static ArrayList<University> searchSchool(Criteria cri) {
+	 ArrayList<University> colleges = DatabaseController.getUniversities();
+	 for (University uni : colleges) {
+		 //TODO
+	 }
   
  }
 

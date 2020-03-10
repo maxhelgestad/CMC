@@ -10,6 +10,7 @@ import cmc.account.Account;
 import cmc.account.admin.AdminInteraction;
 import cmc.account.user.UserInteraction;
 import cmc.database.DatabaseController;
+import cmc.search.Criteria;
 import cmc.university.University;
 
 /**
@@ -44,6 +45,7 @@ public class Driver {
 
 		// (User) Search for schools by a combination of state and number of students
 		// //(User) View search results
+		Criteria c = new Criteria("NoUniversity", "x", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);
 		ArrayList<University> schools = UserInteraction.searchSchool("CSB", 1000);
 		for (int i = 0; i < schools.size(); i++) {
 			pw.println(schools.get(i).toString());
@@ -124,6 +126,16 @@ public class Driver {
 		
 		//(user) view profile
 		Account a = UserInteraction.viewProfile("juser");
+		System.out.println(a.toString());
+		
+		//(user) view school page
+		University u2 = DatabaseController.getUniversity("BARD");
+		System.out.println(u2.toString());
+		
+		//(user) edit profile
+		AdminInteraction.editProfile("luser","Laura", "Helgestad", "user2", 'u', 'y');
+		
+		//
 		
 		
           pw.close();
