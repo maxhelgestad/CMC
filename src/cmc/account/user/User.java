@@ -61,28 +61,28 @@ public class User extends Account {
 	 * @param u
 	 *            - school to be added
 	 */
-	public void addSavedSchool(University u) {
-		if (this.savedSchools.contains(u) != true) {
-			this.savedSchools.add(u);
-		} else {
-			System.out.println("School is already saved");
-		}
-	}
+	//public void addSavedSchool(University u) {
+		//if (this.savedSchools.contains(u) != true) {
+			//this.savedSchools.add(u);
+		//} else {
+		//	System.out.println("School is already saved");
+		//}
+	//}
 
 	/*
 	 * method to remove a school from the saved schools list
 	 * 
 	 * @param u - school to be removed
 	 */
-	public void removeSavedSchool(String schoolName) {
-		for (int i = 0; i < this.savedSchools.size(); i++) {
-			University result = this.savedSchools.get(i);
+//	public void removeSavedSchool(String schoolName) {
+		//for (int i = 0; i < this.savedSchools.size(); i++) {
+			//University result = this.savedSchools.get(i);
 
-			if (result.getName().equals(schoolName)) {
-				this.savedSchools.remove(result);
-			}
-		}
-	}
+			//if (result.getName().equals(schoolName)) {
+			//	this.savedSchools.remove(result);
+			//}
+		//}
+	//}
 
 	/*
 	 * method to return a users saved schools list
@@ -91,13 +91,13 @@ public class User extends Account {
 	 * 
 	 * @return ArrayList<University> - the list of saved schools schools
 	 */
-	public ArrayList<University> getSavedSchools(String username) {
+	//public ArrayList<University> getSavedSchools(String username) {
 		// TODO parameter???
-		return this.savedSchools;
-	}
+		//return this.savedSchools;
+	//}
 
 	public static void editProfile(String username, String password, String newUsername, String newPassword) {
-		Account u = DatabaseController.getAccount(username);
+		Account u = DatabaseController.getUser(username, password);
 
 		u.setUsername(newUsername);
 		u.setPassword(newPassword);
