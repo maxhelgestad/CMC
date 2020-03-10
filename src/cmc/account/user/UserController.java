@@ -26,6 +26,7 @@ public class UserController {
 	public static void main(String[] args) {
 
 	}
+<<<<<<< HEAD
 	/**
 	  * Add a new user  
 	  *
@@ -33,6 +34,11 @@ public class UserController {
 	  */
 	public static boolean addUser(String username, String password) {
 		User u = new User(username, password);
+=======
+
+	public static boolean addUser(String username, String password, String firstname, String lastname, char status) {
+		User u = new User(username, password, firstname, lastname, status);
+>>>>>>> 3e2f46ac04db277a04e0c2ca77870026ce47a229
 		DatabaseController.addUser(u);
 		return true;
 	}
@@ -43,6 +49,14 @@ public class UserController {
 	  * @param u user to be added
 	  */
 
+	/**
+	 * Edits the users username and password
+	 * 
+	 * @param username old username to be edited
+	 * @param password old password to be edited
+	 * @param newUsername new username for user
+	 * @param newPassword new password for user
+	 */
 	public static void editUser(String username, String password, String newUsername, String newPassword) {
 		Account u = DatabaseController.getUser(username, password);
 
@@ -51,7 +65,13 @@ public class UserController {
 		// save updated password and User name in database
 
 	}
-
+	
+	/**
+	 * deactivates the user
+	 * 
+	 * @param username the username of user being deactivated
+	 * @param password the password of user being deactivated
+	 */
 	public static void deactivateUser(String username, String password) {
 		ArrayList<Account> a = DatabaseController.getAccounts();
 		int i = 0;
@@ -86,9 +106,13 @@ public class UserController {
 		University s = DatabaseController.getUniversity(schoolName);
 		// u.addSavedSchool(s);
 	}
-
+	
 	public static void viewProfile() {
+		
+	}
 
+	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
+		User.editProfile(username, password, newUsername, newPassword);
 	}
 
 	public static void removeSchool(String userName, String schoolName) {

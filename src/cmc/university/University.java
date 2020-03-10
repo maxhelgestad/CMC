@@ -1,41 +1,38 @@
 package cmc.university;
 
-
 import java.util.ArrayList;
 
 import cmc.database.DatabaseController;
 
 public class University {
-  private String name, mfRatio, control, location;
-  private int numStudents, satVerbal, satMath, numApplicants, academics, social, qualOfLife;
-  private float expenses, financialAid, admitionRate, percentEnrolled;
-  private ArrayList<String> emphases;
-  
-  
-  public University(String name) {
-    this.name = name;
-  }
-  
-  public University(String name, String mfRatio, String control, String location, int numStudents, int satVerbal,
-                    int satMath, int numApplicants, int academics, int social, int qualOfLife, float expenses,
-                    float financialAid, float admitionRate, float percentEnrolled, ArrayList<String> emphases) {
-    this.name = name;
-    this.mfRatio = mfRatio;
-    this.control = control;
-    this.location = location;
-    this.numStudents = numStudents;
-    this.satVerbal = satVerbal;
-    this.satMath = satMath;
-    this.numApplicants = numApplicants;
-    this.academics = academics;
-    this.social = social;
-    this.qualOfLife = qualOfLife;
-    this.expenses = expenses;
-    this.financialAid = financialAid;
-    this.admitionRate = admitionRate;
-    this.percentEnrolled = percentEnrolled;
-    this.emphases = emphases;
-  }
+	private String name, control, location;
+	private int numStudents, numApplicants, academics, social, qualOfLife;
+	private float expenses, financialAid, admitionRate, percentEnrolled, mfRatio, satVerbal, satMath;
+	private ArrayList<String> emphases;
+
+	public University(String name) {
+		this.name = name;
+	}
+
+	public University(String name, String state, String location, String control, int numStudents, float mfRatio,
+			float satVerbal, float satMath, float expenses, float financialAid, int numApplicants, float admitionRate,
+			float percentEnrolled, int academics, int social, int qualOfLife) {
+		this.name = name;
+		this.mfRatio = mfRatio;
+		this.control = control;
+		this.location = location;
+		this.numStudents = numStudents;
+		this.satVerbal = satVerbal;
+		this.satMath = satMath;
+		this.numApplicants = numApplicants;
+		this.academics = academics;
+		this.social = social;
+		this.qualOfLife = qualOfLife;
+		this.expenses = expenses;
+		this.financialAid = financialAid;
+		this.admitionRate = admitionRate;
+		this.percentEnrolled = percentEnrolled;
+	}
   
   public String toString() {
     return "Name: " + name + "\n Male/Female Ratio: " + mfRatio + "\n Control: " + control + "\n Location: "+ location + "\n Number of Students: "+ numStudents 
@@ -47,7 +44,7 @@ public class University {
    return this.name;
   }
   
-  public String getMfRatio() {
+  public float getMfRatio() {
    return this.mfRatio;
   }
   public String getControl() {
@@ -61,11 +58,11 @@ public class University {
    return this.numStudents;
   }
   
-  public int getSatVerbal() {
+  public float getSatVerbal() {
    return this.satVerbal;
   }
   
-  public int getSatMath() {
+  public float getSatMath() {
    return this.satMath;
   }
   

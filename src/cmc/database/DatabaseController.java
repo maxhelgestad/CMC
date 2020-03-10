@@ -7,113 +7,84 @@ import java.util.ArrayList;
 import cmc.account.Account;
 import cmc.account.user.User;
 import cmc.university.University;
+import dblibrary.project.csci230.UniversityDBLibrary;
 
 public class DatabaseController {
- private static University one, two, three, four, five, six; 
- private static ArrayList<University> universities; 
- private static ArrayList<Account> accounts;
- private static Account sam, james;
- private static ArrayList<String> emphases;
+	private static UniversityDBLibrary lib;
 
+	public static void setUp(String username, String password) {
+		lib = new UniversityDBLibrary(username, password);
+	}
 
- 
-public static void setSchool() {
- emphases = new ArrayList<String>();
- emphases.add("hi");
- one = new University("SJU", "half", "one", "Collegeville", 300, 50, 50, 1000, 95, 3, 5, 10, 1, 5, 25, emphases);
- two = new University("CSB", "half", "one", "Collegeville", 800, 50, 50, 2000, 95, 4, 5, 10, 2, 5, 25, emphases);
- three = new University("UST", "half", "one", "Collegeville", 1000, 75, 50, 1500, 100, 3, 2, 12, 1, 5, 25, emphases);
- four = new University("hi", "half", "one", "Collegeville", 1200, 40, 60, 1500, 80, 3, 5, 10, 1, 5, 25, emphases);
- five = new University("max", "half", "one", "Collegeville", 2000, 60, 40, 1250, 70, 2, 4, 14, 2, 5, 25, emphases);
- six = new University("UMN", "half", "one", "Collegeville", 4000, 50, 50, 1000, 95, 3, 5, 10, 1, 5, 25, emphases);
- universities = new ArrayList<University>();
- universities.add(one);
- universities.add(two);
- universities.add(three);
- universities.add(four);
- universities.add(five);
- universities.add(six);
+	public static Account getUser(String username, String password) {
+
+	}
+
+	/**
+	 * get a user by the given name
+	 *
+	 * @param user
+	 *            name
+	 *
+	 * @reutrn a User with given user name
+	 */
+	public static User lookupUser(String username) {
+		User result = null;
+		for (int i = 0; i < accounts.size(); i++) {
+			if (accounts.get(i).getUsername().equals(username)) {
+				result = (User) accounts.get(i);
+			}
+		}
+		return result;
+	}
+
+	public void updateSavedUser(User user) {
+
+	}
+
+	public static void addUser(User user) {
+	}
+
+	public static ArrayList<University> getSchool(String schoolName, int numStudents) {
+
+	}
+
+	public static University getUniversity(String name) {
+
+	}
+
+	public void getSchoolDetails(String schoolName) {
+
+	}
+
+	public void updateSavedSchoolList(String username) {
+
+	}
+
+	public static ArrayList<University> getUniversities() {
+		String[][] u = lib.university_getUniversities();
+		ArrayList<University> allSchools = new ArrayList<University>();
+		University uni;
+		for (int i = 0; u.length < i; i++) {
+			uni = new University(u[i][0], u[i][1], u[i][2], u[i][3], Integer.parseInt(u[i][4]),
+					Float.parseFloat(u[i][5]), Float.parseFloat(u[i][6]), Float.parseFloat(u[i][7]),
+					Float.parseFloat(u[i][8]), Float.parseFloat(u[i][9]), Integer.parseInt(u[i][10]),
+					Float.parseFloat(u[i][11]), Float.parseFloat(u[i][12]), Integer.parseInt(u[i][13]),
+					Integer.parseInt(u[i][14]), Integer.parseInt(u[i][15]));
+			allSchools.add(uni);
+		}
+		return allSchools;
+	}
+	
+	public static ArrayList<Account> getAccounts(){
+		String[][] a = lib.user_getUsers();
+		ArrayList<Account> allAccounts = new ArrayList<Account>();
+		for (int i = 0; a.length < i; i++) {
+			char[] ch1 = a[i][4].toCharArray();
+			char[] ch2 = a[1][5].toCharArray();
+			Account acc = new Account(a[i][0], a[i][1], a[i][2], a[i][3], ch1[0], ch2[0]);
+			allAccounts.add(acc);
+		}
+		return allAccounts;		
+	}
 }
-
-public static void setUser() {
- sam = new Account("sammy", "password");
- james = new Account("james", "12345");
- accounts = new ArrayList<Account>();
- accounts.add(sam);
- accounts.add(james);
-}
-
- 
-  public static ArrayList<University> getSchool(String schoolName, int numStudents) {
-   int i = 0;
-   ArrayList<University> uni = new ArrayList<University>();
-   while(universities.size() > i) {
-    if(universities.get(i).getName() == schoolName || universities.get(i).getNumStudents() == numStudents) {
-      uni.add(universities.get(i));
-    }
-    i++;
-   }
-   return uni;
-  }
-  
-  
-  public static Account getUser(String username, String password) {
-   int i = 0;
-   while(accounts.size() > i) {
-    if(accounts.get(i).getUsername() == username && accounts.get(i).getPassword() == password) {
-     return accounts.get(i);
-    }
-    i++;
-   }
-   return null;
-  }
-  
-  public static University getUniversity(String name) {
-   int i = 0;
-   while(universities.size() > i) {
-    if(universities.get(i).getName() == name) {
-     return universities.get(i);
-    }
-    i++;
-   }
-   return null;
-  }
-  
-  public void getSchoolDetails(String schoolName) {
-  }
-
-  
-  public static User lookupUser(String username) {
-
-	  User result = null;
-	    for(int i = 0; i < accounts.size(); i++)
-	    {
-	      if(accounts.get(i).getUsername().equals(username))
-	      {
-	        result = (User)accounts.get(i); 
-	      }
-	    }
-	    return result;
-	  }   
-    	
- 
-  
-  public void updateSavedSchoolList(String username) {
-  }
-  
-  public void updateSavedUser(User user) {
-	  
-  }
-  
-  public static void addUser(User user) {
-  }
-  
-  public static ArrayList<Account> getAccounts() {
-   return accounts;
-  }
-  
-  public static ArrayList<University> getUniversities(){
-   return universities;
-  }
-}
-  
