@@ -15,7 +15,7 @@ import cmc.university.University;
 
 
 /**
- * Driver Class to test first six use cases
+ * Driver class to test back end functionality for first twelve uses cases
  * 
  * @author javengers
  *

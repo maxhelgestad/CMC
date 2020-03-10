@@ -10,9 +10,7 @@ import cmc.university.University;
 
 /**
  * Class for a User object that extends the Account class.
- */
-
-/**
+ * 
  * @author mhelgesta001
  *
  */

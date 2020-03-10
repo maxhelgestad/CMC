@@ -5,6 +5,8 @@ package cmc.account;
  */
 
 /**
+ * Class to construct and modify Account objects. This class is the superclass for the User and Admin classes
+ * 
  * @author mhelgesta001
  *
  */

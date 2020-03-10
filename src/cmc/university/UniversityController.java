@@ -11,17 +11,13 @@ import java.lang.Math;
  */
 
 /**
+ * University Controller handles communication with the DatabaseController/Database on anything
+ * having anything to do with Universities
+ * 
  * @author vkahlhame001
  *
  */
 public class UniversityController {
-
- /**
-  * 
-  */
- public UniversityController() {
-  // TODO Auto-generated constructor stub
- }
  
  /**
   * Admin function to  add university to the database

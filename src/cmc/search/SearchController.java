@@ -6,10 +6,9 @@ import cmc.database.DatabaseController;
 import cmc.university.University;
 
 /**
+ * Search Controller handles communication with the DatabaseController/Database on anything
+ * having anything to do with Search
  * 
- */
-
-/**
  * @author abrandeck001
  *
  */

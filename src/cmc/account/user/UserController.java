@@ -10,7 +10,8 @@ import cmc.university.University;
 
 
 /**
- * Controller for the user and the things users can do
+ * User Controller handles communication with the DatabaseController/Database on anything
+ * having anything to do with Users
  * 
  * @author mli001
  *

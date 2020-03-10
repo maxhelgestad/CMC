@@ -11,7 +11,7 @@ import cmc.university.UniversityController;
 
 
 /**
- * Controller class for user interactions with the CMC Website
+ * Class for Users to interact with the system
  * 
  * @author javengers
  *

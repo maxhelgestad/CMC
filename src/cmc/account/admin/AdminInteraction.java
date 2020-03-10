@@ -9,7 +9,9 @@ import cmc.university.University;
 import cmc.university.UniversityController;
 
 
-/**Class to handel Admin Interaction
+/**
+ * Class for Admins to interact with the system
+ * 
  * @author vkahlhame001
  *
  */
