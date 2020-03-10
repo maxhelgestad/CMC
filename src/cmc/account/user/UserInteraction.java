@@ -9,11 +9,6 @@ import cmc.search.SearchController;
 import cmc.university.University;
 import cmc.university.UniversityController;
 
-/**
- * 
- */
-
-
 
 /**
  * @author jkost001
@@ -21,13 +16,12 @@ import cmc.university.UniversityController;
  */
 public class UserInteraction {
 
- /**
-  * 
-  */
- public UserInteraction() {
-	//userControl = new UserController();
- }
- 
+	/**Logs the User on
+ *  
+ * @param username of the User
+ * @param password of the User
+ * @return boolean weather successful or not
+ */
  public static boolean logOn(String username, String password) {
   return AccountController.logOn(username, password);
  }
@@ -79,12 +73,12 @@ public class UserInteraction {
  public static Account viewProfile(String username) {
 	 return UserController.viewProfile(username);
  }
- /**
+ /**Changes the username and Password of a user
   * 
-  * @param username
-  * @param password
-  * @param newUsername
-  * @param newPassword
+  * @param username to be changed
+  * @param password to be chaanged
+  * @param newUsername to be new username
+  * @param newPassword to be new username
   */
  public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
 	 UserController.viewToEditProfile(username, password, newUsername, newPassword);

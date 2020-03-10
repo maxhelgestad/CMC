@@ -13,18 +13,29 @@ public class Account {
 	private String username;
 	// password for the account
 	private String password;
+	// firstname for the account
 	private String firstname;
+	// lastName for the account
 	private String lastName;
+	// type for the account
 	private char type;
+	// status for the account
 	private char status;
 
 	/**
 	 * constructs an Account object
-	 * 
+	 * @param firstname
+	 * 			  - first name of the account
+	 * @param lastName
+	 * 			  - last name of the account
 	 * @param username
 	 *            - username of the account
 	 * @param password
 	 *            - password of the account
+	 * @param type
+	 * 			  - type of the account
+	 * @param status
+	 * 			  - status of the account
 	 */
 	public Account(String firstname, String lastName, String username, String password, char type, char status) {
 		this.username = username;
@@ -35,8 +46,11 @@ public class Account {
 		this.status = status;
 	}
 
-	/**
-	  * 
+	/**Checks to see if a user is valid or invalid
+	 * 
+	 * @param username - username of the user
+	 * @param password - password of the user
+	  * @return boolean if user is valid or invalid
 	  */
 	public boolean isValid(String username, String password) {
 		return true;
@@ -55,28 +69,45 @@ public class Account {
 	public boolean logOn(String username, String password) {
 		return true;
 	}
-
+	/**
+	 * 
+	 * @return username of the account
+	 */
 	public String getUsername() {
 		return this.username;
 	}
-
+	/**
+	 * 
+	 * @return password of the account
+	 */
 	public String getPassword() {
 		return this.password;
 	}
-
+/**
+ * 
+ * @param username that will become the new username
+ */
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+	/**
+	 * 
+	 * @param password that will become the new password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	/**
+	 * 
+	 * @return type of the account
+	 */
 	public char getType() {
 		return this.type;
 		
 	}
-
+	/**
+	 * @return String of all the information of the user
+	 */
 	public String toString() {
 		return "Firstname: " + firstname + "Lastname: " + lastName + "Username: "+username + "Password" + password;
 	}
