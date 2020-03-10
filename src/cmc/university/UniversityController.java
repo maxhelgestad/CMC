@@ -23,18 +23,38 @@ public class UniversityController {
   // TODO Auto-generated constructor stub
  }
  
+ /**
+  * Admin function to  add university to the database
+  * 
+  * @param uni the university to add
+  */
  public static void addUniversity(University uni) {
   
  }
  
+ /**
+  * Admin function to remove the university from the database
+  * 
+  * @param uni the university that is being removed
+  */
  public static void removeUniversity(University uni) {
   
  }
  
+ /**
+  * Admin control to edit university information in the database
+  * 
+  * @param uni the university being edited
+  */
  public static void editUniversity(University uni) {
   
  }
  
+ /**
+  * A method that retrieves all the universities in the database
+  * 
+  * @return an Array list of universities that are in the database
+  */
  public static ArrayList<University> viewUniversities(){
   return DatabaseController.getUniversities();
  }

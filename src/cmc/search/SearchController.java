@@ -55,6 +55,7 @@ public class SearchController {
  }
  
  /**
+  * 
   * Displays the colleges matching the search criteria
   */
  public void displayList() {
@@ -62,6 +63,7 @@ public class SearchController {
  }
  
  /**
+  * Method to add university to list
   * 
   * @param uni the university being added
   */
@@ -74,8 +76,12 @@ public class SearchController {
   * 
   * @param cri the criteria to search schools on
   */
- public static ArrayList<University> searchSchool(String name, int numStudents) {
-  return DatabaseController.getSchool(name, numStudents);
+ public static ArrayList<University> searchSchool(Criteria cri) {
+	 ArrayList<University> colleges = DatabaseController.getUniversities();
+	 for (University uni : colleges) {
+		 
+		 //TODO
+	 }
   
  }
 
