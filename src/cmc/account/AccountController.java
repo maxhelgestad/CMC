@@ -84,4 +84,13 @@ public static void editProfile(String username, String newPassword, String newFi
 	
 }
 
+/**
+ * Deactivates an Account
+ * 
+ * @param username of the account
+ */
+public static void deactivateProfile(String username) {
+		DatabaseController.removeAccount(username);
+}
+
 }

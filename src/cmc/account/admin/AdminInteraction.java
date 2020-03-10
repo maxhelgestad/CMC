@@ -50,17 +50,14 @@ public class AdminInteraction {
 	AccountController.addAccount(firstName, lastName, username, password, type, status);
  }
  
- //public static void editUser(String username, String password, String newUsername, String newPassword) {
-	 //UserController.editUser(username, password, newUsername, newPassword); 
- //}
  
 	
 /** Deactivates an account
  * @param username of the account
  * @param password of the account
  */
- public static void deactivateUser(String username, String password) {
-	 UserController.deactivateUser(username, password);
+ public static void deactivateUser(String username) {
+	 AccountController.deactivateProfile(username);
  }
 
 /** Edits an account

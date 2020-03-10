@@ -100,6 +100,17 @@ public class Account {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	/**
+	 * sets the first name for an account
+	 * 
+	 * @param firstname first name to update
+	 */
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	
+
 	/**Returns the type of the account
 	 * 
 	 * @return type of the account
@@ -114,5 +125,33 @@ public class Account {
 	 */
 	public String toString() {
 		return "Firstname: " + firstname + "\nLastname: " + lastName + "\nUsername: "+username + "\nPassword: " + password + "\n";
+	}
+
+	/**
+	 * @return the firstname
+	 */
+	public String getFirstname() {
+		return firstname;
+	}
+
+	/**
+	 * @param firstname the firstname to set
+	 */
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 }

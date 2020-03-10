@@ -79,6 +79,7 @@ public class SearchController {
  public static ArrayList<University> searchSchool(Criteria cri) {
 	 ArrayList<University> colleges = DatabaseController.getUniversities();
 	 for (University uni : colleges) {
+		 
 		 //TODO
 	 }
   

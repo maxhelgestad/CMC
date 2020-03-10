@@ -39,7 +39,7 @@ public class DatabaseController {
 	 *
 	 * @param username the user to retrieve from the database
 	 *
-	 * @reutrn a User with given user name
+	 * @return a User with given user name
 	 */
 	public static Account lookupAccount(String username) {
 		ArrayList<Account> accounts = DatabaseController.getAccounts();
