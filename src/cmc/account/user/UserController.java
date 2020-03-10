@@ -36,10 +36,14 @@ public class UserController {
 	/**
 	 * Edits the users username and password
 	 * 
-	 * @param username old username to be edited
-	 * @param password old password to be edited
-	 * @param newUsername new username for user
-	 * @param newPassword new password for user
+	 * @param username
+	 *            old username to be edited
+	 * @param password
+	 *            old password to be edited
+	 * @param newUsername
+	 *            new username for user
+	 * @param newPassword
+	 *            new password for user
 	 */
 	public static void editUser(String username, String password, String newUsername, String newPassword) {
 		Account u = DatabaseController.getUser(username, password);
@@ -49,12 +53,14 @@ public class UserController {
 		// save updated password and User name in database
 
 	}
-	
+
 	/**
 	 * deactivates the user
 	 * 
-	 * @param username the username of user being deactivated
-	 * @param password the password of user being deactivated
+	 * @param username
+	 *            the username of user being deactivated
+	 * @param password
+	 *            the password of user being deactivated
 	 */
 	public static void deactivateUser(String username, String password) {
 		ArrayList<Account> a = DatabaseController.getAccounts();
@@ -90,9 +96,9 @@ public class UserController {
 		University s = DatabaseController.getUniversity(schoolName);
 		// u.addSavedSchool(s);
 	}
-	
+
 	public static void viewProfile() {
-		
+
 	}
 
 	public static void viewToEditProfile(String username, String password, String newUsername, String newPassword) {
