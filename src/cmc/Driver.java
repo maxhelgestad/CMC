@@ -37,6 +37,7 @@ public class Driver {
 		AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');                     //U1 Add a new User
 
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
 		
 		
 		// Successful Login
@@ -46,24 +47,34 @@ public class Driver {
 		// Failed (not a user)
 		System.out.println("Login was unsuccessful not a user(should be false): " + UserInteraction.logOn("max", "123"));
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
 
 		//(user) view profile
-		Account a = UserInteraction.viewProfile("juser");  
+		Account a1 = UserInteraction.viewProfile("juser");  
 		System.out.println("Viewing the profile of username juser");																										//U3 view Profile
-		System.out.println(a.toString());
+		System.out.println(a1.toString());
 		
-		System.out.println("------------------------------");                        
+		Account a2 = UserInteraction.viewProfile("maxh");  
+		System.out.println("Viewing the profile of username maxh");																										//U3 view Profile
+		System.out.println(a2.toString());
+		
+		System.out.println("------------------------------"); 
+		System.out.println("------------------------------");
 
 		
 		
 		// (User) Search for schools by a combination of state and number of students
 		// //(User) View search results
-		Criteria c = new Criteria("v", "M", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);                   //U5 Search school by different Criteria
-		//ArrayList<University> schools = UserInteraction.searchSchool(c);                      
-		//for (int i = 0; i < schools.size(); i++) {
-			//System.out.println(schools.get(i).toString());
-			//System.out.println();
-		//}
+		System.out.println("Searching and viewing results");
+		float inf = Float.POSITIVE_INFINITY;
+		Integer val = Integer.MAX_VALUE;
+		Criteria c = new Criteria("va", "t", "ur", "pr", -1, val, -1, inf, -1, inf, -1, inf, -1, inf, -1, inf, -1, val, -1, inf, -1, inf, -1, val, -1, val, -1, val);                   //U5 Search school by different Criteria
+		ArrayList<University> schools = UserInteraction.searchSchool(c);                      
+		for (int i = 0; i < schools.size(); i++) {
+			System.out.println(schools.get(i).toString());
+			System.out.println();
+		}
+		System.out.println("------------------------------");
 		System.out.println("------------------------------");
 		
 		//(admin) edit profile                                                                               //U6 Edit profile
@@ -71,6 +82,8 @@ public class Driver {
 		System.out.println("Edited user luser profile");
 		
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
+		
 		System.out.println("Printing off all of the users");
 		ArrayList<Account> users = AdminInteraction.viewUsers();											 //U13 View Users
 		for (int i = 0; i < users.size(); i++) {
@@ -79,6 +92,8 @@ public class Driver {
 		
 		// (Admin) View list of universities
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
+		
 		System.out.println("Printing off all of the universities (limited to five)");
 		ArrayList<University> universities = AdminInteraction.viewUniversities();                 //U12 View Universities
 		for (int i = 0; i < 5; i++) {
@@ -88,7 +103,10 @@ public class Driver {
 		System.out.println("Adding a school to the saved school list");
 		// (User) Save a school to saved schools list                                                       //U10 Save sChool to the saved School List
 		UserInteraction.saveSchool("juser", "YALE"); 
+		
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
+		
 		//(User) View Saved Schools  																					//U4 View Saved School List
 		System.out.println("Viewing Saved Schools");
 		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser"); 
@@ -98,14 +116,20 @@ public class Driver {
 			System.out.println();
 		}
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
+		
 		//System.out.println("removing a school from the saved school list");
 		// (User) Remove a saved school from the saved shcools list                                         //U7 Remove School from Saved School list
 		//UserInteraction.removeSchool("juser", "AUBURN");
+		
 		System.out.println("------------------------------");
+		System.out.println("------------------------------");
+		
 		//(user) view school page
 		University u2 = DatabaseController.getUniversity("BARD");                                           //U9 View School Page
 		System.out.println(u2.toString());
 		
+		System.out.println("------------------------------");
 		System.out.println("------------------------------");
 		
 		// (User) Find top 5 recommended schools for a given school
@@ -114,6 +138,7 @@ public class Driver {
 		System.out.println("CSB: " + ratings[0] + '\n' + "UST: " + ratings[1] + '\n' + " hi: " + ratings[2] + '\n'
 				+ "max: " + ratings[3] + '\n' + "UMN: " + ratings[4]);
 
+		System.out.println("------------------------------");
 		System.out.println("------------------------------");
 		
 

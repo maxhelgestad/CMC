@@ -81,33 +81,35 @@ public class SearchController {
 	 ArrayList<University> results = new ArrayList<University>();
 	 University u;
 	 for (int i = 0; i < colleges.size(); i++) 
-	 {
+	 {		 
 		 u = colleges.get(i);
-		 if (u.getName().contains(c.getName()) || 
-				 u.getState().contains(c.getState()) || 
-				 u.getLocation().contains(c.getLocation()) || 
-				 u.getControl().contains(c.getControl()) || 
-				 c.getNumStudentsB() <= u.getNumStudents() ||
-				 u.getNumStudents()<= c.getNumStudentsT() ||
-				 c.getMfRatioB() <= u.getMfRatio() ||
-				 u.getMfRatio()<= c.getMfRatioT() ||
-				 c.getSatVerbalB() <= u.getSatVerbal() ||
-				 u.getSatVerbal()<= c.getSatVerbalT() ||
-				 c.getSatMathB() <= u.getSatMath() ||
-				 u.getSatMath()<= c.getSatMathT() ||
-				 c.getExpensesB() <= u.getExpenses() ||
-				 u.getExpenses()<= c.getExpensesT() ||
-				 c.getFinancialAidB() <= u.getFinancialAid() ||
-				 u.getFinancialAid()<= c.getFinancialAidT() ||
-				 c.getNumApplicantsB() <= u.getNumApplicants() ||
-				 u.getNumApplicants()<= c.getNumApplicantsT() ||
-				 c.getAdmitionRateB() <= u.getAdmitionRate() ||
-				 u.getAdmitionRate()<= c.getAdmitionRateT() ||
-				 c.getPercentEnrolledB() <= u.getPercentEnrolled() ||
-				 u.getPercentEnrolled()<= c.getPercentEnrolledT() ||
-				 c.getSocialB() <= u.getSocial() ||
-				 u.getSocial() <= c.getSocialT() ||
-				 c.getQualOfLifeB() <= u.getQualOfLife() ||
+		 //System.out.println(u.getName());
+		 //System.out.println(c.getName());
+		 if (u.getName().contains(c.getName()) && 
+				 u.getState().contains(c.getState()) && 
+				 u.getLocation().contains(c.getLocation()) && 
+				 u.getControl().contains(c.getControl()) &&
+				 c.getNumStudentsB() <= u.getNumStudents() &&
+				 u.getNumStudents()<= c.getNumStudentsT() &&
+				 c.getMfRatioB() <= u.getMfRatio() &&
+				 u.getMfRatio()<= c.getMfRatioT() &&
+				 c.getSatVerbalB() <= u.getSatVerbal() &&
+				 u.getSatVerbal()<= c.getSatVerbalT() &&
+				 c.getSatMathB() <= u.getSatMath() &&
+				 u.getSatMath()<= c.getSatMathT() &&
+				 c.getExpensesB() <= u.getExpenses() &&
+				 u.getExpenses()<= c.getExpensesT() &&
+				 c.getFinancialAidB() <= u.getFinancialAid() &&
+				 u.getFinancialAid()<= c.getFinancialAidT() &&
+				 c.getNumApplicantsB() <= u.getNumApplicants() &&
+				 u.getNumApplicants()<= c.getNumApplicantsT() &&
+				 c.getAdmitionRateB() <= u.getAdmitionRate() &&
+				 u.getAdmitionRate()<= c.getAdmitionRateT() &&
+				 c.getPercentEnrolledB() <= u.getPercentEnrolled() &&
+				 u.getPercentEnrolled()<= c.getPercentEnrolledT() &&
+				 c.getSocialB() <= u.getSocial() &&
+				 u.getSocial() <= c.getSocialT() &&
+				 c.getQualOfLifeB() <= u.getQualOfLife() &&
 				 u.getQualOfLife()<= c.getQualOfLifeT()) 
 		 {
 		 results.add(u);

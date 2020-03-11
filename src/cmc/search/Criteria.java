@@ -1,7 +1,5 @@
 package cmc.search;
 
-import java.util.List;
-
 
 /**
  * Criteria class for use in the searching of universities
