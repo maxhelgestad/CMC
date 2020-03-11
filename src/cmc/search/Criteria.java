@@ -56,10 +56,12 @@ public class Criteria {
 			int academicsB, int academicsT,
 			int socialB, int socialT,
 			int qualOfLifeB, int qualOfLifeT){
-  this.name = name;
+  
+	 this.name = name;
   this.mfRatioB = mfRatioB;
   this.mfRatioT = mfRatioT;
   this.numStudentsB = numStudentsB;
+  this.numStudentsT = numStudentsT;
   this.control = control;
   this.location = location;
   this.satVerbalB = satVerbalB;
@@ -70,6 +72,8 @@ public class Criteria {
   this.expensesT = expensesT;
   this.financialAidB = financialAidB;
   this.financialAidT = financialAidT;
+  this.numApplicantsB = numApplicantsB;
+  this.numApplicantsT = numApplicantsT;
   this.admitionRateB = admitionRateB;
   this.admitionRateT = admitionRateT;
   this.percentEnrolledB = percentEnrolledB;

@@ -63,13 +63,13 @@ public class Driver {
 
 		
 		
-		// (User) Search for schools by a combination of state and number of students
+		// (User) Search for schools
 		// //(User) View search results
 
 		System.out.println("Searching and viewing results");
 		float inf = Float.POSITIVE_INFINITY;
 		Integer val = Integer.MAX_VALUE;
-		Criteria c = new Criteria("va", "t", "ur", "pr", -1, val, -1, inf, -1, inf, -1, inf, -1, inf, -1, inf, -1, val, -1, inf, -1, inf, -1, val, -1, val, -1, val);                   //U5 Search school by different Criteria
+		Criteria c = new Criteria("VAN", "T", "U", "P", -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val, -1, val);                   //U5 Search school by different Criteria
 		ArrayList<University> schools = UserInteraction.searchSchool(c);                      
 		for (int i = 0; i < schools.size(); i++) {
 			System.out.println(schools.get(i).toString());
@@ -157,7 +157,7 @@ public class Driver {
 		System.out.println("------------------------------");
 		
 		// (User) Find top 5 recommended schools for a given school
-		float[] ratings = UserInteraction.displaySimilarSchools("SJU");									    //U11 Display 5 most similar school to school being viewed
+		float[] ratings = UserInteraction.displaySimilarSchools("YALE");									    //U11 Display 5 most similar school to school being viewed
 		System.out.println("Similarity Ratings for top 5 similar schools to SJU");
 		System.out.println("CSB: " + ratings[0] + '\n' + "UST: " + ratings[1] + '\n' + " hi: " + ratings[2] + '\n'
 				+ "max: " + ratings[3] + '\n' + "UMN: " + ratings[4]);
