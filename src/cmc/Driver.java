@@ -58,7 +58,7 @@ public class Driver {
 		
 		// (User) Search for schools by a combination of state and number of students
 		// //(User) View search results
-		Criteria c = new Criteria("v", "M", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);                   //U5 Search school by different Criteria
+		//Criteria c = new Criteria("v", "M", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);                   //U5 Search school by different Criteria
 		//ArrayList<University> schools = UserInteraction.searchSchool(c);                      
 		//for (int i = 0; i < schools.size(); i++) {
 			//System.out.println(schools.get(i).toString());
@@ -88,19 +88,37 @@ public class Driver {
 		System.out.println("Adding a school to the saved school list");
 		// (User) Save a school to saved schools list                                                       //U10 Save sChool to the saved School List
 		UserInteraction.saveSchool("juser", "YALE"); 
+		UserInteraction.saveSchool("juser", "AUBURN"); 
 		System.out.println("------------------------------");
+		
+		
 		//(User) View Saved Schools  																					//U4 View Saved School List
 		System.out.println("Viewing Saved Schools");
-		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser"); 
-		//System.out.println(savedSchools);                    
+		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser");                   
 		for (int i = 0; i < savedSchools.size(); i++) {
+			University u = savedSchools.get(i);
+			if (!u.getName().equals("NoUniversity")) {
 			System.out.println(savedSchools.get(i).toString());
 			System.out.println();
+			}
 		}
 		System.out.println("------------------------------");
-		//System.out.println("removing a school from the saved school list");
+		System.out.println("removing a school from the saved school list");
 		// (User) Remove a saved school from the saved shcools list                                         //U7 Remove School from Saved School list
-		//UserInteraction.removeSchool("juser", "AUBURN");
+		UserInteraction.removeSchool("juser", "AUBURN");
+		
+		//(User) View Saved Schools  																					//U4 View Saved School List
+		System.out.println("Viewing Saved Schools after removing AUBURN");
+		ArrayList<University> savedSchools2 = UserInteraction.showSavedSchoolList("juser");                    
+		for (int i = 0; i < savedSchools2.size(); i++) {
+			University u = savedSchools2.get(i);
+			if (!u.getName().equals("NoUniversity")) {
+			System.out.println(savedSchools2.get(i).toString());
+			System.out.println();
+			}
+		}
+		
+		
 		System.out.println("------------------------------");
 		//(user) view school page
 		University u2 = DatabaseController.getUniversity("BARD");                                           //U9 View School Page
