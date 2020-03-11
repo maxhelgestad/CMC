@@ -106,7 +106,7 @@ public class DatabaseController {
 		ArrayList<University> schools = DatabaseController.getUniversities();
 		University un = noUniversity;
 		for (int i = 0; i < schools.size(); i++) {
-			if (schools.get(i).getName() == name) {
+			if (schools.get(i).getName().equals(name)) {
 				un = (University)schools.get(i);
 			}
 		}
@@ -142,9 +142,15 @@ public class DatabaseController {
 	 */
 	public static ArrayList<University> getSavedSchools(String username){
 		  String[][] saved = lib.user_getUsernamesWithSavedSchools();
+		  ArrayList<String> s = new ArrayList<String>();
+		  for (int i = 0; saved.length > i; i++) {
+				s.add(Arrays.toString(saved[i]));
+			}
+		  
 		  ArrayList<University> result = new ArrayList<University>();
-		  for(int i = 0; i < saved.length; i++)
+		  for(int i = 0; i < s.size(); i++)
 		  {
+			 
 			  if(saved[i][0].equals(username))
 			  {
 				  for(int j = 0; j < saved[i].length;j++) {

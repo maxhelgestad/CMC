@@ -13,8 +13,8 @@ import cmc.database.DatabaseController;
  *
  */
 public class University {
-	//name, control, and location of  the University
-  private String name, control, location;
+	//name, control, state, and location of  the University
+  private String name, control, location, state;
   //Number of students, number of applicants, academics, social, and quality of life of the University
   private int numStudents, numApplicants, academics, social, qualOfLife;
   //Expenses, financial Aid, admit Rate, Percent Enrolled, Male Female Ratio, SAT Verbal, and SAT Math of the University
@@ -57,6 +57,7 @@ public class University {
     this.financialAid = financialAid;
     this.admitionRate = admitionRate;
     this.percentEnrolled = percentEnrolled;
+    this.state = state;
   }
   
   
@@ -65,7 +66,7 @@ public class University {
    * @return all the information of the university
    */
   public String toString() {
-    return "Name: " + name + "\n Male/Female Ratio: " + mfRatio + "\n Control: " + control + "\n Location: "+ location + "\n Number of Students: "+ numStudents 
+    return "Name: " + name + "\nState: " + state +"\n Male/Female Ratio: " + mfRatio + "\n Control: " + control + "\n Location: "+ location + "\n Number of Students: "+ numStudents 
     		+"\n SAT Verbal: "+ satVerbal +"\n SAT Math: "+ satMath +"\n Number of Applicants: "+ numApplicants +"\n Academics:"+ academics +"\n Social: "+ social + "\n Quality of Life: "+ 
     		qualOfLife + "\n Expenses: "+ expenses + "\n Financial Aid: "+ financialAid + "\n admition Rate: "+ admitionRate +"\n Percent Enrolled: "+ percentEnrolled;
   }
@@ -75,6 +76,14 @@ public class University {
    */
   public String getName() {
    return this.name;
+  }
+  
+  /**
+   * Returns the state of the University
+   * @return state of the University
+   */
+  public String getState() {
+   return this.state;
   }
   /**
    * returns the Male to Female Ratio of the University

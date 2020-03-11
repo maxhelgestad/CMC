@@ -53,26 +53,21 @@ public class Driver {
 		System.out.println(a.toString());
 		
 		System.out.println("------------------------------");                        
-		//(User) View Saved Schools                                                                         //U4 View Saved School List
-		//ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser");                                  //not done                                
-		//for (int i = 0; i < savedSchools.size(); i++) {
-			//pw.println(savedSchools.get(i).toString());
-			//pw.println();
-		//}
+
 		
 		
 		// (User) Search for schools by a combination of state and number of students
 		// //(User) View search results
-		Criteria c = new Criteria("NoUniversity", "x", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);                   //U5 Search school by different Criteria
-		//ArrayList<University> schools = UserInteraction.searchSchool("CSB", 1000);                         //not done
+		Criteria c = new Criteria("v", "M", "x", "x", 0,0,0,0,0,0,0,0,0,0,0,0);                   //U5 Search school by different Criteria
+		//ArrayList<University> schools = UserInteraction.searchSchool(c);                      
 		//for (int i = 0; i < schools.size(); i++) {
-			//pw.println(schools.get(i).toString());
-			//pw.println();
-	//	}
+			//System.out.println(schools.get(i).toString());
+			//System.out.println();
+		//}
 		System.out.println("------------------------------");
 		
 		//(admin) edit profile                                                                               //U6 Edit profile
-		AdminInteraction.editProfile("luser","Laura", "Helgestad", "user2", 'u', 'y');
+		AdminInteraction.editProfile("luser", "user2", "Laura", "Helgestad", 'u', 'y');
 		System.out.println("Edited user luser profile");
 		
 		System.out.println("------------------------------");
@@ -90,17 +85,28 @@ public class Driver {
 			System.out.println(universities.get(i).toString());
 			System.out.println();
 		}
-
-		System.out.println("removing a school from the saved school list");
+		System.out.println("Adding a school to the saved school list");
+		// (User) Save a school to saved schools list                                                       //U10 Save sChool to the saved School List
+		UserInteraction.saveSchool("juser", "YALE"); 
+		System.out.println("------------------------------");
+		//(User) View Saved Schools  																					//U4 View Saved School List
+		System.out.println("Viewing Saved Schools");
+		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser"); 
+		//System.out.println(savedSchools);                    
+		for (int i = 0; i < savedSchools.size(); i++) {
+			System.out.println(savedSchools.get(i).toString());
+			System.out.println();
+		}
+		System.out.println("------------------------------");
+		//System.out.println("removing a school from the saved school list");
 		// (User) Remove a saved school from the saved shcools list                                         //U7 Remove School from Saved School list
-		UserInteraction.removeSchool("juser", "AUBURN");
-		
+		//UserInteraction.removeSchool("juser", "AUBURN");
+		System.out.println("------------------------------");
 		//(user) view school page
 		University u2 = DatabaseController.getUniversity("BARD");                                           //U9 View School Page
 		System.out.println(u2.toString());
 		
-		// (User) Save a school to saved schools list                                                       //U10 Save sChool to the saved School List
-		UserInteraction.saveSchool("juser", "AUBURN"); 
+		System.out.println("------------------------------");
 		
 		// (User) Find top 5 recommended schools for a given school
 		float[] ratings = UserInteraction.displaySimilarSchools("SJU");									    //U11 Display 5 most similar school to school being viewed
@@ -133,20 +139,20 @@ public class Driver {
 
 
 		// (Admin) Deactivate a user
-		System.out.println("------------------------------");
-		System.out.println("(Old list of users)");
-		for (int i = 0; i < users.size(); i++) {
-			System.out.println(users.get(i).toString());
-		}
-		AdminInteraction.deactivateUser("james");												//(extra) U17 Deactivate User account
+		//System.out.println("------------------------------");
+		//System.out.println("(Old list of users)");
+		//for (int i = 0; i < users.size(); i++) {
+		//	System.out.println(users.get(i).toString());
+		//}
+		//AdminInteraction.deactivateUser("james");												//(extra) U17 Deactivate User account
 
-		AdminInteraction.deactivateUser("Sammy");
+		//AdminInteraction.deactivateUser("Sammy");
 
-		System.out.println("(New list of users *one removed*)");
-		ArrayList<Account> u = AdminInteraction.viewUsers();
-		for (int i = 0; i < u.size(); i++) {
-			System.out.println(u.get(i).toString());
-		}
+		//System.out.println("(New list of users *one removed*)");
+		//ArrayList<Account> u = AdminInteraction.viewUsers();
+		//for (int i = 0; i < u.size(); i++) {
+		//	System.out.println(u.get(i).toString());
+		//}
 		
 
 		
