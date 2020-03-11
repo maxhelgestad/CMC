@@ -9,40 +9,65 @@ package cmc.search;
  */
 public class Criteria {
 
- 
-	private String name,state, location, control; 
+	//name of the School, state its in, location, and control type
+	private String name, state, location, control; 
+	//upper and lower bounds for number of students
 	private int numStudentsB,  numStudentsT;
+	//upper and lower bounds for male to female ratio
 	private float mfRatioB,  mfRatioT;
+	//upper and lower bounds for SATVerbal scores
 	private float satVerbalB,  satVerbalT;
+	//upper and lower bounds for SATMath scores
 	private float satMathB,  satMathT;
+	//upper and lower bounds for expenses
 	private float expensesB,  expensesT;
+	//upper and lower bounds for financial aid percentage
 	private float financialAidB,  financialAidT;
+	//upper and lower bounds for number of applications
 	private int numApplicantsB,  numApplicantsT;
+	//upper and lower bounds for admition rate
 	private float admitionRateB,  admitionRateT;
+	//upper and lower bounds for percent enrolled
 	private float percentEnrolledB,  percentEnrolledT;
+	//upper and lower bounds for academics scale
 	private	int academicsB,  academicsT;
+	//upper and lower bounds Social scale
 	private	int socialB,  socialT;
+	//upper and lower bounds for quality of life scale
 	private int qualOfLifeB,  qualOfLifeT;
 
- /**
-  * criteria constructor
-  * 
-  * @param name school's name
-  * @param mfRatio male to female ratio
-  * @param numStudents the number of enrolled students
-  * @param control public or private control of the school
-  * @param satVerbal average verbal SAT stat for given school
-  * @param satMath average math SAT stat for school
-  * @param expenses cost of school
-  * @param financialAid the amount of financial aid offered by the school
-  * @param admitionRate the admission rate of the school
-  * @param percentEnrolled the percent of enrolled students
-  * @param academics 1-5 rating of academics at a school
-  * @param social 1-5 rating of school social life
-  * @param emphasis what the school is known for
-  * @param location the location of the school 
-  * 
-  */
+/**
+ * Constructs a criteria object for searching
+ * 
+ * @param name name of the university - can be substring that the name might contain
+ * @param state name of the state - can be substring that the state name might contain
+ * @param location name of the location - can be substring that the location might contain
+ * @param control name of the control - can be substring that the control might contain
+ * @param numStudentsB lower bound of number of students - if not entered will be -1
+ * @param numStudentsT upper bound of number of students - if not entered will be MAX_VALUE
+ * @param mfRatioB lower bound of male female ratio - if not entered will be -1
+ * @param mfRatioT upper bound of male female ratio - if not entered will be MAX_VALUE
+ * @param satVerbalB lower bound of SATVerbal - if not entered will be -1
+ * @param satVerbalT upper bound of SATverbal - if not entered will be MAX_VALUE
+ * @param satMathB lower bound of SATMath - if not entered will be -1
+ * @param satMathT upper bound of SATMath - if not entered will be MAX_VALUE
+ * @param expensesB lower bound of expenses - if not entered will be -1
+ * @param expensesT upper bound of expenses - if not entered will be MAX_VALUE
+ * @param financialAidB lower bound of financial aid percentage - if not entered will be -1
+ * @param financialAidT upper bound of financial aid percentage - if not entered will be MAX_VALUE
+ * @param numApplicantsB lower bound of number of applicants - if not entered will be -1
+ * @param numApplicantsT upper bound of number of applicants - if not entered will be MAX_VALUE
+ * @param admitionRateB lower bound of admition rate - if not entered will be -1
+ * @param admitionRateT upper bound of admition rate - if not entered will be MAX_VALUE
+ * @param percentEnrolledB lower bound of percent Enrolled - if not entered will be -1
+ * @param percentEnrolledT upper bound of percent Enrolled - if not entered will be MAX_VALUE
+ * @param academicsB lower bound of academics - if not entered will be -1
+ * @param academicsT upper bound of academics - if not entered will be MAX_VALUE
+ * @param socialB lower bound of social - if not entered will be -1
+ * @param socialT upper bound of social - if not entered will be MAX_VALUE
+ * @param qualOfLifeB lower bound of quality of life - if not entered will be -1
+ * @param qualOfLifeT upper bound of quality of life - if not entered will be MAX_VALUE
+ */
  public Criteria(String name, String state, String location, String control, 
 		 int numStudentsB, int numStudentsT,
 		 float mfRatioB, float mfRatioT,

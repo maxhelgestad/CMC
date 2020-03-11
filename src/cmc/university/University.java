@@ -25,19 +25,22 @@ public class University {
    * University constructor
    * 
    * @param name school's name
+   * @param state state the school is in
+   * @param location the location of the school
+   * @param control public or private control of the school
    * @param mfRatio male to female ratio
    * @param numStudents the number of enrolled students
-   * @param control public or private control of the school
    * @param satVerbal average verbal SAT stat for given school
    * @param satMath average math SAT stat for school
    * @param expenses cost of school
    * @param financialAid the amount of financial aid offered by the school
+   * @param numApplicants number of applicants that apply to the school
    * @param admitionRate the admission rate of the school
    * @param percentEnrolled the percent of enrolled students
    * @param academics 1-5 rating of academics at a school
    * @param social 1-5 rating of school social life
-   * @param emphasis what the school is known for
-   * @param location the location of the school 
+   * @param qualOfLife 1-5 rating of quality of life at the school
+ 
    * 
    */
   public University(String name, String state, String location, String control, int numStudents,float mfRatio, float satVerbal,
