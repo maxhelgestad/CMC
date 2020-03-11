@@ -1,0 +1,244 @@
+add new account under name max helgestad
+------------------------------
+------------------------------
+Login was success(should be true): true
+Login was unsuccessful wrong passowrd(should be false): false
+Login was unsuccessful not a user(should be false): false
+------------------------------
+------------------------------
+Viewing the profile of username juser
+Firstname: John
+Lastname: User
+Username: juser
+Password: user
+Type: u 
+Status: y
+
+Viewing the profile of username maxh
+Firstname: Max
+Lastname: Helgestad
+Username: maxh
+Password: ilovemom
+Type: u 
+Status: y
+
+------------------------------
+------------------------------
+Searching and viewing results: Search Result should be VANDERBILT
+Name: VANDERBILT
+State: TENNESSEE
+ Male/Female Ratio: 50.0
+ Control: PRIVATE
+ Location: URBAN
+ Number of Students: 15000
+ SAT Verbal: 550.0
+ SAT Math: 600.0
+ Number of Applicants: 5500
+ Academics:4
+ Social: 3
+ Quality of Life: 4
+ Expenses: 25280.0
+ Financial Aid: 35.0
+ admition Rate: 60.0
+ Percent Enrolled: 25.0
+
+------------------------------
+------------------------------
+Edited user luser profile: to change Name to Laura Helgestad
+------------------------------
+------------------------------
+Printing off all of the users
+Firstname: John
+Lastname: User
+Username: juser
+Password: user
+Type: u 
+Status: y
+
+Firstname: Laura
+Lastname: Helgestad
+Username: luser
+Password: user2
+Type: u 
+Status: y
+
+Firstname: Max
+Lastname: Helgestad
+Username: maxh
+Password: ilovemom
+Type: u 
+Status: y
+
+------------------------------
+------------------------------
+Printing off all of the universities (limited to five)
+Name: ABILENE CHRISTIAN UNIVERSITY
+State: TEXAS
+ Male/Female Ratio: 50.0
+ Control: PRIVATE
+ Location: SUBURBAN
+ Number of Students: 10000
+ SAT Verbal: -1.0
+ SAT Math: -1.0
+ Number of Applicants: 4000
+ Academics:2
+ Social: 3
+ Quality of Life: 3
+ Expenses: 12088.0
+ Financial Aid: 70.0
+ admition Rate: 90.0
+ Percent Enrolled: 80.0
+
+Name: ADELPHI
+State: NEW YORK
+ Male/Female Ratio: 70.0
+ Control: PRIVATE
+ Location: -1
+ Number of Students: 15000
+ SAT Verbal: 500.0
+ SAT Math: 475.0
+ Number of Applicants: 5500
+ Academics:2
+ Social: 2
+ Quality of Life: 2
+ Expenses: 37437.0
+ Financial Aid: 60.0
+ admition Rate: 70.0
+ Percent Enrolled: 40.0
+
+Name: AMERICAN UNIVERSITY OF BEIRUT
+State: FOREIGN
+ Male/Female Ratio: 40.0
+ Control: PRIVATE
+ Location: URBAN
+ Number of Students: 10000
+ SAT Verbal: -1.0
+ SAT Math: -1.0
+ Number of Applicants: 5500
+ Academics:3
+ Social: 3
+ Quality of Life: 3
+ Expenses: 16403.0
+ Financial Aid: 20.0
+ admition Rate: 50.0
+ Percent Enrolled: 80.0
+
+Name: ARIZONA STATE
+State: ARIZONA
+ Male/Female Ratio: 50.0
+ Control: STATE
+ Location: -1
+ Number of Students: 40000
+ SAT Verbal: 450.0
+ SAT Math: 500.0
+ Number of Applicants: 17000
+ Academics:3
+ Social: 4
+ Quality of Life: 5
+ Expenses: 16181.0
+ Financial Aid: 50.0
+ admition Rate: 80.0
+ Percent Enrolled: 60.0
+
+Name: AUBURN
+State: ALABAMA
+ Male/Female Ratio: 21.0
+ Control: STATE
+ Location: SMALL-CITY
+ Number of Students: 35000
+ SAT Verbal: 480.0
+ SAT Math: 545.0
+ Number of Applicants: 5500
+ Academics:2
+ Social: 4
+ Quality of Life: 4
+ Expenses: 12468.0
+ Financial Aid: 50.0
+ admition Rate: 90.0
+ Percent Enrolled: 60.0
+
+------------------------------
+------------------------------
+Adding a school to the saved school list: juser added YALE
+Adding a school to the saved school list: juser added AUBURN
+------------------------------
+------------------------------
+Viewing Saved Schools for juser
+Name: AUBURN
+State: ALABAMA
+ Male/Female Ratio: 21.0
+ Control: STATE
+ Location: SMALL-CITY
+ Number of Students: 35000
+ SAT Verbal: 480.0
+ SAT Math: 545.0
+ Number of Applicants: 5500
+ Academics:2
+ Social: 4
+ Quality of Life: 4
+ Expenses: 12468.0
+ Financial Aid: 50.0
+ admition Rate: 90.0
+ Percent Enrolled: 60.0
+
+Name: YALE
+State: CONNECTICUT
+ Male/Female Ratio: 45.0
+ Control: PRIVATE
+ Location: SMALL-CITY
+ Number of Students: 10000
+ SAT Verbal: 675.0
+ SAT Math: 675.0
+ Number of Applicants: 11500
+ Academics:5
+ Social: 3
+ Quality of Life: 4
+ Expenses: 33014.0
+ Financial Aid: 40.0
+ admition Rate: 20.0
+ Percent Enrolled: 60.0
+
+------------------------------
+------------------------------
+removing a school from the saved school list: juser removed AUBURN
+------------------------------
+------------------------------
+Viewing Saved Schools after removing AUBURN
+Name: YALE
+State: CONNECTICUT
+ Male/Female Ratio: 45.0
+ Control: PRIVATE
+ Location: SMALL-CITY
+ Number of Students: 10000
+ SAT Verbal: 675.0
+ SAT Math: 675.0
+ Number of Applicants: 11500
+ Academics:5
+ Social: 3
+ Quality of Life: 4
+ Expenses: 33014.0
+ Financial Aid: 40.0
+ admition Rate: 20.0
+ Percent Enrolled: 60.0
+
+------------------------------
+------------------------------
+View the school page for BARD
+Name: BARD
+State: NEW YORK
+ Male/Female Ratio: 55.0
+ Control: PRIVATE
+ Location: SMALL-CITY
+ Number of Students: 10000
+ SAT Verbal: 560.0
+ SAT Math: 520.0
+ Number of Applicants: 4000
+ Academics:3
+ Social: 4
+ Quality of Life: 4
+ Expenses: 32239.0
+ Financial Aid: 80.0
+ admition Rate: 70.0
+ Percent Enrolled: 30.0
+------------------------------
+------------------------------
