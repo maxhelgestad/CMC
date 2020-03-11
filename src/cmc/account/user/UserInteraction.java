@@ -119,8 +119,8 @@ public class UserInteraction {
   * @param schoolName the original school
   * @return an array list of universities that are similar (five)
   */
- public static float[] displaySimilarSchools(String schoolName) {
-  return UniversityController.getSimilarSchoolRatings(schoolName);
-  
- }
+// public static float[] displaySimilarSchools(String schoolName) {
+//  return UniversityController.getSimilarSchoolRatings(schoolName);
+//  
+// }
 }

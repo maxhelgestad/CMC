@@ -55,26 +55,26 @@ public class UniversityController {
   return DatabaseController.getUniversities();
  }
  
- public static float[] getSimilarSchoolRatings(String schoolName)
- {
-	 ArrayList<University> u = DatabaseController.getUniversities();
-	 float first = 0;
-	 float second = 0;
-	 float third = 0;
-	 float four = 0;
-	 float five = 0;
-	 float[] ratings = new float[]{r1,r2,r3,r4,r5};
-	 for (int i =0; i < u.size(); i++ ) {
-		 float in = University.similarity(schoolName, u.get(i).getName());
-		 if (in < five) {
-			 
-		 }
-	 }
-	 
-  
-  
-  
-  return ratings;
- }
+// public static float[] getSimilarSchoolRatings(String schoolName)
+// {
+//	 ArrayList<University> u = DatabaseController.getUniversities();
+//	 float first = 0;
+//	 float second = 0;
+//	 float third = 0;
+//	 float four = 0;
+//	 float five = 0;
+//	 float[] ratings = new float[]{r1,r2,r3,r4,r5};
+//	 for (int i =0; i < u.size(); i++ ) {
+//		 float in = University.similarity(schoolName, u.get(i).getName());
+//		 if (in < five) {
+//			 
+//		 }
+//	 }
+//	 
+//  
+//  
+//  
+//  return ratings;
+// }
 
 }
