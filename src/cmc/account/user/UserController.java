@@ -79,8 +79,8 @@ public class UserController {
 	 * @param userName the user looking for saved schools
 	 * @return the ArrayList of schools saved by the user
 	 */
-	public static ArrayList<University> getSavedSchoolList(String userName) {
-		return DatabaseController.getSavedSchools(userName);
+	public static ArrayList<University> getSavedSchoolList(String username) {
+		return DatabaseController.getSavedSchools(username);
 	}
 
 	/**

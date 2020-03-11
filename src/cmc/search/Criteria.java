@@ -27,6 +27,7 @@ public class Criteria {
  private int academics;
  private int social;
  private int qualOfLife;
+ private int numOfApplicants;
 
  /**
   * criteria constructor
@@ -260,6 +261,20 @@ public int getQualOfLife() {
  */
 public void setQualOfLife(int qualOfLife) {
 	this.qualOfLife = qualOfLife;
+}
+
+/**
+ * @return the numOfApplicants
+ */
+public int getNumOfApplicants() {
+	return numOfApplicants;
+}
+
+/**
+ * @param numOfApplicants the numOfApplicants to set
+ */
+public void setNumOfApplicants(int numOfApplicants) {
+	this.numOfApplicants = numOfApplicants;
 }
 
 }
