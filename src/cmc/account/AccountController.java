@@ -5,7 +5,10 @@ import java.util.List;
 
 import cmc.database.DatabaseController;
 
-/**Controller of the accounts
+/**
+ * Account Controller handles communication with the DatabaseController/Database on anything
+ * having anything to do Accounts (Users/Admins)
+ * 
  * @author mli001
  *
  */

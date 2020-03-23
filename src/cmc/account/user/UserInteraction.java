@@ -11,7 +11,7 @@ import cmc.university.UniversityController;
 
 
 /**
- * Controller class for user interactions with the CMC Website
+ * Class for Users to interact with the system
  * 
  * @author javengers
  *
@@ -119,8 +119,8 @@ public class UserInteraction {
   * @param schoolName the original school
   * @return an array list of universities that are similar (five)
   */
- public static float[] displaySimilarSchools(String schoolName) {
-  return UniversityController.getSimilarSchoolRatings(schoolName);
-  
- }
+// public static float[] displaySimilarSchools(String schoolName) {
+//  return UniversityController.getSimilarSchoolRatings(schoolName);
+//  
+// }
 }

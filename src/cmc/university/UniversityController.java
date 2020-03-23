@@ -11,17 +11,13 @@ import java.lang.Math;
  */
 
 /**
+ * University Controller handles communication with the DatabaseController/Database on anything
+ * having anything to do with Universities
+ * 
  * @author vkahlhame001
  *
  */
 public class UniversityController {
-
- /**
-  * 
-  */
- public UniversityController() {
-  // TODO Auto-generated constructor stub
- }
  
  /**
   * Admin function to  add university to the database
@@ -59,17 +55,26 @@ public class UniversityController {
   return DatabaseController.getUniversities();
  }
  
- public static float[] getSimilarSchoolRatings(String schoolName)
- {
-  float r1 = University.similarity(schoolName, "CSB");
-  float r2 = University.similarity(schoolName, "UST");
-  float r3 = University.similarity(schoolName, "hi");
-  float r4 = University.similarity(schoolName, "max");
-  float r5 = University.similarity(schoolName, "UMN");
-  float[] ratings = new float[]{r1,r2,r3,r4,r5};
-  
-  
-  return ratings;
- }
+// public static float[] getSimilarSchoolRatings(String schoolName)
+// {
+//	 ArrayList<University> u = DatabaseController.getUniversities();
+//	 float first = 0;
+//	 float second = 0;
+//	 float third = 0;
+//	 float four = 0;
+//	 float five = 0;
+//	 float[] ratings = new float[]{r1,r2,r3,r4,r5};
+//	 for (int i =0; i < u.size(); i++ ) {
+//		 float in = University.similarity(schoolName, u.get(i).getName());
+//		 if (in < five) {
+//			 
+//		 }
+//	 }
+//	 
+//  
+//  
+//  
+//  return ratings;
+// }
 
 }

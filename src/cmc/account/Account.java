@@ -5,6 +5,8 @@ package cmc.account;
  */
 
 /**
+ * Class to construct and modify Account objects. This class is the superclass for the User and Admin classes
+ * 
  * @author mhelgesta001
  *
  */
@@ -101,15 +103,7 @@ public class Account {
 		this.password = password;
 	}
 	
-	/**
-	 * sets the first name for an account
-	 * 
-	 * @param firstname first name to update
-	 */
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	
+
 
 	/**Returns the type of the account
 	 * 
@@ -124,7 +118,7 @@ public class Account {
 	 * @return String of all the information of the user
 	 */
 	public String toString() {
-		return "Firstname: " + firstname + "\nLastname: " + lastName + "\nUsername: "+username + "\nPassword: " + password + "\n";
+		return "Firstname: " + firstname + "\nLastname: " + lastName + "\nUsername: "+username + "\nPassword: " + password + "\nType: " + type +" \nStatus: " + status + "\n";
 	}
 
 	/**
