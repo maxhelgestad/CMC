@@ -176,9 +176,9 @@ public class Driver {
 		//for (int i = 0; i < users.size(); i++) {
 		//	pw.println(users.get(i).toString());
 		//}
-		//AdminInteraction.editUser("sammy", "password", "Sammy", "Password");
+		//AdminInteraction.editProfile(*username*, *newPassword*, *newFirstname*, *newLastname*, *newType*, *newStatus*);
 
-		//AdminInteraction.editUser("james", "12345", "James", "123456");
+		//AdminInteraction.editProfile(*username*, *newPassword*, *newFirstname*, *newLastname*, *newType*, *newStatus*);
 
 		//pw.println("(Updated Username and Password)");
 		//for (int i = 0; i < users.size(); i++) {
