@@ -23,14 +23,10 @@ import cmc.university.University;
 public class Driver {
 
 	/**
-	 * @param args
-	 * @throws FileNotFoundException 
-	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	 * @param args arguments
+     */
+	public static void main(String[] args) {
 		DatabaseController.setUp("javengers", "csci230");
-		File file = new File("output.txt");
-		
-		PrintWriter pw = new PrintWriter(file);
 		
 		// (Admin) Add a new User
 		System.out.println("add new account under name max helgestad");
@@ -130,7 +126,7 @@ public class Driver {
 		System.out.println("removing a school from the saved school list: juser removed AUBURN");
 		// (User) Remove a saved school from the saved shcools list            
 		System.out.println("------------------------------");
-		System.out.println("------------------------------");//U7 Remove School from Saved School list
+		System.out.println("------------------------------");                                                     //U7 Remove School from Saved School list
 		UserInteraction.removeSchool("juser", "AUBURN");
 		
 		//(User) View Saved Schools  																					//U4 View Saved School List
@@ -212,8 +208,7 @@ public class Driver {
 		
 		
 		
-		
-          pw.close();
+	
 		}
 		
 	}
