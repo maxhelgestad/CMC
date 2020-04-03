@@ -46,7 +46,7 @@ public class UserController {
 	public static boolean addUser(String username, String password, String firstname, String lastname, char type, char status) {
 		User u = new User(username, password, firstname, lastname, type, status);
 
-		DatabaseController.addUser(u);
+		DatabaseController.addAccount(username, password, firstname, lastname, type, status);
 		return true;
 	}
 	
