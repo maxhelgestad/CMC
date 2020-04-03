@@ -141,6 +141,16 @@ public class DatabaseController {
 	 * @return an ArrayList of universities that the specified user has saved
 	 */
 	public static ArrayList<University> getSavedSchools(String username){
+		if (username != null && username != "")
+		{
+			//String[][] users = lib.user_getUsers();
+			//for (int n = 0; n < users.length; n++)
+			//{
+				//if(users[n][2].equals(username))
+				//{
+					
+				//}
+			//}
 		  String[][] saved = lib.user_getUsernamesWithSavedSchools();
 		  ArrayList<String> s = new ArrayList<String>();
 		  for (int i = 0; saved.length > i; i++) {
@@ -157,8 +167,17 @@ public class DatabaseController {
 					  result.add(getUniversity(saved[i][j]));
 				  }
 			  }
+			  else
+			  {
+				  result = null;
+			  }
 		  }
 		return result;
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	/**
