@@ -221,6 +221,41 @@ public class DatabaseController {
 		return allAccounts;	
 		
 	}
+	
+	/**
+	 * method to add a university to the database
+	 * 
+	 * @param name
+	 * @param state
+	 * @param location
+	 * @param control
+	 * @param numStudents
+	 * @param mfratio
+	 * @param SATVerbal
+	 * @param SATMath
+	 * @param expenses
+	 * @param financialAid
+	 * @param numApplicants
+	 * @param percentAdmitted
+	 * @param percentEnrolled
+	 * @param academics
+	 * @param social
+	 * @param qualOfLife
+	 */
+	public static void addUniversity(String name, String state, String location, String control, int numStudents, float mfratio, float SATVerbal, float SATMath, float expenses,
+			float financialAid, int numApplicants, float percentAdmitted, float percentEnrolled, int academics, int social, int qualOfLife) {
+		lib.university_addUniversity(name, state, location, control, numStudents, mfratio, SATVerbal, SATMath, expenses, financialAid, numApplicants, percentAdmitted, percentEnrolled, 
+				academics, social, qualOfLife);
+	}
+	
+	/**
+	 * method to delete a university from the database
+	 * 
+	 * @param name name of the school to be deleted
+	 */
+	public static void deleteUniversity(String name) {
+		lib.university_deleteUniversity(name);
+	}
 
 
 }
