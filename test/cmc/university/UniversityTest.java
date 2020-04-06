@@ -1,4 +1,4 @@
-package cmc.University;
+package cmc.university;
 
 import static org.junit.Assert.*;
 
