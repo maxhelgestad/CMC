@@ -225,9 +225,9 @@ public class DatabaseController {
 	/**
 	 * method to add a university to the database
 	 * 
-	 * @param name
-	 * @param state
-	 * @param location
+	 * @param name - name of the school
+	 * @param state - state the school is in
+	 * @param location - 
 	 * @param control
 	 * @param numStudents
 	 * @param mfratio
