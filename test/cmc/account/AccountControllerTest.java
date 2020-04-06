@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author mli001
  *
  */
-public class AccountController {
+public class AccountControllerTest {
 
 	/**
 	 * @throws java.lang.Exception
