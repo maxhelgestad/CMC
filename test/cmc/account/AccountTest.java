@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cmc.account.user;
+package cmc.account;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author mli001
  *
  */
-public class UserTest {
+public class AccountTest {
 
 	/**
 	 * @throws java.lang.Exception
