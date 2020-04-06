@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import cmc.database.DatabaseController;
+import cmc.search.Criteria;
+import cmc.search.SearchController;
 import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")

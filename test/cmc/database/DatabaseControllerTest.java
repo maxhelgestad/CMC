@@ -29,10 +29,12 @@ public class DatabaseControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
+
 		//AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');
 		AdminInteraction.addAccount("Tom","Jerryson","TandJ", "tomandjerry",'u','Y');
 		UserInteraction.saveSchool("TandJ", "BARD"); 
 		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
+
 	}
 
 	/**
@@ -58,10 +60,12 @@ public class DatabaseControllerTest {
 		
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList("") == null);
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList(null) == null);
+
 		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("tandj") == null);
 		//Assert.assertEquals(savedSchools, UserController.getSavedSchoolList("TandJ"));
 		//Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("TandJ"));
 		Assert.assertEquals(savedSchools, DatabaseController.getSavedSchools("TandJ"));
+
 	}
 
 }
