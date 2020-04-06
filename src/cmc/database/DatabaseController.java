@@ -1,13 +1,9 @@
 package cmc.database;
 
-import java.awt.List;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import cmc.account.Account;
-import cmc.account.user.User;
-import cmc.search.Criteria;
 import cmc.university.University;
 import dblibrary.project.csci230.UniversityDBLibrary;
 /**
