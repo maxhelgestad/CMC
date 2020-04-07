@@ -21,7 +21,7 @@ public class UserControllerTest {
 		v = DatabaseController.lookupAccount("vincent");
 		
 		UserController.addUser("austin", "brandecker", "austin", "password", 'u', 'Y');
-		a1 = DatabaseController.lookupAccount("abrand");
+		a1 = DatabaseController.lookupAccount("austin");
 	}
 
 	@After
@@ -39,6 +39,7 @@ public class UserControllerTest {
 	public void testEditProfile() {
 		
 		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
+		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));

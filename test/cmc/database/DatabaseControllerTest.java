@@ -68,8 +68,9 @@ public class DatabaseControllerTest {
 	@Test
 	public void testGetUniversity() {
 		
-		
-		
+		Assert.assertTrue("Name in the system", DatabaseController.getUniversity("BARD").getName().equals("BARD"));
+		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
+		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 	}
 
 }
