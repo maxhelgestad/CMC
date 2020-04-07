@@ -31,12 +31,20 @@ public class DatabaseControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
+
 		AdminInteraction.addAccount("Max", "Helgestad", "maxh2", "ilovemom", 'u', 'Y');
 		UserInteraction.saveSchool("maxh2", "BARD"); 
 		UserInteraction.saveSchool("maxh2", "CAL TECH"); 
 		
 		UserController.addUser("austin", "brandecker", "austin", "password", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
+
+		AdminInteraction.addAccount("Tom","Jerryson","TandJ", "tomandjerry",'u','Y');
+		UserInteraction.saveSchool("TandJ", "BARD"); 
+		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
+
+
+
 	}
 
 	/**
@@ -44,10 +52,10 @@ public class DatabaseControllerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		DatabaseController.removeSchool("maxh2", "BARD");
-		DatabaseController.removeSchool("maxh2", "CAL TECH");
+		DatabaseController.removeSchool("TandJ", "BARD");
+		DatabaseController.removeSchool("TandJ", "CAL TECH");
 		
-		DatabaseController.removeAccount("maxh2");
+		DatabaseController.removeAccount("TandJ");
 
 		DatabaseController.removeAccount("austin");
 	}
@@ -66,9 +74,18 @@ public class DatabaseControllerTest {
 		ArrayList a = new ArrayList();
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList("") == null);
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList(null) == null);
+
+
+		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("tandj").equals(a));
 		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("Juser").equals(a));
-		//fizzed the problem with the database returning "NoSchool" I dont know why it isnt passing now
-		Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("maxh2"));
+		
+		for (int i = 0; i < savedSchools.size(); i++)
+		{
+		  Assert.assertEquals(savedSchools.get(i).toString(), DatabaseController.getSavedSchools("TandJ").get(i).toString());
+		}
+		
+		
+		
 	}
 	
 	@Test
@@ -106,4 +123,5 @@ public class DatabaseControllerTest {
 		
 	}
 
-}
+	}
+

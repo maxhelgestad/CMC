@@ -173,7 +173,8 @@ public class DatabaseController {
 						  result.add(getUniversity(saved[i][j]));
 					  }
 				  }
-			  }
+			  }			  
+
 		  }
 		  return result;
 		}
