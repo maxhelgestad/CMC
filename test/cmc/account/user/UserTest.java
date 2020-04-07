@@ -50,9 +50,4 @@ public class UserTest {
 		Assert.assertEquals("Password", a1.getPassword());
 
 	}
-
-	@Test
-	public void testRemoveSchool() {
-		
-	}
 }
