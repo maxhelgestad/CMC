@@ -37,6 +37,9 @@ public class UserTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		DatabaseController.removeAccount("abrand");
+		DatabaseController.removeAccount("brich");
+		DatabaseController.removeAccount("jkost");
 	}
 
 	@SuppressWarnings("deprecation")

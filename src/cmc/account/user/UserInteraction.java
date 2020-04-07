@@ -99,10 +99,8 @@ public class UserInteraction {
   * @param status the status of the user
   */
  public static void viewToEditProfile(String username, String newPassword, String newFirstName, String newLastName, char type, char status) {
-	  Account A = DatabaseController.lookupAccount(username);
-	  char t = A.getType();
-	  char s = A.getStatus();
-	 UserController.viewToEditProfile(username, newPassword, newFirstName, newLastName, t, s);
+	  
+	 UserController.viewToEditProfile(username, newPassword, newFirstName, newLastName, type, status);
  }
  
  /**

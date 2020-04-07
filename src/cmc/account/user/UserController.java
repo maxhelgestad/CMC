@@ -139,7 +139,10 @@ public class UserController {
 	 * @param status of user
 	 */
 	public static void viewToEditProfile(String username, String newPassword, String newFirstName, String newLastName, char type, char status) {
-		DatabaseController.userEdit(username, newPassword, newFirstName, newLastName, type, status);
+		Account A = DatabaseController.lookupAccount(username);
+		  char t = A.getType();
+		  char s = A.getStatus();
+		DatabaseController.userEdit(username, newPassword, newFirstName, newLastName, t, s);
 	}
 
 	/**

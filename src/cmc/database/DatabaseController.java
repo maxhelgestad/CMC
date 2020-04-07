@@ -79,8 +79,12 @@ public class DatabaseController {
 	 */
 	public static void userEdit(String username, String newPassword, String newFirstName, String newLastName,
 			char type, char status) {
-		
-		lib.user_editUser(username, newFirstName, newLastName, newPassword, type, status);
+		Account a = DatabaseController.lookupAccount(username);
+		if (a != null) {
+		if (newPassword != "" || newFirstName != "" || newLastName != "") {
+			lib.user_editUser(username, newFirstName, newLastName, newPassword, type, status);
+		}
+		}
 	}
 	
 
