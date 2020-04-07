@@ -80,7 +80,7 @@ public class DatabaseController {
 	public static void userEdit(String username, String newPassword, String newFirstName, String newLastName,
 			char type, char status) {
 		
-		lib.user_editUser(username, newPassword, newFirstName, newLastName, type, status);
+		lib.user_editUser(username, newFirstName, newLastName, newPassword, type, status);
 	}
 	
 
