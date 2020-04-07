@@ -29,9 +29,6 @@ public class DatabaseControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
-
-
-		//AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');
 		AdminInteraction.addAccount("Tom","Jerryson","TandJ", "tomandjerry",'u','Y');
 		UserInteraction.saveSchool("TandJ", "BARD"); 
 		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
@@ -44,10 +41,10 @@ public class DatabaseControllerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		DatabaseController.removeSchool("maxh2", "BARD");
-		DatabaseController.removeSchool("maxh2", "CAL TECH");
+		DatabaseController.removeSchool("TandJ", "BARD");
+		DatabaseController.removeSchool("TandJ", "CAL TECH");
 		
-		DatabaseController.removeAccount("maxh2");
+		DatabaseController.removeAccount("TandJ");
 
 	
 	}
@@ -68,13 +65,16 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList(null) == null);
 
 
-		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("tandj") == null);
-		//Assert.assertEquals(savedSchools, UserController.getSavedSchoolList("TandJ"));
-		//Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("TandJ"));
-		Assert.assertEquals(savedSchools, DatabaseController.getSavedSchools("TandJ"));
+		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("tandj").equals(a));
 		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("Juser").equals(a));
-		//fizzed the problem with the database returning "NoSchool" I dont know why it isnt passing now
-		Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("maxh2"));
+		
+		for (int i = 0; i < savedSchools.size(); i++)
+		{
+		  Assert.assertEquals(savedSchools.get(i).toString(), DatabaseController.getSavedSchools("TandJ").get(i).toString());
+		}
+		
+		
+		
 	}
 	
 	@Test

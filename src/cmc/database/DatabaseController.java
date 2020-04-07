@@ -169,11 +169,8 @@ public class DatabaseController {
 						  result.add(getUniversity(saved[i][j]));
 					  }
 				  }
-			  }
-<<<<<<< HEAD
-			  
-=======
->>>>>>> add0670d98de7623810e156ba0ad8380fdad20db
+			  }			  
+
 		  }
 		  return result;
 		}
