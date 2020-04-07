@@ -68,7 +68,7 @@ public class DatabaseController {
 	}
 	
 	/**
-	 * Method for user to edit their profile
+	 * Method for user to edit their profile, username, type, and status cannot be changed
 	 * 
 	 * @param username the user to edit
 	 * @param newPassword the updated password
