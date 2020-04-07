@@ -85,5 +85,4 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 
 	}
-
 }
