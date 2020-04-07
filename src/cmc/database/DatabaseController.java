@@ -43,7 +43,8 @@ public class DatabaseController {
 		
 		for (int i = 0; i < accounts.size(); i++)
 		{
-			if(accounts.get(i).getFirstname().equals(username))
+			//System.out.println(accounts.get(i).getUsername() + " " + username);
+			if(accounts.get(i).getUsername().equals(username))
 			{
 				ac = accounts.get(i);
 			}
@@ -77,7 +78,7 @@ public class DatabaseController {
 	 * @param status y for active, n for inactive
 	 */
 	public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
-		lib.user_addUser(firstName, lastName, username, password, type);
+		int i = lib.user_addUser(firstName, lastName, username, password, type);
 	}
 	
 	/**
@@ -201,11 +202,13 @@ public class DatabaseController {
 	public static ArrayList<Account> getAccounts(){
 		String[][] a = lib.user_getUsers();
 		ArrayList<String> ac = new ArrayList<String>();
-		for (int i = 1; a.length > i; i++) {
+		
+		for (int i = 0; a.length > i; i++) {
 			ac.add(Arrays.toString(a[i]));
 		}
 		
 		ArrayList<Account> allAccounts = new ArrayList<Account>();
+		
 		for (int i = 0; ac.size() > i; i++) {
 			char[] ch1 = a[i][4].toCharArray();
 			char[] ch2 = a[1][5].toCharArray();

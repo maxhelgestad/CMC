@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.admin.AdminInteraction;
+import cmc.account.user.UserController;
 import cmc.account.user.UserInteraction;
 import cmc.database.DatabaseController;
 import cmc.search.Criteria;
@@ -210,8 +211,7 @@ public class Driver {
 		//UserInteraction.showSchoolPage("SJU"PrintWriter(String fileName)  
 		
 		
-		
-	
+
 		}
 		
 	}

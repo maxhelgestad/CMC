@@ -11,25 +11,22 @@ import cmc.database.DatabaseController;
 import junit.framework.Assert;
 @SuppressWarnings("deprecation")
 public class UserControllerTest {
-
+	Account v;
 	@Before
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 		UserController.addUser("vincent", "password", "vincent", "ka", 'u', 'y');
-		Account v = DatabaseController.lookupAccount("juser");
-		System.out.println(v);
+		v = DatabaseController.lookupAccount("vincent");
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		
+		DatabaseController.removeAccount("vincent");
 	}
 
 	@Test
 	public void testAddNewUser() {
-		//count v = DatabaseController.lookupAccount("vincent");
-		//stem.out.println(v);
-		//sert.assertTrue("checks to see if new user was created" + v.getFirstname(),  v.getFirstname() == "vincent");
+		Assert.assertTrue("checks to see if new user was created", v.getFirstname().equals("vincent"));
 	}
 
 }
