@@ -12,6 +12,7 @@ import org.junit.Test;
 import cmc.account.admin.AdminInteraction;
 import cmc.account.user.UserInteraction;
 import cmc.database.DatabaseController;
+import cmc.search.SearchController;
 import cmc.university.University;
 import junit.framework.Assert;
 
@@ -33,6 +34,6 @@ public class UniversityControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testgetSavedSchools() {
-
+		Assert.assertTrue("making sure we can pass a test",  1 == 1);
 	}
 }

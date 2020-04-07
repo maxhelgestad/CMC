@@ -40,8 +40,10 @@ public class DatabaseController {
 	public static Account lookupAccount(String username) {
 		ArrayList<Account> accounts = DatabaseController.getAccounts();
 		Account ac = noUser;
+		
 		for (int i = 0; i < accounts.size(); i++)
 		{
+			//System.out.println(accounts.get(i).getUsername() + " " + username);
 			if(accounts.get(i).getUsername().equals(username))
 			{
 				ac = accounts.get(i);
@@ -93,7 +95,7 @@ public class DatabaseController {
 	 * @param status y for active, n for inactive
 	 */
 	public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
-		lib.user_addUser(firstName, lastName, username, password, type);
+		int i = lib.user_addUser(firstName, lastName, username, password, type);
 	}
 	
 	/**
@@ -132,8 +134,7 @@ public class DatabaseController {
 	 * @param username the user to save the school to
 	 * @param schoolName The school to save to the user
 	 */
-	public static void saveSchool(String username, String schoolName)
-	{
+	public static void saveSchool(String username, String schoolName) {
 		lib.user_saveSchool(username, schoolName);
 	}
 	
@@ -143,8 +144,7 @@ public class DatabaseController {
 	 * @param username the user to remove the school from
 	 * @param schoolName the school to remove
 	 */
-	public static void removeSchool(String username, String schoolName)
-	{
+	public static void removeSchool(String username, String schoolName) {
 		lib.user_removeSchool(username, schoolName);
 	}
 	/**
@@ -156,32 +156,24 @@ public class DatabaseController {
 	public static ArrayList<University> getSavedSchools(String username){
 		if (username != null && username != "")
 		{
-			
 		  String[][] saved = lib.user_getUsernamesWithSavedSchools();
 		  ArrayList<String> s = new ArrayList<String>();
 		  for (int i = 0; saved.length > i; i++) {
 				s.add(Arrays.toString(saved[i]));
-			}
-		  
+		  }
 		  ArrayList<University> result = new ArrayList<University>();
-		  for(int i = 0; i < s.size(); i++)
-		  {
-			 
-			  if(saved[i][0].equals(username))
-			  {
+		  for(int i = 0; i < s.size(); i++){ 
+			  if(saved[i][0].equals(username)){
 				  for(int j = 0; j < saved[i].length;j++) {
-					  result.add(getUniversity(saved[i][j]));
+					  if (!getUniversity(saved[i][j]).getName().equals("NoUniversity")) {
+						  result.add(getUniversity(saved[i][j]));
+					  }
 				  }
 			  }
-			  else
-			  {
-				  result = null;
-			  }
 		  }
-		return result;
+		  return result;
 		}
-		else
-		{
+		else{
 			return null;
 		}
 	}
@@ -220,11 +212,13 @@ public class DatabaseController {
 	public static ArrayList<Account> getAccounts(){
 		String[][] a = lib.user_getUsers();
 		ArrayList<String> ac = new ArrayList<String>();
-		for (int i = 1; a.length > i; i++) {
+		
+		for (int i = 0; a.length > i; i++) {
 			ac.add(Arrays.toString(a[i]));
 		}
 		
 		ArrayList<Account> allAccounts = new ArrayList<Account>();
+		
 		for (int i = 0; ac.size() > i; i++) {
 			char[] ch1 = a[i][4].toCharArray();
 			char[] ch2 = a[1][5].toCharArray();

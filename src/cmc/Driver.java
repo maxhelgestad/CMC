@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.admin.AdminInteraction;
+import cmc.account.user.UserController;
 import cmc.account.user.UserInteraction;
 import cmc.database.DatabaseController;
 import cmc.search.Criteria;
@@ -27,6 +28,7 @@ public class Driver {
      */
 	public static void main(String[] args) {
 		DatabaseController.setUp("javengers", "csci230");
+		
 		
 		// (Admin) Add a new User
 		System.out.println("add new account under name max helgestad");
@@ -111,12 +113,14 @@ public class Driver {
 		
 		//(User) View Saved Schools  																					//U4 View Saved School List
 		System.out.println("Viewing Saved Schools for juser");
-		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser");                   
-		for (int i = 0; i < savedSchools.size(); i++) {
-			University u = savedSchools.get(i);
-			if (!u.getName().equals("NoUniversity")) {
-			System.out.println(savedSchools.get(i).toString());
-			System.out.println();
+		ArrayList<University> savedSchools = UserInteraction.showSavedSchoolList("juser"); 
+		if (savedSchools.size() > 0) {
+			for (int i = 0; i < savedSchools.size(); i++) {
+				University u = savedSchools.get(i);
+				if (!u.getName().equals("NoUniversity")) {
+					System.out.println(savedSchools.get(i).toString());
+					System.out.println();
+				}
 			}
 		}
 		System.out.println("------------------------------");
@@ -207,8 +211,7 @@ public class Driver {
 		//UserInteraction.showSchoolPage("SJU"PrintWriter(String fileName)  
 		
 		
-		
-	
+
 		}
 		
 	}

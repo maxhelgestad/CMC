@@ -28,14 +28,6 @@ import cmc.university.University;
 
 public class UserController {
 
-	// private List<User> regularUsers = new ArrayList<User>();
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-	}
 
 	/**
 	  * Add a new user  
@@ -43,20 +35,11 @@ public class UserController {
 	  * @param u user to be added
 	  */
 	
-	public static boolean addUser(String username, String password, String firstname, String lastname, char type, char status) {
-		User u = new User(username, password, firstname, lastname, type, status);
-
-		DatabaseController.addAccount(username, password, firstname, lastname, type, status);
+	public static boolean addUser(String firstname, String lastname, String username, String password, char type, char status) {
+		DatabaseController.addAccount(firstname, lastname, username, password, type, status);
 		return true;
 	}
 	
-	/**
-	  * Edit an existing user  
-	  *
-	  * @param u user to be added
-	  */
-
-
 
 	/**
 	 * Edits the users username and password
@@ -132,9 +115,6 @@ public class UserController {
 	 */
 	public static void saveSchool(String username, String schoolName) {
 		DatabaseController.saveSchool(username, schoolName);
-	}
-
-	public static void viewProfile() {
 	}
 	
 	/**
