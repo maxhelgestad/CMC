@@ -117,8 +117,7 @@ public class DatabaseController {
 	 * @param username the user to save the school to
 	 * @param schoolName The school to save to the user
 	 */
-	public static void saveSchool(String username, String schoolName)
-	{
+	public static void saveSchool(String username, String schoolName) {
 		lib.user_saveSchool(username, schoolName);
 	}
 	
@@ -128,8 +127,7 @@ public class DatabaseController {
 	 * @param username the user to remove the school from
 	 * @param schoolName the school to remove
 	 */
-	public static void removeSchool(String username, String schoolName)
-	{
+	public static void removeSchool(String username, String schoolName) {
 		lib.user_removeSchool(username, schoolName);
 	}
 	/**
@@ -141,29 +139,24 @@ public class DatabaseController {
 	public static ArrayList<University> getSavedSchools(String username){
 		if (username != null && username != "")
 		{
-			
 		  String[][] saved = lib.user_getUsernamesWithSavedSchools();
 		  ArrayList<String> s = new ArrayList<String>();
 		  for (int i = 0; saved.length > i; i++) {
 				s.add(Arrays.toString(saved[i]));
-			}
-		  
+		  }
 		  ArrayList<University> result = new ArrayList<University>();
-		  for(int i = 0; i < s.size(); i++)
-		  {
-			 
-			  if(saved[i][0].equals(username))
-			  {
+		  for(int i = 0; i < s.size(); i++){ 
+			  if(saved[i][0].equals(username)){
 				  for(int j = 0; j < saved[i].length;j++) {
-					  result.add(getUniversity(saved[i][j]));
+					  if (!getUniversity(saved[i][j]).getName().equals("NoUniversity")) {
+						  result.add(getUniversity(saved[i][j]));
+					  }
 				  }
 			  }
-
 		  }
-		return result;
+		  return result;
 		}
-		else
-		{
+		else{
 			return null;
 		}
 	}
