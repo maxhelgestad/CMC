@@ -27,7 +27,7 @@ public class UserControllerTest {
 	@After
 	public void tearDown() throws Exception {
 		DatabaseController.removeAccount("vincent");
-		DatabaseController.removeAccount("abrand");
+		DatabaseController.removeAccount("austin");
 	}
 
 	@Test
