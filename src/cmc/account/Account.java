@@ -113,6 +113,14 @@ public class Account {
 		return this.type;
 		
 	}
+	/**
+	 * returns the status of account
+	 * 
+	 * @return status of account
+	 */
+	public char getStatus() {
+		return this.status;
+	}
 	/**Returns a string containing the information about the user
 	 * 
 	 * @return String of all the information of the user

@@ -68,6 +68,23 @@ public class DatabaseController {
 			char newType, char newStatus) {
 		lib.user_editUser(username, newFirstName, newLastName, newPassword, newType, newStatus);
 	}
+	
+	/**
+	 * Method for user to edit their profile
+	 * 
+	 * @param username the user to edit
+	 * @param newPassword the updated password
+	 * @param newFirstName the updated first name of the user
+	 * @param newLastName the updated last name of the user
+	 * @param type of user
+	 * @param staus of user
+	 */
+	public static void userEdit(String username, String newPassword, String newFirstName, String newLastName,
+			char type, char status) {
+		
+		lib.user_editUser(username, newPassword, newFirstName, newLastName, type, status);
+	}
+	
 
 	/**
 	 * Method for admins to add new accounts to the system

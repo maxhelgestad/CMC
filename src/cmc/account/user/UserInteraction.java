@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cmc.account.Account;
 import cmc.account.AccountController;
+import cmc.database.DatabaseController;
 import cmc.search.Criteria;
 import cmc.search.SearchController;
 import cmc.university.University;
@@ -90,13 +91,18 @@ public class UserInteraction {
  /**
   * Changes the username and Password of a user
   * 
-  * @param username to be changed
-  * @param password to be chaanged
-  * @param newUsername to be new username
-  * @param newPassword to be new username
+  * @param username of user
+  * @param newPassword to be new password
+  * @param newFirstName to be new first name
+  * @param newLastName to be new last name
+  * @param type the type of the user
+  * @param status the status of the user
   */
- public static void viewToEditProfile(String username, String newUsername, String newPassword, String newFirstName, String newLastName) {
-	 UserController.viewToEditProfile(username, newUsername, newPassword, newFirstName, newLastName);
+ public static void viewToEditProfile(String username, String newPassword, String newFirstName, String newLastName, char type, char status) {
+	  Account A = DatabaseController.lookupAccount(username);
+	  char t = A.getType();
+	  char s = A.getStatus();
+	 UserController.viewToEditProfile(username, newPassword, newFirstName, newLastName, t, s);
  }
  
  /**

@@ -149,14 +149,17 @@ public class UserController {
 	}
 
 	/**
+	 * Method for user to edit profile
 	 * 
-	 * @param username
-	 * @param password
-	 * @param newUsername
-	 * @param newPassword
+	 * @param username of user to be edited
+	 * @param newPassword of user
+	 * @param newFirstName of user
+	 * @param newLastName of user
+	 * @param type of user
+	 * @param status of user
 	 */
-	public static void viewToEditProfile(String username, String newUsername, String newPassword, String newFirstName, String newLastName) {
-		User.editProfile(username, newUsername, newPassword, newFirstName, newLastName);
+	public static void viewToEditProfile(String username, String newPassword, String newFirstName, String newLastName, char type, char status) {
+		DatabaseController.userEdit(username, newPassword, newFirstName, newLastName, type, status);
 	}
 
 	/**
