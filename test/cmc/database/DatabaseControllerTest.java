@@ -30,10 +30,12 @@ public class DatabaseControllerTest {
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 
+
 		//AdminInteraction.addAccount("Max", "Helgestad", "maxh", "ilovemom", 'u', 'Y');
 		AdminInteraction.addAccount("Tom","Jerryson","TandJ", "tomandjerry",'u','Y');
 		UserInteraction.saveSchool("TandJ", "BARD"); 
 		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
+
 
 	}
 
@@ -42,8 +44,11 @@ public class DatabaseControllerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		DatabaseController.removeSchool("maxh2", "BARD");
+		DatabaseController.removeSchool("maxh2", "CAL TECH");
 		
-		
+		DatabaseController.removeAccount("maxh2");
+
 	
 	}
 
@@ -57,14 +62,27 @@ public class DatabaseControllerTest {
 		University u2 = DatabaseController.getUniversity("CAL TECH");
 		savedSchools.add(u1);
 		savedSchools.add(u2);
-		
+		//needed an empty array for the fourth one for them to match
+		ArrayList a = new ArrayList();
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList("") == null);
 		Assert.assertTrue("invalid name", UserInteraction.showSavedSchoolList(null) == null);
+
 
 		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("tandj") == null);
 		//Assert.assertEquals(savedSchools, UserController.getSavedSchoolList("TandJ"));
 		//Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("TandJ"));
 		Assert.assertEquals(savedSchools, DatabaseController.getSavedSchools("TandJ"));
+		Assert.assertTrue("Name doesn't exist", UserInteraction.showSavedSchoolList("Juser").equals(a));
+		//fizzed the problem with the database returning "NoSchool" I dont know why it isnt passing now
+		Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("maxh2"));
+	}
+	
+	@Test
+	public void testGetUniversity() {
+		
+		Assert.assertTrue("Name in the system", DatabaseController.getUniversity("BARD").getName().equals("BARD"));
+		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
+		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 
 	}
 

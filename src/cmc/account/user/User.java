@@ -94,21 +94,5 @@ public class User extends Account {
 		//return this.savedSchools;
 	//}
 
-	/**
-	 * 
-	 * 
-	 * @param username
-	 * @param newUsername
-	 * @param newPassword
-	 */
-	public static void editProfile(String username, String newUsername, String newPassword, String newFirstName,String newLastName) {
-		Account u = DatabaseController.lookupAccount(username);
 
-		u.setUsername(newUsername);
-		u.setPassword(newPassword);
-		u.setFirstname(newFirstName);
-		u.setLastName(newLastName);
-		
-		// save updated password and User name in database
-	}
 }
