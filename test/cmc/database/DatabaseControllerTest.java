@@ -64,5 +64,12 @@ public class DatabaseControllerTest {
 		//fizzed the problem with the database returning "NoSchool" I dont know why it isnt passing now
 		Assert.assertEquals(savedSchools, UserInteraction.showSavedSchoolList("maxh2"));
 	}
+	
+	@Test
+	public void testGetUniversity() {
+		
+		
+		
+	}
 
 }
