@@ -160,10 +160,7 @@ public class DatabaseController {
 					  result.add(getUniversity(saved[i][j]));
 				  }
 			  }
-			  else
-			  {
-				  result = null;
-			  }
+			  
 		  }
 		return result;
 		}
