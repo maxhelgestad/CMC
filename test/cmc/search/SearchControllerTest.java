@@ -1,4 +1,4 @@
-package cmc.search;
+package cmc.Search;
 
 import static org.junit.Assert.*;
 
