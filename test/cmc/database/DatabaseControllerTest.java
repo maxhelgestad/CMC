@@ -72,5 +72,10 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
 		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 	}
+	
+	@Test
+	public void testRemoveSchool() {
+		
+	}
 
 }

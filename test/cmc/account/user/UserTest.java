@@ -51,4 +51,8 @@ public class UserTest {
 
 	}
 
+	@Test
+	public void testRemoveSchool() {
+		
+	}
 }
