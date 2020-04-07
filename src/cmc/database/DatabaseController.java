@@ -44,9 +44,10 @@ public class DatabaseController {
 	public static Account lookupAccount(String username) {
 		ArrayList<Account> accounts = DatabaseController.getAccounts();
 		Account ac = noUser;
+		
 		for (int i = 0; i < accounts.size(); i++)
 		{
-			if(accounts.get(i).getUsername().equals(username))
+			if(accounts.get(i).getFirstname().equals(username))
 			{
 				ac = accounts.get(i);
 			}
@@ -160,10 +161,7 @@ public class DatabaseController {
 					  result.add(getUniversity(saved[i][j]));
 				  }
 			  }
-			  else
-			  {
-				  result = null;
-			  }
+
 		  }
 		return result;
 		}
