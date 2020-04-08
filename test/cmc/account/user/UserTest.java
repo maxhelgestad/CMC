@@ -50,6 +50,9 @@ public class UserTest {
 		a3 = DatabaseController.lookupAccount("jkost");
 		
 		UserInteraction.viewToEditProfile("abrand", "Password", "Austin", "Brandecker", 'u', 'Y');
+		
+		a1 = DatabaseController.lookupAccount("abrand");
+		
 		Assert.assertEquals("Password", a1.getPassword());
 
 	}
