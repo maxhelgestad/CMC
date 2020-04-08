@@ -67,7 +67,6 @@ public class UserControllerTest {
 		Assert.assertFalse("Check if school is in saved school list",DatabaseController.getSavedSchools("ben").equals(al1));
 		DatabaseController.removeSchool("ben", "BARD");
 		Assert.assertTrue("Check if school list is empty",DatabaseController.getSavedSchools("ben").equals(al1));
-
-
+	}
 
 }
