@@ -28,14 +28,6 @@ import cmc.university.University;
 
 public class UserController {
 
-	// private List<User> regularUsers = new ArrayList<User>();
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-	}
 
 	/**
 	  * Add a new user  
@@ -43,20 +35,11 @@ public class UserController {
 	  * @param u user to be added
 	  */
 	
-	public static boolean addUser(String username, String password, String firstname, String lastname, char type, char status) {
-		User u = new User(username, password, firstname, lastname, type, status);
-
-		DatabaseController.addAccount(username, password, firstname, lastname, type, status);
+	public static boolean addUser(String firstname, String lastname, String username, String password, char type, char status) {
+		DatabaseController.addAccount(firstname, lastname, username, password, type, status);
 		return true;
 	}
 	
-	/**
-	  * Edit an existing user  
-	  *
-	  * @param u user to be added
-	  */
-
-
 
 	/**
 	 * Edits the users username and password
@@ -133,9 +116,6 @@ public class UserController {
 	public static void saveSchool(String username, String schoolName) {
 		DatabaseController.saveSchool(username, schoolName);
 	}
-
-	public static void viewProfile() {
-	}
 	
 	/**
 	 * Method to view the profile of a user
@@ -149,14 +129,20 @@ public class UserController {
 	}
 
 	/**
+	 * Method for user to edit profile
 	 * 
-	 * @param username
-	 * @param password
-	 * @param newUsername
-	 * @param newPassword
+	 * @param username of user to be edited
+	 * @param newPassword of user
+	 * @param newFirstName of user
+	 * @param newLastName of user
+	 * @param type of user
+	 * @param status of user
 	 */
-	public static void viewToEditProfile(String username, String newUsername, String newPassword, String newFirstName, String newLastName) {
-		User.editProfile(username, newUsername, newPassword, newFirstName, newLastName);
+	public static void viewToEditProfile(String username, String newPassword, String newFirstName, String newLastName, char type, char status) {
+		Account A = DatabaseController.lookupAccount(username);
+		  char t = A.getType();
+		  char s = A.getStatus();
+		DatabaseController.userEdit(username, newPassword, newFirstName, newLastName, t, s);
 	}
 
 	/**

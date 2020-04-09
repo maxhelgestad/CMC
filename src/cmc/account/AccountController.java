@@ -22,8 +22,7 @@ public class AccountController {
  * @param password of the user
  * @return boolean checking the user
  */
- public boolean checkUser(String userName, String password)
- {
+ public boolean checkUser(String userName, String password) {
   return false;
  }
  
@@ -34,20 +33,17 @@ public class AccountController {
   * @param password of the user
   * @return boolean if account was logged on
   */
- public static boolean logOn(String userName, String password)
- {
-  Account user = DatabaseController.lookupAccount(userName);
-  if(user == null) {
-   return false;
-  }
-  // could be !.equals if doesn't work - Max thought of this
-  else if((!user.getPassword().equals(password)))
-  {
-	  return false;
-  }
-  else {
-   return true;
-  }
+ public static boolean logOn(String userName, String password) {
+	 Account user = DatabaseController.lookupAccount(userName);
+	 if(user == null) {
+		 return false;
+	 }
+	 else if((!user.getPassword().equals(password))) {
+		 return false;
+	 }
+	 else {
+		 return true;
+	 }
  }
  
  
