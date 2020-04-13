@@ -42,5 +42,10 @@ public class AccountControllerTest {
 		Assert.assertFalse("Log on with incorrect username", AccountController.logOn("jr", "password"));
 		Assert.assertFalse("Log on with incorrect password ", AccountController.logOn("vincentusername", "00"));
 	}
+	
+	@Test
+	public void testViewUsers() {
+		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);
+	}
 
 }
