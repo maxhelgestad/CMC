@@ -88,8 +88,12 @@ public static void editProfile(String username, String newPassword, String newFi
  * 
  * @param username of the account
  */
-public static void deactivateProfile(String username) {
-		DatabaseController.removeAccount(username);
+public static void deactivateUser(String username) {
+		DatabaseController.deactivateUser(username);
+}
+
+public static void activateUser(String username) {
+	DatabaseController.activateUser(username);
 }
 
 }

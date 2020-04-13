@@ -59,7 +59,11 @@ public class AdminInteraction {
  * @param password of the account
  */
  public static void deactivateUser(String username) {
-	 AccountController.deactivateProfile(username);
+	 AccountController.deactivateUser(username);
+ }
+ 
+ public static void activateUser(String username) {
+	 AccountController.activateUser(username);
  }
 
 /** Edits an account

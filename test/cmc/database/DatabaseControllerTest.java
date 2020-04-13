@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import cmc.account.Account;
 import cmc.account.admin.AdminInteraction;
+import cmc.account.user.User;
 import cmc.account.user.UserController;
 import cmc.account.user.UserInteraction;
 import cmc.university.University;
@@ -44,7 +45,8 @@ public class DatabaseControllerTest {
 		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
 
 
-
+		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
+		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
 	}
 
 	/**
@@ -58,6 +60,9 @@ public class DatabaseControllerTest {
 		DatabaseController.removeAccount("TandJ");
 
 		DatabaseController.removeAccount("austin");
+		
+		DatabaseController.removeAccount("notActive");
+		DatabaseController.removeAccount("active");
 	}
 
 
@@ -101,11 +106,12 @@ public class DatabaseControllerTest {
 	public void testUserEdit() {
 		
 		//changing profile with valid changes
-		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
+		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'N');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
+		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'N');
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		
@@ -136,6 +142,22 @@ public class DatabaseControllerTest {
 			
 		}
 	}
-
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testDeactivateUser() {
+		DatabaseController.deactivateUser("active");
+		Account a = DatabaseController.lookupAccount("active");
+		Assert.assertTrue("Deactivated user active" + a.getStatus(), a.getStatus() == 'N');
 	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testActivateUser() {
+		DatabaseController.activateUser("notActive");
+		Account a = DatabaseController.lookupAccount("notActive");
+		Assert.assertTrue("activated user notActive" + a.getStatus(), a.getStatus() == 'Y');
+	}
+
+}
 
