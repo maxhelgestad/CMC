@@ -122,6 +122,20 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Invalid username: ", a1.getPassword().equals("password"));
 		
 	}
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testAddAccount() {
+		ArrayList<Account> all = DatabaseController.getAccounts();
+		for (int i = 0; i < all.size(); i++)
+		{
+			if(all.get(i).getUsername().equals("TandJ"))
+			{
+				System.out.println("Account exists");
+				Assert.assertEquals("TandJ", all.get(i).getUsername());
+			}
+			
+		}
+	}
 
 	}
 
