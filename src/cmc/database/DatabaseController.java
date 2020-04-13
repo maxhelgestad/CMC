@@ -81,13 +81,26 @@ public class DatabaseController {
 			char type, char status) {
 		Account a = DatabaseController.lookupAccount(username);
 		if (a != null) {
-		if (newPassword != "" || newFirstName != "" || newLastName != "") {
-			lib.user_editUser(username, newFirstName, newLastName, newPassword, type, status);
-		}
+			if (newPassword != "" || newFirstName != "" || newLastName != "") {
+				lib.user_editUser(username, newFirstName, newLastName, newPassword, type, status);
+			}
 		}
 	}
 	
-
+	public static void deactivateUser(String username) {
+		Account a = DatabaseController.lookupAccount(username);
+		if (a != null ) {
+			int i = lib.user_editUser(username, a.getFirstname(), a.getLastName(), a.getPassword(), a.getType(), 'N');
+		}
+	}
+	
+	public static void activateUser(String username) {
+		Account a = DatabaseController.lookupAccount(username);
+		if (a != null ) {
+			lib.user_editUser(username, a.getFirstname(), a.getLastName(), a.getPassword(), a.getType(), 'Y');
+		}
+	}
+	
 	/**
 	 * Method for admins to add new accounts to the system
 	 * 
@@ -111,9 +124,7 @@ public class DatabaseController {
 		lib.user_deleteUser(username);
 	}
 
-	//public static ArrayList<University> getSchool(String schoolName, int numStudents) {
-		//TODO
-	//}
+	
 
 	/**
 	 * A method to get the university object for a specific university name
@@ -226,7 +237,7 @@ public class DatabaseController {
 		
 		for (int i = 0; ac.size() > i; i++) {
 			char[] ch1 = a[i][4].toCharArray();
-			char[] ch2 = a[1][5].toCharArray();
+			char[] ch2 = a[i][5].toCharArray();
 			Account acc = new Account(a[i][0], a[i][1], a[i][2], a[i][3], ch1[0], ch2[0]);
 			allAccounts.add(acc);
 		}
