@@ -44,7 +44,14 @@ public class AccountController {
   */
  public static ArrayList<Account> getUsers()
  {
-  return DatabaseController.getAccounts();
+	ArrayList<Account> users = new ArrayList<Account>();
+	ArrayList<Account> accounts = DatabaseController.getAccounts();
+	for(int i = 0; i < accounts.size(); i++) {
+		if (accounts.get(i).getType() == 'u' ) {
+			users.add(accounts.get(i));
+		}
+	}
+	return users;
  }
  /**Adds account to the Database
   * 
