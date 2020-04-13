@@ -30,42 +30,8 @@ public class User extends Account {
 		this.savedSchools = new ArrayList<University>();
 	}
 
-	/*
-	 * 
-	 */
-	public void searchSchool(Criteria c) {
-		// TODO
-	}
 
-	/*
-	 * 
-	 */
-	// public boolean logOn(String username, String password) {
-	// DatabaseController.getUser(username, password);
-	// }
 
-	/**
-	 * method for the user to view their profile
-	 * 
-	 * @return this user's profile
-	 */
-	//public static Profile viewProfile() {
-	//	return new Profile("", "", "", "", "");
-	//}
-
-	/**
-	 * method to add a school to the saved schools list
-	 * 
-	 * @param u
-	 *            - school to be added
-	 */
-	//public void addSavedSchool(University u) {
-		//if (this.savedSchools.contains(u) != true) {
-			//this.savedSchools.add(u);
-		//} else {
-		//	System.out.println("School is already saved");
-		//}
-	//}
 
 	/*
 	 * method to remove a school from the saved schools list
@@ -82,17 +48,6 @@ public class User extends Account {
 		}
 	}
 
-	/*
-	 * method to return a users saved schools list
-	 * 
-	 * @param username - the username of the user to return their savedSchools list
-	 * 
-	 * @return ArrayList<University> - the list of saved schools schools
-	 */
-	//public ArrayList<University> getSavedSchools(String username) {
-		// TODO parameter???
-		//return this.savedSchools;
-	//}
 
 
 }
