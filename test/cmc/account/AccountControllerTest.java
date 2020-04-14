@@ -26,6 +26,7 @@ public class AccountControllerTest {
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 		UserController.addUser("vincent", "kahlhamer", "vincentusername", "password", 'u', 'y');
+
 	}
 
 	/**
@@ -34,6 +35,7 @@ public class AccountControllerTest {
 	@After
 	public void tearDown() throws Exception {
 		DatabaseController.removeAccount("vincentusername");
+		DatabaseController.removeAccount("maxjh");
 	}
 
 	@Test
@@ -41,6 +43,13 @@ public class AccountControllerTest {
 		Assert.assertTrue("Log on with correct credentials", AccountController.logOn("vincentusername", "password"));
 		Assert.assertFalse("Log on with incorrect username", AccountController.logOn("jr", "password"));
 		Assert.assertFalse("Log on with incorrect password ", AccountController.logOn("vincentusername", "00"));
+	}
+	
+	@Test
+	public void testViewUsers() {
+		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);
+		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
+		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);	
 	}
 
 }
