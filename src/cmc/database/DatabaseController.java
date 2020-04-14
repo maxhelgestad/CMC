@@ -47,6 +47,7 @@ public class DatabaseController {
 			if(accounts.get(i).getUsername().equals(username))
 			{
 				ac = accounts.get(i);
+				break;
 			}
 		}
 		return ac;
