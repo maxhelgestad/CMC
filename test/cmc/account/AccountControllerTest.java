@@ -26,7 +26,6 @@ public class AccountControllerTest {
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 		UserController.addUser("vincent", "kahlhamer", "vincentusername", "password", 'u', 'y');
-
 	}
 
 	/**
@@ -47,9 +46,22 @@ public class AccountControllerTest {
 	
 	@Test
 	public void testViewUsers() {
-		Assert.assertTrue("View List of all Regular Users: size should be 7"+ AccountController.getUsers().size(), AccountController.getUsers().size() == 7);
+		Assert.assertTrue("View List of all Regular Users: size should be 7"+ AccountController.getUsers().size(), AccountController.getUsers().size() == 8);
 		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
-		Assert.assertTrue("View List of all Regular Users: size should be 7" + AccountController.getUsers().size(), AccountController.getUsers().size() == 7);	
+		Assert.assertTrue("View List of all Regular Users: size should be 7" + AccountController.getUsers().size(), AccountController.getUsers().size() == 8);	
+	}
+	
+	@Test
+	public void testAddAccounts() {
+		Assert.assertTrue("adding a account", AccountController.addAccount("first", "last", "user", "pass", 'u', 'Y'));
+		Assert.assertFalse("fails because of same username", AccountController.addAccount("first", "last", "user", "pass", 'u', 'Y'));
+		Assert.assertFalse("fails because of firstname", AccountController.addAccount("", "last", "user", "pass", 'u', 'Y'));
+		Assert.assertFalse("fails because of lastname", AccountController.addAccount("first", "", "user", "pass", 'u', 'Y'));
+		Assert.assertFalse("fails because of username", AccountController.addAccount("first", "last", "", "pass", 'u', 'Y'));
+		Assert.assertFalse("fails because of password", AccountController.addAccount("first", "last", "user", "", 'u', 'Y'));
+		Assert.assertFalse("fails because of type", AccountController.addAccount("first", "last", "user", "pass", 'p', 'Y'));
+		Assert.assertFalse("fails because of status", AccountController.addAccount("first", "last", "user", "pass", 'u', 'p'));
+		DatabaseController.removeAccount("user");
 	}
 
 }

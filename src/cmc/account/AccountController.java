@@ -53,7 +53,7 @@ public class AccountController {
 	}
 	return users;
  }
- /**Adds account to the Database
+ /**Adds account to the Database and checks to see if there will be any problems
   * 
   * @param firstName of the account
   * @param lastName of the account
@@ -62,10 +62,24 @@ public class AccountController {
   * @param type of the account
   * @param status of the account
   */
- public static void addAccount(String firstName, String lastName, String username, String password, char type, char status) {
-		DatabaseController.addAccount(firstName, lastName, username, password, type, status);
-	 }
-
+ public static boolean addAccount(String firstName, String lastName, String username, String password, char type, char status) {
+	 String u = DatabaseController.lookupAccount(username).getUsername();
+	 if (firstName.length() <= 0 || lastName.length() <= 0 || password.length() <= 0) {
+		 return false;
+	}
+	else if (u.equals(username)) {
+		return false;
+	}
+	else if (((type == 'u') || (type == 'a')) && ((status == 'Y') || (status =='N'))) {
+		 System.out.println(firstName.length());
+		 DatabaseController.addAccount(firstName, lastName, username, password, type, status);
+		return true;
+	}
+	else {
+		return false;
+	} 
+		
+ }
  /**Edits an Account
  * 
  * @param username of the account
