@@ -113,12 +113,17 @@ public class DatabaseControllerTest {
 	public void testUserEdit() {
 		
 		//changing profile with valid changes
-		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'N');
+		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
+<<<<<<< HEAD
 		Assert.assertTrue("Checks to confirm status was unchanged", a1.getStatus() == 'Y');
+=======
+
+		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'N');
+>>>>>>> 535bd5e68eb42398e93c73575c92bb6e27548e95
 		
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");

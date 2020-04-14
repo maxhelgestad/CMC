@@ -113,10 +113,7 @@ public class UserInteraction {
 	 UserController.removeSchool(name, schoolName);
  }
  
- public void displaySearchResults() {
-  //TODO
- }
- 
+
  /**
   * Method to return the five schools similar to the school being viewed
   * 

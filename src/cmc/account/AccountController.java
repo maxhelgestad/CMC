@@ -16,15 +16,6 @@ public class AccountController {
  //list of accounts
  public List<Account> accounts;
 
- /**Checks if a user something
- * 
- * @param userName of the user
- * @param password of the user
- * @return boolean checking the user
- */
- public boolean checkUser(String userName, String password) {
-  return false;
- }
  
  
  /**Logs on a Account
