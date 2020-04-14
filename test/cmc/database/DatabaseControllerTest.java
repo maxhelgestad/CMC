@@ -159,5 +159,12 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("activated user notActive" + a.getStatus(), a.getStatus() == 'Y');
 	}
 
+	@Test
+	public void lookupAccountTest() {
+		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
+				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
+		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
+				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+	}
 }
 
