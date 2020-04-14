@@ -26,7 +26,7 @@ public class AccountControllerTest {
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 		UserController.addUser("vincent", "kahlhamer", "vincentusername", "password", 'u', 'y');
-		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
+
 	}
 
 	/**
@@ -48,6 +48,9 @@ public class AccountControllerTest {
 	@Test
 	public void testViewUsers() {
 		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);
+		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
+		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);
+		
 	}
 
 }
