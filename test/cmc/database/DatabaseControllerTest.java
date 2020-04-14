@@ -72,6 +72,8 @@ public class DatabaseControllerTest {
 		
 		DatabaseController.removeAccount("notActive");
 		DatabaseController.removeAccount("active");
+		
+		DatabaseController.deleteUniversity("COLLEGE");
 	}
 
 
@@ -105,10 +107,17 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversity() {
-		
+		//Black-Box
 		Assert.assertTrue("Name in the system", DatabaseController.getUniversity("BARD").getName().equals("BARD"));
 		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
 		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
+		
+		//White-Box
+		Assert.assertTrue("University Existing in the Database", 
+				DatabaseController.getUniversity("YALE").getName().equals("YALE"));
+		Assert.assertTrue("University not existing in the Database", 
+				DatabaseController.getUniversity("DUMMY").getName().equals("NoUniversity"));
+		Assert.assertTrue("Empty String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -240,10 +249,17 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testLookupAccount() {
-		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
+		//white box
+		Assert.assertTrue("lookup account with existing username", 
 				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
-		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
-				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("maxh3").getUsername().equals("x"));
+		
+		//black box
+		Assert.assertTrue("lookup account with existing username", 
+				DatabaseController.lookupAccount("juser").getUsername().equals("juser"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("juser5").getUsername().equals("x"));
 	}
 	
 	@SuppressWarnings("deprecation")
