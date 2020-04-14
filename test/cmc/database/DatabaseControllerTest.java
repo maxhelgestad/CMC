@@ -49,10 +49,6 @@ public class DatabaseControllerTest {
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
 		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
 		
-		uniList = DatabaseController.getUniversities();
-		firstU = new University("ABILENE CHRISTIAN UNIVERSITY","TEXAS","SUBURBAN","PRIVATE",
-				10000,(float)50.0,(float)-1.0,(float)-1.0,(float)12088.0,(float)70.0,4000,(float)90.0,
-				(float)80.0,2,3,3);
 	}
 
 	/**
@@ -113,17 +109,12 @@ public class DatabaseControllerTest {
 	public void testUserEdit() {
 		
 		//changing profile with valid changes
-		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
+		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'N');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
-<<<<<<< HEAD
 		Assert.assertTrue("Checks to confirm status was unchanged", a1.getStatus() == 'Y');
-=======
-
-		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'N');
->>>>>>> 535bd5e68eb42398e93c73575c92bb6e27548e95
 		
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
@@ -184,7 +175,7 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversities() {
-		Assert.assertTrue("checks if database controller returns univeristy list" + "/n" +DatabaseController.getUniversities().size(),
+		Assert.assertTrue("checks if database controller returns univeristy list(should be 178)",
 				DatabaseController.getUniversities().size() == 178);
 	}
 }

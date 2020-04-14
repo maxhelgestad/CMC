@@ -47,7 +47,7 @@ public class SearchControllerTest {
 		
 		//Black-Box Tests (Search)
 		Assert.assertTrue("Testing search with criteria 1", SearchController.searchSchool(this.c1).size() == 1);
-		Assert.assertTrue("Testing search with criteria 2", SearchController.searchSchool(this.c2).size() == 1);
+		Assert.assertTrue("Testing search with criteria 2", SearchController.searchSchool(this.c2).size() == 2);
 		Assert.assertTrue("Testing search with criteria 3", SearchController.searchSchool(this.c3).size() == 1);
 		Assert.assertTrue("Testing search with criteria 4", SearchController.searchSchool(this.c4).size() == 0);
 		Assert.assertTrue("Testing search with criteria 5", SearchController.searchSchool(this.c5).size() == 0);

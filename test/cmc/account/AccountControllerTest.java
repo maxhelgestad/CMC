@@ -47,9 +47,9 @@ public class AccountControllerTest {
 	
 	@Test
 	public void testViewUsers() {
-		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);
+		Assert.assertTrue("View List of all Regular Users: size should be 7"+ AccountController.getUsers().size(), AccountController.getUsers().size() == 7);
 		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
-		Assert.assertTrue("View List of all Regular Users: size should be 8", AccountController.getUsers().size() == 8);	
+		Assert.assertTrue("View List of all Regular Users: size should be 7" + AccountController.getUsers().size(), AccountController.getUsers().size() == 7);	
 	}
 
 }
