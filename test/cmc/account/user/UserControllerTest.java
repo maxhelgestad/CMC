@@ -34,7 +34,7 @@ public class UserControllerTest {
 		b = DatabaseController.lookupAccount("ben");
 		u1 = DatabaseController.getUniversity("BARD");
 		DatabaseController.saveSchool("ben", "BARD");
-		al1 = new ArrayList();
+		al1 = new ArrayList<University>();
 
 
 	}
