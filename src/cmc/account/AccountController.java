@@ -16,15 +16,6 @@ public class AccountController {
  //list of accounts
  public List<Account> accounts;
 
- /**Checks if a user something
- * 
- * @param userName of the user
- * @param password of the user
- * @return boolean checking the user
- */
- public boolean checkUser(String userName, String password) {
-  return false;
- }
  
  
  /**Logs on a Account
@@ -53,7 +44,14 @@ public class AccountController {
   */
  public static ArrayList<Account> getUsers()
  {
-  return DatabaseController.getAccounts();
+	ArrayList<Account> users = new ArrayList<Account>();
+	ArrayList<Account> accounts = DatabaseController.getAccounts();
+	for(int i = 0; i < accounts.size(); i++) {
+		if (accounts.get(i).getType() == 'u' ) {
+			users.add(accounts.get(i));
+		}
+	}
+	return users;
  }
  /**Adds account to the Database
   * 

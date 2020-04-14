@@ -25,7 +25,8 @@ import junit.framework.Assert;
  */
 public class DatabaseControllerTest {
 		Account a1;
-
+		ArrayList<University> uniList;
+		University firstU;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -51,6 +52,7 @@ public class DatabaseControllerTest {
 
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
 		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
+		
 	}
 
 	/**
@@ -100,6 +102,7 @@ public class DatabaseControllerTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversity() {
 		
@@ -135,7 +138,10 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
-		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'Y');
+
+		Assert.assertTrue("Checks to confirm status was unchanged", a1.getStatus() == 'Y');
+		
+
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		
@@ -231,5 +237,20 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("activated user notActive" + a.getStatus(), a.getStatus() == 'Y');
 	}
 
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testLookupAccount() {
+		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
+				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
+		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
+				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testGetUniversities() {
+		Assert.assertTrue("checks if database controller returns univeristy list(should be 178)",
+				DatabaseController.getUniversities().size() == 178);
+	}
 }
 

@@ -13,6 +13,7 @@ import cmc.account.user.UserInteraction;
 import cmc.database.DatabaseController;
 import cmc.search.Criteria;
 import cmc.university.University;
+import cmc.university.UniversityController;
 
 
 /**
@@ -156,14 +157,14 @@ public class Driver {
 		System.out.println("------------------------------");
 		System.out.println("------------------------------");
 		
-//		// (User) Find top 5 recommended schools for a given school
-//		float[] ratings = UserInteraction.displaySimilarSchools("YALE");									    //U11 Display 5 most similar school to school being viewed
-//		System.out.println("Similarity Ratings for top 5 similar schools to SJU");
-//		System.out.println("CSB: " + ratings[0] + '\n' + "UST: " + ratings[1] + '\n' + " hi: " + ratings[2] + '\n'
-//				+ "max: " + ratings[3] + '\n' + "UMN: " + ratings[4]);
-//
-//		System.out.println("------------------------------");
-//		System.out.println("------------------------------");
+		// (User) Find top 5 recommended schools for a given school
+		ArrayList<University> a = UniversityController.getSimilarSchools("YALE");									    //U11 Display 5 most similar school to school being viewed
+		System.out.println("Similarity Ratings for top 5 similar schools to Yale");
+		System.out.println(a.get(0).toString() + "" + a.get(1).toString() + "" + a.get(2).toString());
+
+
+		System.out.println("------------------------------");
+		System.out.println("------------------------------");
 		
 
 

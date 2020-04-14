@@ -48,29 +48,7 @@ public class Account {
 		this.status = status;
 	}
 
-	/**Checks to see if a user is valid or invalid
-	 * 
-	 * @param username - username of the user
-	 * @param password - password of the user
-	  * @return boolean if user is valid or invalid
-	  */
-	public boolean isValid(String username, String password) {
-		return true;
-	}
 
-	/**
-	 * method to log on an account
-	 * 
-	 * @param username
-	 *            the username of the account to log on
-	 * @param password
-	 *            the password of the account to log on
-	 * 
-	 * @return true if logged on succeeded, false if log on fails
-	 */
-	public boolean logOn(String username, String password) {
-		return true;
-	}
 	/**
 	 * Method to get username for an account
 	 * 
@@ -155,5 +133,16 @@ public class Account {
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+
+	public void setStatus(char c) {
+		this.status = c;	
+	}
+
+
+	public void setType(char c) {
+		this.type = c;
+		
 	}
 }
