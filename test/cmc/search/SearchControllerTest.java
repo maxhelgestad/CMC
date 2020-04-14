@@ -24,8 +24,8 @@ public class SearchControllerTest {
 		this.c1 = new Criteria("HELGEST", "FLOR", "", "P", 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000);
 		this.c2 = new Criteria("", "MINN", "URB", "P", 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000);
 		this.c3 = new Criteria("JACOB", "O", "RUR", "", 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000);
-		this.c4 = new Criteria("XYZ", "FLORIDQ", "RUR", "", -5, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000);
-		this.c5 = new Criteria("HELGESQ", "FLORIDQ", "", "PRI", -1, 50000, -1, 50000, -1, 50000, 1, 50000, 1, 50000, 1, 50000, 1, 50000, -1, 50000, 1, 50000, 1, 50000, -1, 50000, 1, 50000);
+		this.c4 = new Criteria("XYZ", "FLORIDQ", "RUR", "", -5, 50000, -1, 50000, -1, 50000, -5, 50000, -1, 50000, -1, 50000, -5, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000, -1, 50000);
+		this.c5 = new Criteria("HELGESQ", "FLORIDQ", "", "PRI", -1, 50000, -1, 50000, -1, 50000, 1, 50000, -5, 50000, 1, 50000, 1, 50000, -1, 50000, 1, 50000, 1, 50000, -1, 50000, 1, 50000);
 		
 	}
 
@@ -38,9 +38,12 @@ public class SearchControllerTest {
 
 	@Test
 	public void testSearch() throws Exception {
-		//White-Box Tests (getters from Criteria)
+		//Simple Tests (getters from Criteria)
 		Assert.assertTrue("Testing getName() method from Criteria Class: ", this.c1.getName() == "HELGEST");
 		Assert.assertTrue("Testing getNumStudents() method from Criteria Class: ", this.c2.getNumStudentsT() == 50000);
+		//Simple Test (setter from Criteria)
+		this.c4.setExpensesT(40000);
+		Assert.assertTrue("Testing setExpenses method from Criteria class - set c4.expensesT to 40000: ", this.c4.getExpensesT() == 40000);
 		
 		//Black-Box Tests (Search)
 		Assert.assertTrue("Testing search with criteria 1", SearchController.searchSchool(this.c1).size() == 1);

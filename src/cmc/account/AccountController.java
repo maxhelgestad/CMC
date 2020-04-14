@@ -53,7 +53,14 @@ public class AccountController {
   */
  public static ArrayList<Account> getUsers()
  {
-  return DatabaseController.getAccounts();
+	ArrayList<Account> users = new ArrayList<Account>();
+	ArrayList<Account> accounts = DatabaseController.getAccounts();
+	for(int i = 0; i < accounts.size(); i++) {
+		if (accounts.get(i).getType() == 'u' ) {
+			users.add(accounts.get(i));
+		}
+	}
+	return users;
  }
  /**Adds account to the Database
   * 
@@ -88,8 +95,12 @@ public static void editProfile(String username, String newPassword, String newFi
  * 
  * @param username of the account
  */
-public static void deactivateProfile(String username) {
-		DatabaseController.removeAccount(username);
+public static void deactivateUser(String username) {
+		DatabaseController.deactivateUser(username);
+}
+
+public static void activateUser(String username) {
+	DatabaseController.activateUser(username);
 }
 
 }

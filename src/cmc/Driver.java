@@ -187,22 +187,6 @@ public class Driver {
 
 
 
-		// (Admin) Deactivate a user
-		//System.out.println("------------------------------");
-		//System.out.println("(Old list of users)");
-		//for (int i = 0; i < users.size(); i++) {
-		//	System.out.println(users.get(i).toString());
-		//}
-		//AdminInteraction.deactivateUser("james");												//(extra) U17 Deactivate User account
-
-		//AdminInteraction.deactivateUser("Sammy");
-
-		//System.out.println("(New list of users *one removed*)");
-		//ArrayList<Account> u = AdminInteraction.viewUsers();
-		//for (int i = 0; i < u.size(); i++) {
-		//	System.out.println(u.get(i).toString());
-		//}
-		
 
 		
 

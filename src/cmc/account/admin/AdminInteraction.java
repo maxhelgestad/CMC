@@ -28,15 +28,7 @@ public class AdminInteraction {
  * @return List containing the regular users
  */
  public static ArrayList<Account> viewUsers() {
-	ArrayList<Account> users = new ArrayList<Account>();
-	ArrayList<Account> accounts = AccountController.getUsers();
-	//System.out.println(accounts);
-	for(int i = 0; i < accounts.size(); i++) {
-		if (accounts.get(i).getType() == 'u' ) {
-			users.add(accounts.get(i));
-		}
-	}
-	return users;
+	return AccountController.getUsers();
  }
  
 	
@@ -59,7 +51,11 @@ public class AdminInteraction {
  * @param password of the account
  */
  public static void deactivateUser(String username) {
-	 AccountController.deactivateProfile(username);
+	 AccountController.deactivateUser(username);
+ }
+ 
+ public static void activateUser(String username) {
+	 AccountController.activateUser(username);
  }
 
 /** Edits an account
