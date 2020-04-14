@@ -34,7 +34,7 @@ public class UniversityController {
   * @param uni the university that is being removed
   */
  public static void removeUniversity(University uni) {
-  
+
  }
  
  /**

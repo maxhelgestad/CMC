@@ -25,7 +25,8 @@ import junit.framework.Assert;
  */
 public class DatabaseControllerTest {
 		Account a1;
-
+		ArrayList<University> uniList;
+		University firstU;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -47,6 +48,11 @@ public class DatabaseControllerTest {
 
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
 		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
+		
+		uniList = DatabaseController.getUniversities();
+		firstU = new University("ABILENE CHRISTIAN UNIVERSITY","TEXAS","SUBURBAN","PRIVATE",
+				10000,(float)50.0,(float)-1.0,(float)-1.0,(float)12088.0,(float)70.0,4000,(float)90.0,
+				(float)80.0,2,3,3);
 	}
 
 	/**
@@ -93,6 +99,7 @@ public class DatabaseControllerTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversity() {
 		
@@ -112,6 +119,7 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
 		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'N');
+		
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		
@@ -159,12 +167,20 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("activated user notActive" + a.getStatus(), a.getStatus() == 'Y');
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
-	public void lookupAccountTest() {
+	public void testLookupAccount() {
 		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
 				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
 		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
 				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testGetUniversities() {
+		Assert.assertFalse("checks if database controller returns univeristy list",
+				AdminInteraction.viewUniversities().equals(uniList));
 	}
 }
 
