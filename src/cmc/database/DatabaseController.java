@@ -64,7 +64,12 @@ public class DatabaseController {
 	 */
 	public static void adminUserEdit(String username, String newPassword, String newFirstName, String newLastName,
 			char newType, char newStatus) {
+		Account a = DatabaseController.lookupAccount(username);
+		if (a != null) {
+			if (newPassword != "" || newFirstName != "" || newLastName != "" || newType == 'a' || newType == 'u' || newStatus == 'Y' || newStatus == 'N') {
 		lib.user_editUser(username, newFirstName, newLastName, newPassword, newType, newStatus);
+			}
+		}
 	}
 	
 	/**
@@ -150,7 +155,12 @@ public class DatabaseController {
 	 * @param schoolName The school to save to the user
 	 */
 	public static void saveSchool(String username, String schoolName) {
+		Account a = DatabaseController.lookupAccount(username);
+		University u = DatabaseController.getUniversity(schoolName);
+		if (a != null) {
+			if (u != null)
 		lib.user_saveSchool(username, schoolName);
+		}
 	}
 	
 	/**
