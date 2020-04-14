@@ -26,6 +26,7 @@ public class AccountControllerTest {
 	public void setUp() throws Exception {
 		DatabaseController.setUp("javengers", "csci230");
 		UserController.addUser("vincent", "kahlhamer", "vincentusername", "password", 'u', 'y');
+		UserController.addUser("max", "helg", "maxjh", "5678", 'a', 'y');
 	}
 
 	/**
@@ -34,6 +35,7 @@ public class AccountControllerTest {
 	@After
 	public void tearDown() throws Exception {
 		DatabaseController.removeAccount("vincentusername");
+		DatabaseController.removeAccount("maxjh");
 	}
 
 	@Test
