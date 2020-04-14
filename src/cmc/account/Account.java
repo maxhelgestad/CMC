@@ -147,4 +147,15 @@ public class Account {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+
+	public void setStatus(char c) {
+		this.status = c;	
+	}
+
+
+	public void setType(char c) {
+		this.type = c;
+		
+	}
 }
