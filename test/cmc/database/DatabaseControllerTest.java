@@ -118,7 +118,7 @@ public class DatabaseControllerTest {
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
-		Assert.assertTrue("Checks to see if status was changed", a1.getStatus() == 'N');
+		Assert.assertTrue("Checks to confirm status was unchanged", a1.getStatus() == 'Y');
 		
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
@@ -179,8 +179,8 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversities() {
-		Assert.assertFalse("checks if database controller returns univeristy list",
-				AdminInteraction.viewUniversities().equals(uniList));
+		Assert.assertTrue("checks if database controller returns univeristy list" + "/n" +DatabaseController.getUniversities().size(),
+				DatabaseController.getUniversities().size() == 178);
 	}
 }
 
