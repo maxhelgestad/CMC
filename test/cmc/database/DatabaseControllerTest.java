@@ -44,6 +44,10 @@ public class DatabaseControllerTest {
 		AdminInteraction.addAccount("Tom","Jerryson","TandJ", "tomandjerry",'u','Y');
 		UserInteraction.saveSchool("TandJ", "BARD"); 
 		UserInteraction.saveSchool("TandJ", "CAL TECH"); 
+		
+		AdminInteraction.addAccount("Austin", "Brandecker", "abrand", "helloworld", 'u', 'Y');
+		DatabaseController.addUniversity("COLLEGE", "MINNESOTA", "URBAN", "PUBLIC", 10000, 40, 500, 700, 10000, 40, 30000, 30, 50, 2, 4, 3);
+		
 
 
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
@@ -64,12 +68,17 @@ public class DatabaseControllerTest {
 		DatabaseController.removeSchool("TandJ", "BARD");
 		DatabaseController.removeSchool("TandJ", "CAL TECH");
 		
+		DatabaseController.removeSchool("abrand", "COLLEGE");
+		DatabaseController.removeAccount("abrand");
+		
 		DatabaseController.removeAccount("TandJ");
 
 		DatabaseController.removeAccount("austin");
 		
 		DatabaseController.removeAccount("notActive");
 		DatabaseController.removeAccount("active");
+		
+		DatabaseController.deleteUniversity("COLLEGE");
 	}
 
 
@@ -103,35 +112,61 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversity() {
-		
+		//Black-Box
 		Assert.assertTrue("Name in the system", DatabaseController.getUniversity("BARD").getName().equals("BARD"));
 		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
 		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
+		
+		//White-Box
+		Assert.assertTrue("University Existing in the Database", 
+				DatabaseController.getUniversity("YALE").getName().equals("YALE"));
+		Assert.assertTrue("University not existing in the Database", 
+				DatabaseController.getUniversity("DUMMY").getName().equals("NoUniversity"));
+		Assert.assertTrue("Empty String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testUserEdit() {
 		
-		//changing profile with valid changes
-		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'N');
+		/**
+		 * black box
+		 */
+		//Valid change
+		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
+		a1 = DatabaseController.lookupAccount("austin");
+		Assert.assertTrue("valid change", a1.getPassword().equals("Password"));
+		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
+		
+		//invalid change
+		UserInteraction.viewToEditProfile("austin", "", "", "", 'u', 'Y');
+		a1 = DatabaseController.lookupAccount("austin");
+		Assert.assertFalse("Invalid change", a1.getPassword().equals(""));
+		
+		/**
+		 * white box
+		 */
+		//changing profile with valid changes[path 1]
+		UserInteraction.viewToEditProfile("austin", "Password", "Austin", "Brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Check to see if password is changed", a1.getPassword().equals("Password"));
 		Assert.assertTrue("Checks to see if first name was changed", a1.getFirstname().equals("Austin"));
 		Assert.assertTrue("Checks to see if last name was changed", a1.getLastName().equals("Brandecker"));
+
 		Assert.assertTrue("Checks to confirm status was unchanged", a1.getStatus() == 'Y');
 		
+
 		UserInteraction.viewToEditProfile("austin", "password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		
-		//changing profile with invalid changes
+		//changing profile with invalid changes[path2]
 		UserInteraction.viewToEditProfile("austin", "", "", "", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Invalid change of password: ", a1.getPassword().equals("password"));
 		Assert.assertTrue("Invalid change to first name: ", a1.getFirstname().equals("austin"));
 		Assert.assertTrue("Invalid change to last name: ", a1.getLastName().equals("brandecker"));
 		
-		//changing profile with invalid username
+		//changing profile with invalid username[path 3]
 		UserInteraction.viewToEditProfile("austi", "Password", "austin", "brandecker", 'u', 'Y');
 		a1 = DatabaseController.lookupAccount("austin");
 		Assert.assertTrue("Invalid username: ", a1.getPassword().equals("password"));
@@ -154,6 +189,54 @@ public class DatabaseControllerTest {
 	
 	@SuppressWarnings("deprecation")
 	@Test
+	public void testSaveSchool() {
+		/**
+		 * blackbox
+		 */
+		//valid change
+		UserInteraction.saveSchool("abrand", "COLLEGE");
+		ArrayList<University> savedschools = UserInteraction.showSavedSchoolList("abrand");
+		for (University u: savedschools) {
+			if(u.getName().equals("COLLEGE")) {
+				Assert.assertTrue("Valid change", u.getName().equals("COLLEGE"));
+			}
+		}
+		
+		//invalid change
+		UserInteraction.saveSchool("abrand", "COLLEG");
+		University uni = DatabaseController.getUniversity("COLLEG");
+		savedschools = UserInteraction.showSavedSchoolList("abrand");
+		Assert.assertFalse("University is Invalid", savedschools.contains(uni));
+		
+		/**
+		 * whitebox testing
+		 */
+		//saves school[path 1]
+		UserInteraction.saveSchool("abrand", "COLLEGE");
+		ArrayList<University> schools = UserInteraction.showSavedSchoolList("abrand");
+		for (University u: schools) {
+			if (u.getName().equals("COLLEGE")) {
+				Assert.assertTrue("School is saved", u.getName().equals("COLLEGE"));
+			}
+		}
+		
+		//University doesn't exist [path 2]
+		UserInteraction.saveSchool("abrand", "COLLEG");
+		University u = DatabaseController.getUniversity("COLLEG");
+		schools = UserInteraction.showSavedSchoolList("abrand");
+		Assert.assertFalse("University is Invalid", schools.contains(u));
+		
+		//Account doesn't exist [path 3]
+		UserInteraction.saveSchool("abran", "COLLEGE");
+		University u1 = DatabaseController.getUniversity("COLLEGE");
+		schools = UserInteraction.showSavedSchoolList("abran");
+		Assert.assertFalse("Account doesn't exist", schools.contains(u1));
+		
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
 	public void testDeactivateUser() {
 		DatabaseController.deactivateUser("active");
 		Account a = DatabaseController.lookupAccount("active");
@@ -171,10 +254,17 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testLookupAccount() {
-		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
+		//white box
+		Assert.assertTrue("lookup account with existing username", 
 				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
-		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
-				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("maxh3").getUsername().equals("x"));
+		
+		//black box
+		Assert.assertTrue("lookup account with existing username", 
+				DatabaseController.lookupAccount("juser").getUsername().equals("juser"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("juser5").getUsername().equals("x"));
 	}
 	
 	@SuppressWarnings("deprecation")
