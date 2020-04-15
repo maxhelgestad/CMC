@@ -24,9 +24,9 @@ import junit.framework.Assert;
  *
  */
 public class DatabaseControllerTest {
-		Account a1;
-		ArrayList<University> uniList;
-		University firstU;
+		Account a1, b;
+		ArrayList<University> al1;
+		University u1;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -53,6 +53,11 @@ public class DatabaseControllerTest {
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
 		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
 		
+		UserController.addUser("ben", "rich", "ben", "password", 'u','y');
+		b = DatabaseController.lookupAccount("ben");
+		u1 = DatabaseController.getUniversity("BARD");
+		DatabaseController.saveSchool("ben", "BARD");
+		al1 = new ArrayList<University>();
 	}
 
 	/**
@@ -72,6 +77,8 @@ public class DatabaseControllerTest {
 		
 		DatabaseController.removeAccount("notActive");
 		DatabaseController.removeAccount("active");
+		
+		DatabaseController.deleteUniversity("COLLEGE");
 	}
 
 
@@ -105,10 +112,17 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetUniversity() {
-		
+		//Black-Box
 		Assert.assertTrue("Name in the system", DatabaseController.getUniversity("BARD").getName().equals("BARD"));
 		Assert.assertTrue("Not a real name", DatabaseController.getUniversity("Not real university").getName().equals("NoUniversity"));
 		Assert.assertTrue("Blank String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
+		
+		//White-Box
+		Assert.assertTrue("University Existing in the Database", 
+				DatabaseController.getUniversity("YALE").getName().equals("YALE"));
+		Assert.assertTrue("University not existing in the Database", 
+				DatabaseController.getUniversity("DUMMY").getName().equals("NoUniversity"));
+		Assert.assertTrue("Empty String", DatabaseController.getUniversity("").getName().equals("NoUniversity"));
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -240,10 +254,17 @@ public class DatabaseControllerTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testLookupAccount() {
-		Assert.assertTrue("lookup account with existing username - maxh2(should be true): ", 
+		//white box
+		Assert.assertTrue("lookup account with existing username", 
 				DatabaseController.lookupAccount("maxh2").getUsername().equals("maxh2"));
-		Assert.assertFalse("lookup account with nonexisting username - maxh3(should be false): ", 
-				DatabaseController.lookupAccount("maxh3").getUsername().equals("maxh3"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("maxh3").getUsername().equals("x"));
+		
+		//black box
+		Assert.assertTrue("lookup account with existing username", 
+				DatabaseController.lookupAccount("juser").getUsername().equals("juser"));
+		Assert.assertTrue("lookup account with nonexisting username", 
+				DatabaseController.lookupAccount("juser5").getUsername().equals("x"));
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -251,6 +272,16 @@ public class DatabaseControllerTest {
 	public void testGetUniversities() {
 		Assert.assertTrue("checks if database controller returns univeristy list(should be 178)",
 				DatabaseController.getUniversities().size() == 178);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveSchool() {
+		
+		Assert.assertFalse("Check if school is in saved school list",DatabaseController.getSavedSchools("ben").equals(al1));
+		DatabaseController.removeSchool("ben", "BARD");
+		Assert.assertTrue("Check if school list is empty",DatabaseController.getSavedSchools("ben").equals(al1));
+
 	}
 }
 

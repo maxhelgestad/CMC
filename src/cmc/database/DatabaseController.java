@@ -144,6 +144,7 @@ public class DatabaseController {
 		for (int i = 0; i < schools.size(); i++) {
 			if (schools.get(i).getName().equals(name)) {
 				un = (University)schools.get(i);
+				break;
 			}
 		}
 		return un;

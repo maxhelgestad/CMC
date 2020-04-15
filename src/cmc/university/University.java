@@ -187,8 +187,11 @@ public class University {
    return this.percentEnrolled;
   }
   
-  public static ArrayList<Float> min()
-  {
+
+/**
+ * For use in the similarity calculation
+ */
+  public static ArrayList<Float> min() {
 	  ArrayList<Float> values = new ArrayList<Float>();
 	  ArrayList<University> u = DatabaseController.getUniversities();
 	  float numStu = Float.POSITIVE_INFINITY;
@@ -259,6 +262,7 @@ public class University {
    * @param t second string to check
    * @return 0 if the two string are equal and 1 if they are not
    */
+
   public static int areStringsEqual(String s, String t)
   {
 	 if(s != null && t != null )
@@ -276,8 +280,11 @@ public class University {
 	 {
 		 return 1;
 	 }
+
   }
-  
+  /**
+   * For use in the similarity calculation
+   */
   public static ArrayList<Float> max()
   {
 	  ArrayList<Float> values = new ArrayList<Float>();
