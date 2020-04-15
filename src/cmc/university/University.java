@@ -261,14 +261,21 @@ public class University {
    */
   public static int areStringsEqual(String s, String t)
   {
-	  if (s.equals(t))
-	  {
-		  return 0;
-	  }
-	  else
-	  {
-		  return 1;
-	  }
+	 if(s != null && t != null )
+	 {
+		 if (s.equals(t))
+		  {
+			  return 0;
+		  }
+		  else
+		  {
+			  return 1;
+		  } 
+	 }
+	 else
+	 {
+		 return 1;
+	 }
   }
   
   public static ArrayList<Float> max()

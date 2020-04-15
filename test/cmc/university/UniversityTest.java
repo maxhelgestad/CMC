@@ -46,5 +46,21 @@ public class UniversityTest {
 		Assert.assertTrue("checks university returns correct social", u.getSocial() == 5);
 		Assert.assertTrue("checks university returns correct qualitiy of life", u.getQualOfLife() == 2);
 	}
+	@Test
+	public void testareStringsequal() {
+	String s = null;
+	String q = "CAL TECH";
+	Assert.assertTrue("invalid s and q", University.areStringsEqual(s,q) == 1);
+	
+	s = "BARD";
+	q = "";
+	Assert.assertTrue("invalid q", University.areStringsEqual(s,q) == 1);
+	
+	q = "YALE";
+	Assert.assertTrue("valid s and q", University.areStringsEqual(s,q) == 1);
+	
+	q = "BARD";
+	Assert.assertTrue("valid s and q", University.areStringsEqual(s,q) == 0);
+	}
 	
 }
