@@ -24,9 +24,9 @@ import junit.framework.Assert;
  *
  */
 public class DatabaseControllerTest {
-		Account a1;
-		ArrayList<University> uniList;
-		University firstU;
+		Account a1, b;
+		ArrayList<University> al1;
+		University u1;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -49,6 +49,11 @@ public class DatabaseControllerTest {
 		AdminInteraction.addAccount("Vincet","Kahlhamer","active", "password",'u','Y');
 		AdminInteraction.addAccount("Vincet","Kahlhamer","notActive", "password",'u','N');
 		
+		UserController.addUser("ben", "rich", "ben", "password", 'u','y');
+		b = DatabaseController.lookupAccount("ben");
+		u1 = DatabaseController.getUniversity("BARD");
+		DatabaseController.saveSchool("ben", "BARD");
+		al1 = new ArrayList<University>();
 	}
 
 	/**
@@ -177,6 +182,16 @@ public class DatabaseControllerTest {
 	public void testGetUniversities() {
 		Assert.assertTrue("checks if database controller returns univeristy list(should be 178)",
 				DatabaseController.getUniversities().size() == 178);
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void testRemoveSchool() {
+		
+		Assert.assertFalse("Check if school is in saved school list",DatabaseController.getSavedSchools("ben").equals(al1));
+		DatabaseController.removeSchool("ben", "BARD");
+		Assert.assertTrue("Check if school list is empty",DatabaseController.getSavedSchools("ben").equals(al1));
+
 	}
 }
 
