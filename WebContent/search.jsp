@@ -7,6 +7,9 @@
 <title>Search School</title>
 </head>
 <body>
+<a href="Menu.jsp">back to menu</a>
+<br>
+<br>
 Search School:<br>
 <br>
 <form method="post" action="searchAction.jsp" name="Search"><br>
