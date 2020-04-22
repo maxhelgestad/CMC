@@ -44,7 +44,7 @@ border="1" cellpadding="2" cellspacing="2">
 
 <tr>
 <td style="vertical-align: top;">Percent Female</td>
-<td style="vertical-align: top;">between<input name="mfRatioB">  and  <input name="mfRaioT"> </td>
+<td style="vertical-align: top;">between<input name="mfRatioB">  and  <input name="mfRatioT"> </td>
 </tr>
 
 <tr>
