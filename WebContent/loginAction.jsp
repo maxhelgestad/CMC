@@ -3,12 +3,13 @@
 <% 
 String username = request.getParameter("Username");
 String password = request.getParameter("Password");
-AccountController ac = new AccountController();
+//AccountController ac = new AccountController();
+//UserInteraction ui = new UserInteraction();
 session.setAttribute("username", username);
-boolean logInStatus = ac.logOn(username, password);
+boolean logInStatus = AccountController.logOn(username, password);
 
 if(logInStatus == true){
-	session.setAttribute("loggedInUser", ac);
+	session.setAttribute("loggedInUser", "ui");
 	response.sendRedirect("Menu.jsp");
 }
 else{

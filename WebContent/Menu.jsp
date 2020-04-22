@@ -9,8 +9,10 @@
 <body>
 Hello User <%= (String)session.getAttribute("username") %>
 <br>
-<a href="profile.jsp">View Your Profile</a>
+<a href="profile.jsp">Manage My Profile</a>
 <br>
-<a href="search.jsp">Search For a School</a>
+<a href="savedSchoold.jsp">Manage My Saved Schools</a>
+<br>
+<a href="search.jsp">Search For Schools</a>
 </body>
 </html>

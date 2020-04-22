@@ -18,6 +18,7 @@ import cmc.university.UniversityController;
  *
  */
 public class UserInteraction {
+	
 
 /**
  * Logs the User on

@@ -1,19 +1,24 @@
 <html>
 <head>
 
-<title>Login Form</title>
+<title>Going to College</title>
 </head>
 <body>
 <br>
-Login form:<br>
 <br>
-<%if (request.getParameter("error") != null) {%>
-<%= request.getParameter("error") %>
-<%} %>
-<br>
-<%if (request.getParameter("error2") != null) {%>
-<%= request.getParameter("error2") %>
-<%} %>
+<% String error = request.getParameter("error");
+if (error == null) {
+	
+}
+else if (error.equals("INVALID USERNAME OR PASSWORD")){
+%>
+	<p>User name or password is not valid</p>
+<%
+}
+%>
+	
+
+
 <form method="post" action="loginAction.jsp" name="Login"><br>
 <table style="text-align: left; width: 266px; height: 228px;"
 border="1" cellpadding="2" cellspacing="2">
