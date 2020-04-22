@@ -4,14 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Going to College</title>
 </head>
 <body>
-Hello User <%= (String)session.getAttribute("username") %>
+Hello User: <%= (String)session.getAttribute("username") %>
 <br>
 <a href="profile.jsp">Manage My Profile</a>
 <br>
-<a href="savedSchoold.jsp">Manage My Saved Schools</a>
+
+<form method="post" action="Delete.jsp" name="Delete" >
+<a href="savedSchools">Manage My Saved Schools</a>
+</form>
+
 <br>
 <a href="search.jsp">Search For Schools</a>
 </body>

@@ -17,6 +17,7 @@ import java.util.TreeMap;
 import cmc.database.DatabaseController;
 
 import java.lang.Math;
+import java.lang.reflect.Array;
 
 /**
  * 
@@ -67,19 +68,38 @@ public class UniversityController {
   return DatabaseController.getUniversities();
  }
  
+
 public static ArrayList<University> getSimilarSchools(String schoolName){
-	ArrayList a = DatabaseController.getUniversities();
-	ArrayList results = new ArrayList<University>();
-	HashMap<University, Float> m = new HashMap<University, Float>();
+	ArrayList<University> a = DatabaseController.getUniversities();
+	ArrayList<University> results = new ArrayList<University>();
+	TreeMap<University, Float> m = new TreeMap<University, Float>();
+	float one = 100;
+	float two = 101;
+	float three = 102;
+	float four  = 103;
+	float five = 104;
 	for (int i = 0; i < a.size(); i++) {
 		float s = University.similarity(schoolName, ((University) a.get(i)).getName());
-		m.put((University) a.get(i), s);
-	}
-	HashMap<University, Float> sortedM = sortByValue(m);
-	TreeMap<University, Float> m2 = new TreeMap<>();
-	m2.putAll(sortedM);
-	for (int i = 0; i < 5; i++) {
-		results.add(sortedM.get(m2.firstKey()));
+		if (s < one) {
+			one = s;
+			results.add(0, a.get(i));
+		}
+		else if (s < two) {
+			two = s;
+			results.add(1, a.get(i));
+		}
+		else if (s < three) {
+			three = s;
+			results.add(2, a.get(i));
+		}
+		else if (s < four) {
+			four = s;
+			results.add(3, a.get(i));
+		}
+		else if (s < five) {
+			five = s;
+			results.add(4, a.get(i));
+		}
 	}
 	return results;
 }

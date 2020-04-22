@@ -8,16 +8,15 @@
 <br>
 <% String error = request.getParameter("error");
 if (error == null) {
-	
-}
-else if (error.equals("INVALID USERNAME OR PASSWORD")){
-%>
-	<p>User name or password is not valid</p>
-<%
-}
-%>
-	
 
+}
+else if (error.equals("INVALID USERNAME OR PASSWORD")){%>
+<p>Username or password is invalid</p>
+<%} %>
+<br>
+<%if (request.getParameter("error2") != null) {%>
+<%= request.getParameter("error2") %>
+<%} %>
 
 <form method="post" action="loginAction.jsp" name="Login"><br>
 <table style="text-align: left; width: 266px; height: 228px;"

@@ -160,12 +160,11 @@ public class Driver {
 		// (User) Find top 5 recommended schools for a given school
 		ArrayList<University> a = UniversityController.getSimilarSchools("YALE");									    //U11 Display 5 most similar school to school being viewed
 		System.out.println("Similarity Ratings for top 5 similar schools to Yale");
-		System.out.println(a.get(0).toString() + "" + a.get(1).toString() + "" + a.get(2).toString());
-
-
-		System.out.println("------------------------------");
-		System.out.println("------------------------------");
+		System.out.println(a.get(1).toString() + "" + a.get(2).toString() + "" + a.get(3).toString());
 		
+
+		System.out.println("------------------------------");
+		System.out.println("------------------------------");
 
 
 		
