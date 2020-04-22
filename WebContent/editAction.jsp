@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page language="java" import="cmc.account.user.*,java.util.*"%>
+<% String firstName = request.getParameter("FirstName");
+String lastName = request.getParameter("LastName");
+String  username = request.getParameter("Username");
+String password = request.getParameter("Password");
+String type = request.getParameter("Type");
+String status = request.getParameter("Status");
+char t = type.charAt(0);
+char s = status.charAt(0);
+User u = new User(firstName,lastName,username,password,t,s);
+UserController uc = new UserController();
+//uc.addUser(u);
+response.sendRedirect("Menu.jsp");
 
-</body>
-</html>
+%>
