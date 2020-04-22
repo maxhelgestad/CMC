@@ -1,14 +1,17 @@
 <html>
 <head>
 
-<title>Login Form</title>
+<title>Going to College</title>
 </head>
 <body>
 <br>
 Login form:<br>
 <br>
-<%if (request.getParameter("error") != null) {%>
-<%= request.getParameter("error") %>
+<% String error = request.getParameter("error");
+if (error == null) {
+}
+else if (error.equals("INVALID USERNAME OR PASSWORD")){%>
+<p>Username or password is invalid</p>
 <%} %>
 <br>
 <%if (request.getParameter("error2") != null) {%>
