@@ -9,9 +9,8 @@ String type = request.getParameter("Type");
 String status = request.getParameter("Status");
 char t = type.charAt(0);
 char s = status.charAt(0);
-User u = new User(firstName,lastName,username,password,t,s);
-UserController uc = new UserController();
-//uc.addUser(u);
-response.sendRedirect("Menu.jsp");
+UserInteraction.viewToEditProfile(username, password, firstName, lastName, t, s);
+
+response.sendRedirect("profile.jsp");
 
 %>
