@@ -13,7 +13,7 @@ Hello User: <%= (String)session.getAttribute("username") %>
 <br>
 
 <form method="post" action="Delete.jsp" name="Delete" >
-<a href="savedSchools">Manage My Saved Schools</a>
+<a href="savedSchools.jsp">Manage My Saved Schools</a>
 </form>
 
 <br>

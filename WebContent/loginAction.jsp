@@ -7,11 +7,11 @@ String password = request.getParameter("Password");
 
 UserInteraction ui = new UserInteraction();
 DatabaseController.setUp("javengers", "csci230");
-session.setAttribute("username", username);
 boolean logInStatus = UserInteraction.logOn(username, password);
 
 if(logInStatus == true){
 	session.setAttribute("loggedInUser", ui);
+	session.setAttribute("username", username);
          response.sendRedirect("Menu.jsp");
 }
 else{
