@@ -12,7 +12,7 @@
 <title>School Page</title>
 </head>
 <body>
-<a href="searchResult.jsp">Back to Search Results</a>
+<a href="searchResults.jsp">Back to Search Results</a>
 <br>
 <%String name = request.getParameter("schoolName");
 University un = DatabaseController.getUniversity(name);%>
@@ -28,12 +28,12 @@ University un = DatabaseController.getUniversity(name);%>
 
 <tr>
 <td style="vertical-align: top;">School Name</td>
-<td style="vertical-align: top;">contains<input name="schoolName" value = <%=un.getName()%> readonly> </td>
+<td style="vertical-align: top;"><input name="schoolName" value = <%=un.getName()%> readonly> </td>
 </tr>
 
 <tr>
 <td style="vertical-align: top;">State</td>
-<td style="vertical-align: top;">contains<input name="state" value = <%=un.getState()%> readonly> </td>
+<td style="vertical-align: top;"><input name="state" value = <%=un.getState()%> readonly> </td>
 </tr>
 
 <tr>
