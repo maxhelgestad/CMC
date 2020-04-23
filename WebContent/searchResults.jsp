@@ -40,6 +40,6 @@
 <%} %>
 </tbody>
 </table>
-<%session.removeAttribute("searchResults"); %>
+<%//session.removeAttribute("searchResults"); %>
 </body>
 </html>

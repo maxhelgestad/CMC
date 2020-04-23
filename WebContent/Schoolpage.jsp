@@ -12,16 +12,12 @@
 <title>School Page</title>
 </head>
 <body>
-<a href="searchResult.jsp">Back to Search Results</a>
+<a href="savedSchools.jsp">Back to Saved Schools</a>
 <br>
 <%String name = request.getParameter("schoolName");
 University un = DatabaseController.getUniversity(name);%>
 
-<td style="vertical-align: top;">
-<form method="post" action="saveAction.jsp" name="SAVE">
-    <input name="SAVE" value="SAVE" type="submit">
-    <input name="schoolName" value="<%= name %>" type="hidden">
-</form>
+
 
 <table width=80% border=2>
 <tbody>

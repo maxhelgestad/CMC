@@ -7,5 +7,5 @@
 String username = (String)session.getAttribute("username");
 String schoolName = request.getParameter("schoolName");
 DatabaseController.saveSchool(username, schoolName);
-response.sendRedirect("search.jsp");
+response.sendRedirect("searchResults.jsp");
 %>
