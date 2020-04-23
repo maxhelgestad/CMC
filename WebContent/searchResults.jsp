@@ -15,13 +15,8 @@
 <table width=80% border=2>
 <tbody><tr>
 <td></td>
-<td>School Name</td>
-<td>State</td>
-<td>Location</td>
-<td>Control</td>
-<td>Number of Students</td>
-<td>% Female</td>
-<td>% Admitted</td>
+<td style="vertical-align: center;">School Name</td>
+<td></td>
 </tr>
 
 <%ArrayList<University> searchResults = (ArrayList<University>)session.getAttribute("searchResults");%>
@@ -35,12 +30,12 @@
 </form>
 </td>
 	<td><%=searchResults.get(i).getName()%></td>
-	<td><%=searchResults.get(i).getState()%></td>
-	<td><%=searchResults.get(i).getLocation()%></td>
-	<td><%=searchResults.get(i).getControl()%></td>
-	<td><%=searchResults.get(i).getNumStudents()%></td>
-	<td><%=searchResults.get(i).getMfRatio()%></td>
-	<td><%=searchResults.get(i).getAdmitionRate()%></td>
+	<td style="vertical-align: top;">
+<form method="post" action="schoolPage.jsp" name="VIEW">
+    <input name="VIEW" value="VIEW" type="submit">
+    <input name="schoolName" value="<%= searchResults.get(i).getName() %>" type="hidden">
+</form>
+</td>
 </tr>
 <%} %>
 </tbody>

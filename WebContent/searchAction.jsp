@@ -8,8 +8,8 @@ String name = request.getParameter("schoolName");
 String state = request.getParameter("state");
 String location = request.getParameter("location");
 String control = request.getParameter("control");
-
 int numStudentsB;
+
 if (request.getParameter("numStudentsB").equals("")){
 	numStudentsB = 0;
 }
@@ -23,7 +23,6 @@ if (request.getParameter("numStudentsT").equals("")){
 else{
 	numStudentsT = Integer.parseInt(request.getParameter("numStudentsT"));
 }
-
 float mfRatioB;
 if (request.getParameter("mfRatioB").equals("")){
 	mfRatioB = 0;
@@ -38,7 +37,6 @@ if (request.getParameter("mfRatioT").equals("")){
 else{
 	mfRatioT = Float.parseFloat(request.getParameter("mfRatioT"));
 }
-
 float SATVerbalB;
 if (request.getParameter("SATVerbalB").equals("")){
 	SATVerbalB = 0;
@@ -53,7 +51,6 @@ if (request.getParameter("SATVerbalT").equals("")){
 else{
 	SATVerbalT = Float.parseFloat(request.getParameter("SATVerbalT"));
 }
-
 float SATMathB;
 if (request.getParameter("SATMathB").equals("")){
 	SATMathB = 0;
@@ -68,7 +65,6 @@ if (request.getParameter("SATMathT").equals("")){
 else{
 	SATMathT = Float.parseFloat(request.getParameter("SATMathT"));
 }
-
 float expensesB;
 if (request.getParameter("expensesB").equals("")){
 	expensesB = 0;
@@ -83,7 +79,6 @@ if (request.getParameter("expensesT").equals("")){
 else{
 	expensesT = Float.parseFloat(request.getParameter("expensesT"));
 }
-
 float financialAidB;
 if (request.getParameter("financialAidB").equals("")){
 	financialAidB = 0;
@@ -98,7 +93,6 @@ if (request.getParameter("financialAidT").equals("")){
 else{
 	financialAidT = Float.parseFloat(request.getParameter("financialAidT"));
 }
-
 int numApplicantsB;
 if (request.getParameter("numApplicantsB").equals("")){
 	numApplicantsB = 0;
@@ -113,7 +107,6 @@ if (request.getParameter("numApplicantsT").equals("")){
 else{
 	numApplicantsT = Integer.parseInt(request.getParameter("numApplicantsT"));
 }
-
 float percentAdmittedB;
 if (request.getParameter("percentAdmittedB").equals("")){
 	percentAdmittedB = 0;
@@ -128,7 +121,6 @@ if (request.getParameter("percentAdmittedT").equals("")){
 else{
 	percentAdmittedT = Float.parseFloat(request.getParameter("percentAdmittedT"));
 }
-
 float percentEnrolledB;
 if (request.getParameter("percentEnrolledB").equals("")){
 	percentEnrolledB = 0;
@@ -143,7 +135,6 @@ if (request.getParameter("percentEnrolledT").equals("")){
 else{
 	percentEnrolledT = Float.parseFloat(request.getParameter("percentEnrolledT"));
 }
-
 int academicsB;
 if (request.getParameter("academicsB").equals("")){
 	academicsB = 0;
@@ -158,7 +149,6 @@ if (request.getParameter("academicsT").equals("")){
 else{
 	academicsT = Integer.parseInt(request.getParameter("academicsT"));
 }
-
 int socialB;
 if (request.getParameter("socialB").equals("")){
 	socialB = 0;
@@ -173,7 +163,6 @@ if (request.getParameter("socialT").equals("")){
 else{
 	socialT = Integer.parseInt(request.getParameter("socialT"));
 }
-
 int qualOfLifeB;
 if (request.getParameter("qualOfLifeB").equals("")){
 	qualOfLifeB = 0;
@@ -189,12 +178,9 @@ else{
 	qualOfLifeT = Integer.parseInt(request.getParameter("qualOfLifeT"));
 }
 
-Criteria criteria = new Criteria(name, state, location, control, numStudentsB, numStudentsT, mfRatioB, mfRatioT, SATVerbalB, SATVerbalT, SATMathB, SATMathT,
-		expensesB, expensesT, financialAidB, financialAidT, numApplicantsB, numApplicantsT, percentAdmittedB, percentAdmittedT, percentEnrolledB, percentEnrolledT, 
-		academicsB, academicsT, socialB, socialT, qualOfLifeB, qualOfLifeT);
-ArrayList<University> results = SearchController.searchSchool(criteria);
+Criteria criteria = new Criteria(name, state, location, control, numStudentsB, numStudentsT, mfRatioB, mfRatioT, SATVerbalB, SATVerbalT, SATMathB, SATMathT,expensesB, expensesT, financialAidB, financialAidT, numApplicantsB, numApplicantsT, percentAdmittedB, percentAdmittedT, percentEnrolledB, percentEnrolledT, academicsB, academicsT, socialB, socialT, qualOfLifeB, qualOfLifeT);
 
+ArrayList<University> results = SearchController.searchSchool(criteria);
 session.setAttribute("searchResults", results);
 response.sendRedirect("searchResults.jsp");
-
 %>

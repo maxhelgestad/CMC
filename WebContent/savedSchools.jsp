@@ -17,12 +17,7 @@ Here Are Your Saved Schools
 <tbody><tr>
 <td></td>
 <td>School Name</td>
-<td>State</td>
-<td>Location</td>
-<td>Control</td>
-<td>Number of Students</td>
-<td>% Female</td>
-<td>% Admitted</td>
+<td></td>
 </tr>
 <%String username = (String)session.getAttribute("username"); %>
 <%ArrayList<University> savedSchools = DatabaseController.getSavedSchools(username);%>
@@ -36,16 +31,16 @@ Here Are Your Saved Schools
 </form>
 </td>
 	<td><%=savedSchools.get(i).getName()%></td>
-	<td><%=savedSchools.get(i).getState()%></td>
-	<td><%=savedSchools.get(i).getLocation()%></td>
-	<td><%=savedSchools.get(i).getControl()%></td>
-	<td><%=savedSchools.get(i).getNumStudents()%></td>
-	<td><%=savedSchools.get(i).getMfRatio()%></td>
-	<td><%=savedSchools.get(i).getAdmitionRate()%></td>
+	
+	<td style="vertical-align: top;">
+    <form method="post" action="schoolPage.jsp" name="VIEW">
+    <input name="VIEW" value="VIEW" type="submit">
+    <input name="schoolName" value="<%= savedSchools.get(i).getName() %>" type="hidden">
+</form>
+</td>
 </tr>
 <%} %>
 </tbody>
 </table>
-<%session.removeAttribute("searchResults"); %>
 </body>
 </html>
