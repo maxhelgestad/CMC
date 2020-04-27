@@ -80,50 +80,32 @@ public static ArrayList<University> getSimilarSchools(String schoolName){
 	float five = 104;
 	for (int i = 0; i < a.size(); i++) {
 		float s = University.similarity(schoolName, ((University) a.get(i)).getName());
-		if (s < one) {
-			one = s;
-			results.add(0, a.get(i));
+		if (!(s == (float)0.0)) {
+			if (s < one) {
+				one = s;
+				results.add(0, a.get(i));
+			}
+			else if (s < two) {
+				two = s;
+				results.add(1, a.get(i));
+			}
+			else if (s < three) {
+				three = s;
+				results.add(2, a.get(i));
+			}
+			else if (s < four) {
+				four = s;
+				results.add(3, a.get(i));
+			}
+			else if (s < five) {
+				five = s;
+				results.add(4, a.get(i));
+			}
 		}
-		else if (s < two) {
-			two = s;
-			results.add(1, a.get(i));
-		}
-		else if (s < three) {
-			three = s;
-			results.add(2, a.get(i));
-		}
-		else if (s < four) {
-			four = s;
-			results.add(3, a.get(i));
-		}
-		else if (s < five) {
-			five = s;
-			results.add(4, a.get(i));
-		}
+
 	}
 	return results;
 }
 
 
-/**
- * @author saurav jain (geeksForGeeks.com)
- * @param hm
- * @return
- */
-public static HashMap<University, Float> sortByValue(HashMap<University, Float> hm){
-	List<Map.Entry<University, Float> > list = 
-			new LinkedList<Map.Entry<University, Float> >(hm.entrySet());
-		Collections.sort(list, new Comparator<Map.Entry<University, Float> >() {
-		public int compare(Map.Entry<University,Float> o1,
-							Map.Entry<University, Float> o2) {
-			return (o1.getValue().compareTo(o2.getValue()));
-		}
-		});
-		HashMap<University, Float> temp = new LinkedHashMap<University, Float>();
-		for (Map.Entry<University, Float> aa : list) {
-			temp.put(aa.getKey(), aa.getValue());
-		}
-		return temp;
-		
-	}
 }
