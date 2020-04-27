@@ -30,8 +30,8 @@ Here Are Your Saved Schools
     <input name="schoolName" value="<%= savedSchools.get(i).getName() %>" type="hidden">
 </form>
 </td>
-	<td><%=savedSchools.get(i).getName()%></td>
-	
+	<td><%=savedSchools.get(i).getName() %></td>
+
 	<td style="vertical-align: top;">
     <form method="post" action="Schoolpage.jsp" name="VIEW">
     <input name="VIEW" value="VIEW" type="submit">
