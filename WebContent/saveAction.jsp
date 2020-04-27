@@ -27,5 +27,4 @@ String time = timeFormatI.format(cal.getTime());
 session.setAttribute("date", date);
 session.setAttribute("time", time);
 
-
 %>

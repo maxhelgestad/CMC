@@ -22,7 +22,9 @@ Here Are Your Saved Schools
 <%String username = (String)session.getAttribute("username"); %>
 <%ArrayList<University> savedSchools = DatabaseController.getSavedSchools(username);%>
 
-<%for(int i = 0; i < savedSchools.size(); i++){%>
+<%String dateFormat = (String)session.getAttribute("date");
+String timeFormat = (String)session.getAttribute("time");
+for(int i = 0; i < savedSchools.size(); i++){%>
 <tr>
 <td style="vertical-align: top;">
 <form method="post" action="deleteSaved.jsp" name="DELETE">
@@ -30,8 +32,8 @@ Here Are Your Saved Schools
     <input name="schoolName" value="<%= savedSchools.get(i).getName() %>" type="hidden">
 </form>
 </td>
-	<td><%=savedSchools.get(i).getName()%></td>
-	
+	<%String result = savedSchools.get(i).getName()+ "(added on: " + dateFormat + " " + timeFormat+ ")";%>
+	<td><%= result %></td>
 	<td style="vertical-align: top;">
     <form method="post" action="Schoolpage.jsp" name="VIEW">
     <input name="VIEW" value="VIEW" type="submit">
