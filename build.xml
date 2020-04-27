@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Web.CMC">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="/opt/eclipse-plugins-4.7/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Apache Tomcat v8.0 [Apache Tomcat v8.0].libraryclasspath">
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/annotations-api.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/catalina.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/ecj-4.4.2.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/el-api.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/jasper-el.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/jasper.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/jsp-api.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/servlet-api.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../../opt/apache-tomcat-8.0.27/lib/websocket-api.jar"/>
+    </path>
+    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="Web.CMC.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Apache Tomcat v8.0 [Apache Tomcat v8.0].libraryclasspath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="../../../../people/classes/CS230/handouts/project/DatabaseLibrary/csci230databaselibrary.jar"/>
+        <pathelement location="../../../../people/classes/Java/mysql-connector-java-3.1.10-bin.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="test">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="test"/>
+            <classpath refid="Web.CMC.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+</project>
