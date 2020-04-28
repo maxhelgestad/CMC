@@ -32,8 +32,11 @@ for(int i = 0; i < savedSchools.size(); i++){%>
     <input name="schoolName" value="<%= savedSchools.get(i).getName() %>" type="hidden">
 </form>
 </td>
+
 	<%String result = savedSchools.get(i).getName()+ "(added on: " + dateFormat + " " + timeFormat+ ")";%>
 	<td><%= result %></td>
+
+
 	<td style="vertical-align: top;">
     <form method="post" action="Schoolpage.jsp" name="VIEW">
     <input name="VIEW" value="VIEW" type="submit">
