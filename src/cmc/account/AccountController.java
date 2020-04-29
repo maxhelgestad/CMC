@@ -66,18 +66,12 @@ public class AccountController {
 	 String u = DatabaseController.lookupAccount(username).getUsername();
 	 if (firstName.length() <= 0 || lastName.length() <= 0 || password.length() <= 0) {
 		 return false;
-	}
-	else if (u.equals(username)) {
-		return false;
-	}
-	else if (((type == 'u') || (type == 'a')) && ((status == 'Y') || (status =='N'))) {
-		 System.out.println(firstName.length());
-		 DatabaseController.addAccount(firstName, lastName, username, password, type, status);
+	 }
+	 else {
+		DatabaseController.addAccount(firstName, lastName, username, password, type, status);
 		return true;
-	}
-	else {
-		return false;
-	} 
+	 }
+
 		
  }
  /**Edits an Account
