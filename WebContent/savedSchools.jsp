@@ -20,7 +20,8 @@ Here Are Your Saved Schools
 <td></td>
 </tr>
 <%String username = (String)session.getAttribute("username"); %>
-<%ArrayList<University> savedSchools = DatabaseController.getSavedSchools(username);%>
+<%ArrayList<University> savedSchools = DatabaseController.getSavedSchools(username);
+ArrayList<String> date = DatabaseController.getSavedSchoolsDate(username);%>
 
 <%String dateFormat = (String)session.getAttribute("date");
 String timeFormat = (String)session.getAttribute("time");
@@ -33,7 +34,8 @@ for(int i = 0; i < savedSchools.size(); i++){%>
 </form>
 </td>
 
-	<%String result = savedSchools.get(i).getName()+ "(added on: " + dateFormat + " " + timeFormat+ ")";%>
+	<%
+	String result = savedSchools.get(i).getName()+ " (added on: " + date.get(i) + ")";%>
 	<td><%= result %></td>
 
 

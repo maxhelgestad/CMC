@@ -1,6 +1,6 @@
 package cmc.database;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Arrays;
 
 import cmc.account.Account;
@@ -204,6 +204,26 @@ public class DatabaseController {
 		else{
 			return null;
 		}
+	}
+	
+	public static ArrayList<String> getSavedSchoolsDate(String username)
+	{
+		if (username != null && username != "")
+		{
+			String[][] saved = lib.user_getUsernamesWithSavedSchools();
+			ArrayList<String> result = new ArrayList<String>();
+			for (int i = 0; saved.length > i; i++) {
+				if(saved[i][0].equals(username)){
+					result.add(saved[i][2]);
+				}
+			}
+			return result;
+		  }
+			  
+		
+			  else{
+					return null;
+			}
 	}
 
 	/**
