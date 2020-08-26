@@ -1,5 +1,6 @@
 # CSCI230.CMC
-To run the Driver class all you must do is press run, values are already in the driver class. There is no need for user interaction.
+Backend Java Files exist in the "src" folder
 
-Phase 3
-Open the all tests file under the test default package and run the allTests file
+Frontend files exist in the "WebContent" folder
+
+Test files exist in the "test" folder
